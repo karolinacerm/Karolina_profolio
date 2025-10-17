@@ -5,281 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Karolina C Design — Portfolio</title>
   <meta name="description" content="Visual designer focused on graphics and UX/UI." />
-
-  <style>
-    /* ===== CSS RESET (trimmed) ===== */
-    *,*::before,*::after{box-sizing:border-box}
-    html:focus-within{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    button,input,select,textarea{font:inherit}
-
-    /* ===== THEME ===== */
-    :root{
-      --bg: #ffffff;
-      --ink: #1a1a1a;
-      --muted: #6a6a6a;
-      --panel: #111;         /* dark panels (about/footer) */
-      --panel-ink: #eaeaea;  /* text on dark panels */
-      --accent: #999;
-      --gap: 16px;
-      --radius: 12px;
-      --maxw: 1120px;
-    }
-    @media (min-width: 768px){
-      :root{ --gap: 20px }
-    }
-    body{background:var(--bg);color:var(--ink)}
-    .wrap{max-width:var(--maxw);margin-inline:auto; padding-bottom:0}
-    .nav{padding: 24px;}
-    @media (min-width: 768px){
-      .section{padding:56px 24px}
-    }
-
-    /* ===== ACCESSIBILITY ===== */
-    .skip{
-      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
-    }
-    .skip:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:8px 12px;background:#fff;border:1px solid #000;z-index:10}
-
-    /* ===== HEADER / NAV ===== */
-    header{position:sticky;top:0;background:var(--bg);z-index:9;}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{font-weight:700;letter-spacing:.02em; display: flex; flex-direction: column;}
-    .brand small{font-weight:400;color:var(--muted)}
-    details.navmenu{margin-left:auto}
-    .hamburger{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
-    .hamburger .bars{width:22px;height:2px;background:var(--ink);box-shadow:0 6px 0 var(--ink),0 -6px 0 var(--ink)}
-    details[open] .hamburger .bars{box-shadow:none}
-    .drawer{
-      border-top:1px solid #eee;margin-top:12px;padding-top:12px;display:flex;flex-direction:column;gap:10px
-    }
-    .drawer a{padding:8px 0}
-    @media (min-width: 900px){
-      details.navmenu{display:none}
-.navlinks{display:flex;gap:20px;}      
-    }
-
-    @media (max-width: 900px){
-      .navlinks{display:none}
-    }
-
-    /* ===== HERO ===== */
-    .hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center}
-    .eyes{
-      width:122px;height:48px;margin-inline:auto;margin-bottom:18px;
-      background: radial-gradient(closest-side,#000 60%,transparent 61%) 25% 50%/18px 18px no-repeat,
-                  radial-gradient(closest-side,#000 60%,transparent 61%) 75% 50%/18px 18px no-repeat,
-                  linear-gradient(#000,#000) 0 100%/100% 2px no-repeat;
-      filter:contrast(120%);
-    }
-    .hero .kicker{font-size:.85rem;letter-spacing:.08em;color:var(--muted)}
-    .scroll-cue{margin-top:18px;font-size:.85rem;color:var(--muted)}
-    .scroll-cue::after{content:" ↓";font-size:1rem}
-    @media (prefers-reduced-motion:no-preference){
-      .scroll-cue{animation:blink 2s infinite}
-      @keyframes blink{0%,90%{opacity:.65} 100%{opacity:1}}
-    }
-
-    .hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* nebo libovolná výška */
-}
-.section{padding:32px 24px}
-
-.hero {
-  padding: 0;
-  padding-bottom: 100px;
-}
-
-.hero-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* oči doprostřed */
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.hero .eyes {
-  /* pro střed sekce */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero .bottom {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-}
-
-.hero .kicker {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
-.hero .scroll-cue {
-  font-size: 0.8rem;
-  color: var(--muted);
-  opacity: 0.7;
-}
-
-    /* ===== DARK PANEL (ABOUT) ===== */
-    .panel{background:var(--panel);color:var(--panel-ink)}
-    .about{max-width:720px;margin-inline:auto}
-    .about h2{margin:0 0 8px 0;font-size:1rem;letter-spacing:.05em;color:#bdbdbd}
-    .about p{margin:0 0 12px 0}
-    .about p + p{opacity:.95}
-
-    /* ===== SELECTED WORK ===== */
-    .section h3{margin:0 0 12px 0;font-size:1rem;color:var(--muted);letter-spacing:.06em}
-    .grid{
-      display:grid;gap:22px;
-      grid-template-columns:1fr;
-    }
-    @media (min-width: 700px){ .grid{ grid-template-columns:repeat(2,1fr) } }
-    @media (min-width: 1100px){ .grid{ grid-template-columns:repeat(3,1fr) } }
-    .card{
-      overflow:hidden;background:#fff;
-      transition:transform .2s ease, box-shadow .2s ease
-    }
-    .thumb{
-      aspect-ratio:4/3;background:#111;color:#e5e5e5;display:grid;place-items:center;
-      font-weight:600;letter-spacing:.08em; object-fit: cover; object-position: center; /* 🔹 zarovná na střed */
-    display: block;
-    }
-    .thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;    /* 🔹 obrázek vyplní, ale zachová poměr */
-  object-position: center; /* 🔹 zarovná na střed */
-  display: block;
-}
-    .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
-    .meta{padding-top:14px}
-    .title{font-weight:700;margin:0 0 8px 0}
-    .tags{display:flex;flex-wrap:wrap;gap:8px}
-    .tag{
-      font-size:.78rem;padding:4px 8px;border-radius:999px;border:1px solid #ddd;background:#fafafa
-    }
-
-    /* ===== CONTACT / FOOTER ===== */
-    .contact{background:var(--panel);color:var(--panel-ink)}
-    .contact .wrap{padding-block:28px; padding: 24px;}
-    .cta{display:flex;flex-direction:column;gap:8px}
-    .cta a{
-      border-top:1px solid #3a3a3a;padding:14px 0;display:flex;justify-content:space-between;align-items:center
-    }
-    .cta a:hover{opacity:.9}
-    footer{padding:16px 24px;border-top:1px solid #1e1e1e;background:#0b0b0b;color:#bdbdbd;font-size:.85rem}
-    footer .footwrap{max-width:var(--maxw);margin-inline:auto;display:flex;justify-content:space-between;align-items:center;}
-    .muted{color:#9a9a9a}
-
-    /* ==== FULLSCREEN MOBILE MENU – ANIMACE ==== */
-
-/* Skryj defaultní trojúhelník u <summary> */
-.navmenu > summary::-webkit-details-marker { display:none; }
-.navmenu > summary::marker { content: ""; }
-
-/* Overlay je vždy ve stromu (kvůli animaci), ale v zavřeném stavu mimo plátno */
-.navmenu .overlay {
-  position: fixed;
-  inset: 0;
-  background: #111;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding: 48px 24px;
-  z-index: 100;
-
-  /* výchozí (zavřeno) */
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-100%);
-  transition: transform .35s ease, opacity .35s ease;
-}
-
-/* otevřený stav – animace proběhne tam i zpět */
-.navmenu[open] .overlay {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
-
-/* tlačítko zpět (zavření) */
-.navmenu .close {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.6rem;
-  text-align: left;
-  margin-bottom: 36px;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-  transform: translateX(0);
-  transition: opacity .25s ease, transform .35s ease .05s;
-}
-.navmenu[open] .close { transform: translateX(0); opacity: 1; }
-.navmenu .close:hover { opacity: .8; }
-
-/* seznam položek */
-.navmenu .overlay ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-/* jednotlivé položky: jemné „vyjetí“ + fade se stupňováním */
-.navmenu .overlay li {
-  border-bottom: 1px solid #2a2a2a;
-  transform: translateY(10px);
-  opacity: 0;
-  transition: transform .35s ease, opacity .35s ease;
-}
-
-/* otevřené – zpět na místo */
-.navmenu[open] .overlay li {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* postupné zpoždění (stagger) pro 1–6 položek, přidej/změň dle potřeby */
-.navmenu[open] .overlay li:nth-child(1) { transition-delay: .05s; }
-.navmenu[open] .overlay li:nth-child(2) { transition-delay: .10s; }
-.navmenu[open] .overlay li:nth-child(3) { transition-delay: .15s; }
-.navmenu[open] .overlay li:nth-child(4) { transition-delay: .20s; }
-.navmenu[open] .overlay li:nth-child(5) { transition-delay: .25s; }
-.navmenu[open] .overlay li:nth-child(6) { transition-delay: .30s; }
-
-.navmenu .overlay a {
-  display: block;
-  padding: 18px 0;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  font-weight: 500;
-  color: #fff;
-}
-.navmenu .overlay a:hover { opacity: .85; }
-
-/* Zamez scrollu podkladu při otevření menu */
-.navmenu[open] ~ * { overflow: hidden; }
-
-    /* ===== UTIL ===== */
-    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -294,8 +20,7 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <!-- Mobile nav (no JS) -->
+      
       <!-- Mobile nav (no JS) -->
       <details class="navmenu" aria-label="Mobile menu">
         <summary class="hamburger" aria-label="Open menu">
@@ -343,8 +68,10 @@
     <!-- ===== SELECTED WORK ===== -->
     <section id="work" class="section" aria-label="Selected work">
       <div class="wrap">
-        <h3>SELECTED WORK <span class="muted">/ Click any image to see full project</span></h3>
-
+        <div class="section-header">
+          <h2 class="title">SELECTED WORK</h2>
+          <p class="muted">/ Click any image to see full project</p>
+        </div>        
         <!-- Kontejner, který JS naplní kartami -->
         <div class="grid" id="projectsGrid" data-src="./projects.json">
           <noscript>
@@ -386,12 +113,12 @@
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <footer>
+  <section class="footer" id="footer">
     <div class="footwrap">
       <div>KAROLINA C DESIGN</div>
       <div class="muted">© 2025 All rights reserved</div>
     </div>
-  </footer>
+  </section>
   <script src="./script.js" defer></script>
 </body>
 </html>
