@@ -24,14 +24,19 @@
       "Deliverables": ["Logo suite", "Vehicle wrap", "Menu board", "Merch vizuály"]
     },
     "sections": [
-      {
-        "title": "Brand roll-out",
+      {        
         "items": [
+          {
+            "type": "text",
+            "body": [
+              "Identita stojí na modulárním logotypu, který se dá vrstvit s ilustracemi. Díky jednoduché mřížce jsme schopni rychle připravit další aplikace pro eventy a sezonní menu."              
+            ],
+            "span": "full"
+          },
           {
             "type": "image",
             "src": "/images/beruna1.jpeg",
-            "alt": "Food truck Recerve po rebrandingu",
-            "caption": "Hlavní vozidlo funguje jako největší nosič značky."
+            "alt": "Food truck Recerve po rebrandingu"            
           },
           {
             "type": "image",
@@ -41,8 +46,7 @@
           {
             "type": "text",
             "body": [
-              "Identita stojí na modulárním logotypu, který se dá vrstvit s ilustracemi.",
-              "Díky jednoduché mřížce jsme schopni rychle připravit další aplikace pro eventy a sezonní menu."
+              "Identita stojí na modulárním logotypu, který se dá vrstvit s ilustracemi. Díky jednoduché mřížce jsme schopni rychle připravit další aplikace pro eventy a sezonní menu."              
             ],
             "span": "full"
           }
