@@ -1,0 +1,27 @@
+[
+  {
+    "id": "project-1",
+    "title": "RECERVE FOOD TRUCK",
+    "href": "/projects/recerve-food-truck.html",
+    "thumb": "/images/beruna1.jpeg",
+    "thumbAlt": "Brand aplikace na food trucku Recerve",
+    "tags": ["Branding", "Logo Design", "Print"],
+    "ariaLabel": "Recerve Food Truck project"
+  },
+  {
+    "id": "project-2",
+    "title": "MUSEUM POSTER SERIES",
+    "href": "/projects/museum-posters.html",
+    "thumb": "/images/beruna2.jpeg",
+    "thumbAlt": "Série plakátů pro muzeum",
+    "tags": ["Print", "Typography"]
+  },
+  {
+    "id": "project-3",
+    "title": "APP UI REDESIGN",
+    "href": "https://dribbble.com/shots/12345678",
+    "thumb": "/images/beruna3.jpeg",
+    "thumbAlt": "Náhled mobilní aplikace",
+    "tags": ["UX/UI", "Prototype"]
+  }
+]
