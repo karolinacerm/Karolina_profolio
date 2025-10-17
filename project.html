@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project — Karolina C Design</title>
+  <meta name="description" content="Project detail from Karolina C Design portfolio." />
+  <style>
+    *,*::before,*::after{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6;background:#fff;color:#1a1a1a;}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    :root{
+      --muted:#6a6a6a;
+      --ink:#1a1a1a;
+      --panel:#111;
+      --panel-ink:#eaeaea;
+      --radius:12px;
+      --gap:22px;
+      --maxw:820px;
+    }
+
+    header{
+      padding:20px 24px;
+      border-bottom:1px solid #eaeaea;
+    }
+    .nav{
+      max-width:var(--maxw);
+      margin-inline:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:.02em;
+      display:flex;
+      flex-direction:column;
+      font-size:1rem;
+    }
+    .brand small{font-weight:400;color:var(--muted);}
+    .back-link{
+      font-size:.9rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .back-link:hover{color:var(--ink);}
+
+    main{
+      padding:32px 24px 80px;
+    }
+    .wrap{
+      max-width:var(--maxw);
+      margin-inline:auto;
+    }
+    article{
+      display:flex;
+      flex-direction:column;
+      gap:var(--gap);
+    }
+    .project-tags{
+      margin:0;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+      font-size:.75rem;
+    }
+    .project-title{
+      margin:0;
+      font-size:0.75rem;
+      letter-spacing:.01em;
+    }
+    .project-summary{
+      margin:0;      
+      font-size:1.05rem;      
+      max-width:36ch;
+
+      margin-top: 40px;
+    }
+    .project-hero{
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:#f5f5f5;
+      margin: 0;
+    }
+    .project-hero figcaption{
+      padding:12px 16px;
+      font-size:.85rem;
+      color:var(--muted);
+    }
+    .project-layout{
+      display:flex;
+      flex-direction:column;
+      gap:32px;
+    }
+    .project-description p{margin:0 0 1.4em;}
+    .project-meta{
+      background:#f7f7f7;
+      border-radius:var(--radius);
+      padding:24px;
+      display:grid;
+      gap:18px;
+    }
+    .project-meta dt{
+      margin:0;
+      font-weight:600;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      font-size:.75rem;
+      color:var(--muted);
+    }
+    .project-meta dd{
+      margin:4px 0 0;
+      font-weight:500;
+    }
+    .project-gallery{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .project-gallery-grid{
+      display:grid;
+      gap:16px;
+    }
+    @media (min-width: 640px){
+      .project-gallery-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+    .project-gallery h2,
+    .project-links h2{
+      margin:0;
+      font-size:1.2rem;
+      letter-spacing:.03em;
+    }
+    .project-gallery img{
+      width:100%;
+      border-radius:var(--radius);
+      background:#e6e6e6;
+    }
+    .project-links-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .project-links-list a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 18px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      font-size:.9rem;
+      letter-spacing:.03em;
+    }
+    .project-links-list a:hover{opacity:.85;}
+
+    @media (min-width: 900px){
+      .project-layout{
+        flex-direction:row;
+        align-items:flex-start;
+      }
+      .project-description{flex:2;}
+      .project-meta{flex:1;position:sticky;top:120px;}
+    }
+
+    .contact{
+      background:var(--panel);
+      color:var(--panel-ink);
+      padding:56px 24px;
+      margin-top:80px;
+    }
+    .contact .wrap{
+      max-width:840px;
+    }
+    .contact h2{margin:0;}
+    .contact p{margin:12px 0 24px;}
+    .contact .cta{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .contact a{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 0;
+      border-bottom:1px solid rgba(234,234,234,.18);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.9rem;
+    }
+    footer{
+      background:#000;
+      color:#f3f3f3;
+      padding:28px 24px;
+    }
+    .footwrap{
+      max-width:var(--maxw);
+      margin-inline:auto;
+      display:flex;
+      justify-content:space-between;
+      font-size:.85rem;
+      letter-spacing:.04em;
+    }
+    .placeholder{
+      display:grid;
+      place-items:center;
+      height:280px;
+      background:#ececec;
+      color:var(--muted);
+      border-radius:var(--radius);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        KAROLINA C <div>DESIGN</div>
+      </div>
+      <a class="back-link" href="./index.html" aria-label="Back to projects">← Back to work</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <article id="project" hidden data-project>
+        <div class="project-head">
+          <h1 class="project-title" data-field="title">Project</h1>
+          <p class="project-tags" data-field="categories"></p>          
+          <p class="project-summary" data-field="summary"></p>
+        </div>
+
+        <figure class="project-hero" data-block="hero" hidden>
+          <img data-field="heroImage" alt="">
+          <figcaption data-field="heroCaption"></figcaption>
+        </figure>
+
+        <section class="project-layout">
+          <div class="project-description" data-field="description"></div>
+          <dl class="project-meta" data-field="meta"></dl>
+        </section>
+
+        <section class="project-gallery" data-block="gallery" hidden>
+          <h2>Gallery</h2>
+          <div class="project-gallery-grid" data-field="gallery"></div>
+        </section>
+
+        <section class="project-links" data-block="links" hidden>
+          <h2>Related Links</h2>
+          <div class="project-links-list" data-field="links"></div>
+        </section>
+      </article>
+
+      <div class="placeholder" data-empty-state>
+        <p>Project nebyl nalezen.</p>
+      </div>
+    </div>
+  </main>
+
+  <section class="contact">
+    <div class="wrap">
+      <h2>CONTACTS</h2>
+      <p>Got an idea for a collab? Hit me up!</p>
+
+      <div class="cta" role="list">
+        <a role="listitem" href="mailto:hello@karolina.design" aria-label="Email">
+          <span>EMAIL</span><span aria-hidden="true">→</span>
+        </a>
+        <a role="listitem" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <span>LINKEDIN</span><span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footwrap">
+      <div>KAROLINA C DESIGN</div>
+      <div>© 2025 All rights reserved</div>
+    </div>
+  </footer>
+
+  <script src="./project-detail.js" defer></script>
+</body>
+</html>

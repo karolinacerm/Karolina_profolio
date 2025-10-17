@@ -2,26 +2,94 @@
   {
     "id": "project-1",
     "title": "RECERVE FOOD TRUCK",
-    "href": "/projects/recerve-food-truck.html",
+    "summary": "Kompletní vizuální identita pro pražský street food truck.",
+    "href": "./project.html?id=project-1",
     "thumb": "/images/beruna1.jpeg",
     "thumbAlt": "Brand aplikace na food trucku Recerve",
     "tags": ["Branding", "Logo Design", "Print"],
-    "ariaLabel": "Recerve Food Truck project"
+    "categories": ["Branding", "Logo Design", "Print"],
+    "ariaLabel": "Recerve Food Truck project",
+    "description": [
+      "Recerve chtěli hravou identitu, která by zdůraznila kvalitu street food nabídky. Navrhla jsem modulární logo inspirované ručně psanými cedulemi tržnic a sadu typografických prvků, které se dají rychle kombinovat.",
+      "Barevná paleta a ilustrační styl se propisují do wrapu auta, menu boardů i propagačních materiálů. Díky tomu působí značka soudržně napříč všemi kanály."
+    ],
+    "hero": {
+      "src": "/images/beruna1.jpeg",
+      "alt": "Food truck Recerve oblepený novou vizuální identitou"
+    },
+    "meta": {
+      "Client": "Recerve Street Food",
+      "Role": "Art Direction & Graphic Design",
+      "Year": "2024",
+      "Deliverables": ["Logo suite", "Vehicle wrap", "Menu board", "Merch vizuály"]
+    },
+    "gallery": [
+      { "src": "/images/beruna1.jpeg", "alt": "Logo a brand aplikovaný na food trucku" },
+      { "src": "/images/beruna2.jpeg", "alt": "Ukázka menu boardu Recerve" }
+    ],
+    "links": [
+      { "label": "View process deck", "url": "/projects/recerve-food-truck.html" }
+    ]
   },
   {
     "id": "project-2",
     "title": "MUSEUM POSTER SERIES",
-    "href": "/projects/museum-posters.html",
+    "summary": "Modulární plakátová kampaň pro sezónní výstavy městského muzea.",
+    "href": "./project.html?id=project-2",
     "thumb": "/images/beruna2.jpeg",
     "thumbAlt": "Série plakátů pro muzeum",
-    "tags": ["Print", "Typography"]
+    "tags": ["Print", "Typography"],
+    "categories": ["Print", "Typography"],
+    "description": [
+      "Potřebovali jsme systém, který zvládne komunikovat různé výstavy a přitom zůstane rozpoznatelný. Navrhla jsem typografickou mřížku, která pracuje s kontrastem serifů a moderních grotesků.",
+      "Barevné kódování pomáhá návštěvníkům rozlišit jednotlivé linie expozic. Layout je přenositelný na citylighty i digitální bannery."
+    ],
+    "hero": {
+      "src": "/images/beruna2.jpeg",
+      "alt": "Plakáty muzejní série nainstalované na scéně"
+    },
+    "meta": {
+      "Client": "City Modern Museum",
+      "Role": "Graphic Design & Art Direction",
+      "Year": "2023",
+      "Deliverables": ["Plakáty", "Citylight variace", "Digitální bannery"]
+    },
+    "gallery": [
+      { "src": "/images/beruna2.jpeg", "alt": "Detail typografické mřížky plakátu" },
+      { "src": "/images/beruna3.jpeg", "alt": "Poster série aplikovaná na billboard" }
+    ],
+    "links": [
+      { "label": "Zobrazit kampaň", "url": "/projects/museum-posters.html" }
+    ]
   },
   {
     "id": "project-3",
     "title": "APP UI REDESIGN",
-    "href": "https://dribbble.com/shots/12345678",
+    "summary": "Redesign mobilní aplikace fintech startupu zaměřený na čitelnost a důvěru.",
+    "href": "./project.html?id=project-3",
     "thumb": "/images/beruna3.jpeg",
     "thumbAlt": "Náhled mobilní aplikace",
-    "tags": ["UX/UI", "Prototype"]
+    "tags": ["UX/UI", "Prototype"],
+    "categories": ["UX/UI", "Prototype"],
+    "description": [
+      "Revidovala jsem informační architekturu a zjednodušila klíčové uživatelské cesty k rychlému přehledu financí. Vizuální styl staví na kontrastních blocích a jasných CTA.",
+      "Součástí výstupu byl také interaktivní prototyp, který jsme využili pro uživatelské testování a handoff pro vývoj."
+    ],
+    "hero": {
+      "src": "/images/beruna3.jpeg",
+      "alt": "Mobilní aplikace po redesignu zobrazená na telefonu"
+    },
+    "meta": {
+      "Client": "Fintech Labs",
+      "Role": "Product Design & Prototyping",
+      "Year": "2024",
+      "Deliverables": ["Design systém", "UX testování", "High-fidelity prototypy"]
+    },
+    "gallery": [
+      { "src": "/images/beruna3.jpeg", "alt": "Ukázka hlavního dashboardu aplikace" }
+    ],
+    "links": [
+      { "label": "Dribbble shot", "url": "https://dribbble.com/shots/12345678" }
+    ]
   }
 ]

@@ -1,117 +1,96 @@
 (() => {
-  function renderProjects(items, grid){
-    const frag = document.createDocumentFragment();
+  const grid = document.getElementById('projectsGrid');
+  if (!grid) {
+    console.warn('#projectsGrid nenalezen');
+    return;
+  }
 
-    items.forEach(p => {
-      const a = document.createElement('a');
-      a.className = 'card';
-      a.href = p.href || ('#' + (p.id || ''));
-      a.setAttribute('aria-label', p.ariaLabel || p.title || 'Project');
+  function createCard(project) {
+    const link = document.createElement('a');
+    link.className = 'card';
+    link.href = project.href || (project.id ? `./project.html?id=${project.id}` : '#');
+    link.setAttribute('aria-label', project.ariaLabel || project.title || 'Project');
 
-      const thumb = document.createElement('div');
-      thumb.className = 'thumb';
-      if (p.thumb) {
-        const img = document.createElement('img');
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.src = p.thumb;
-        img.alt = p.thumbAlt || '';
-        thumb.appendChild(img);
-      } else {
-        thumb.textContent = '4:3';
-      }
+    const thumb = document.createElement('div');
+    thumb.className = 'thumb';
+    if (project.thumb) {
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.src = project.thumb;
+      img.alt = project.thumbAlt || '';
+      thumb.appendChild(img);
+    } else {
+      thumb.textContent = '4:3';
+    }
 
-      const meta = document.createElement('div');
-      meta.className = 'meta';
+    const meta = document.createElement('div');
+    meta.className = 'meta';
 
-      const title = document.createElement('p');
-      title.className = 'title';
-      title.textContent = p.title || 'Untitled';
+    const title = document.createElement('p');
+    title.className = 'title';
+    title.textContent = project.title || 'Untitled';
 
-      const tags = document.createElement('div');
-      tags.className = 'tags';
-      tags.setAttribute('aria-label', 'Tags');
-      (p.tags || []).forEach(t => {
-        const span = document.createElement('span');
-        span.className = 'tag';
-        span.textContent = t;
-        tags.appendChild(span);
-      });
-
-      meta.appendChild(title);
-      meta.appendChild(tags);
-      a.appendChild(thumb);
-      a.appendChild(meta);
-      frag.appendChild(a);
+    const tags = document.createElement('div');
+    tags.className = 'tags';
+    tags.setAttribute('aria-label', 'Tags');
+    (project.tags || []).forEach(tag => {
+      const span = document.createElement('span');
+      span.className = 'tag';
+      span.textContent = tag;
+      tags.appendChild(span);
     });
 
+    meta.appendChild(title);
+    meta.appendChild(tags);
+    link.appendChild(thumb);
+    link.appendChild(meta);
+    return link;
+  }
+
+  function renderProjects(items) {
+    const frag = document.createDocumentFragment();
+    items.forEach(project => {
+      frag.appendChild(createCard(project));
+    });
     grid.innerHTML = '';
     grid.appendChild(frag);
   }
 
-  async function init(){
-    const grid = document.getElementById('projectsGrid');
-    if(!grid){ console.warn('#projectsGrid nenalezen'); return; }
-
+  async function loadProjects() {
     const src = grid.getAttribute('data-src') || './projects.json';
-    try {
-      const res = await fetch(src, { cache: 'no-store' });
-      if(!res.ok) throw new Error(`HTTP ${res.status}`);
-      const items = await res.json();
-      if(!Array.isArray(items)) throw new Error('projects.json: očekávám pole objektů');
-      renderProjects(items, grid);
-      console.info(`Načteno ${items.length} projektů z ${src}`);
-    } catch(err){
-      console.error('Nepodařilo se načíst projekty:', err);
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-
-(async () => {
-  function renderProjects(items, grid){ /* tvoje funkce beze změny */ }
-
-  async function init(){
-    const grid = document.getElementById('projectsGrid');
-    if(!grid) return;
-
-    const src = grid.getAttribute('data-src') || './projects.json';
-
-    // 1) Zkus fetch (bude fungovat na http://)
-    try {
-      const res = await fetch(src, { cache: 'no-store' });
-      if(!res.ok) throw new Error(`HTTP ${res.status}`);
-      const items = await res.json();
-      if(!Array.isArray(items)) throw new Error('projects.json: očekávám pole objektů');
-      renderProjects(items, grid);
-      return;
-    } catch(err){
-      console.warn('Fetch selhal, zkouším inline JSON:', err);
-    }
-
-    // 2) Fallback: inline JSON <script type="application/json" id="projects-data">
     const inline = document.getElementById('projects-data');
-    if (inline) {
-      try {
-        const items = JSON.parse(inline.textContent || '[]');
-        if(Array.isArray(items)) {
-          renderProjects(items, grid);
-          return;
-        }
-      } catch(e){ console.error('Inline JSON má chybný formát:', e); }
-    }
 
-    console.error('Nenalezeny žádné projektové data.');
+    try {
+      const res = await fetch(src, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        renderProjects(data);
+        console.info(`Načteno ${data.length} projektů`);
+        return;
+      }
+      throw new Error('projects.json: očekávám pole objektů');
+    } catch (err) {
+      console.warn('Fetch selhal, zkouším inline JSON:', err);
+      if (inline) {
+        try {
+          const fallback = JSON.parse(inline.textContent || '[]');
+          if (Array.isArray(fallback)) {
+            renderProjects(fallback);
+            return;
+          }
+        } catch (parseErr) {
+          console.error('Inline JSON má chybný formát:', parseErr);
+        }
+      }
+      grid.innerHTML = '<p style="color:var(--muted)">Žádné projekty se nepodařilo načíst.</p>';
+    }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', loadProjects);
   } else {
-    init();
+    loadProjects();
   }
 })();
