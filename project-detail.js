@@ -13,21 +13,38 @@
   const getField = name => article.querySelector(`[data-field="${name}"]`);
   const getBlock = name => article.querySelector(`[data-block="${name}"]`);
 
-  function splitParagraphs(value) {
-    if (!value) return [];
+  function normalizeMarkdown(value) {
+    if (!value) return '';
+    if (typeof value === 'string') return value;
     if (Array.isArray(value)) {
-      return value.flatMap(splitParagraphs);
+      return value.map(normalizeMarkdown).filter(Boolean).join('\n\n');
     }
-    if (typeof value === 'string') {
-      return value
-        .split(/\r?\n{2,}/)
-        .map(line => line.trim())
-        .filter(Boolean);
+    if (typeof value === 'object') {
+      if (value.body !== undefined) return normalizeMarkdown(value.body);
+      if (value.text !== undefined) return normalizeMarkdown(value.text);
+      if (value.copy !== undefined) return normalizeMarkdown(value.copy);
+      if (value.paragraph !== undefined) return normalizeMarkdown(value.paragraph);
+      if (value.value !== undefined) return normalizeMarkdown(value.value);
     }
-    if (typeof value === 'object' && value.body) {
-      return splitParagraphs(value.body);
+    return '';
+  }
+
+  function renderMarkdown(container, markdown, { inline = false } = {}) {
+    const source = normalizeMarkdown(markdown);
+    if (!source) return false;
+    const marked = window.marked;
+    if (marked && typeof marked === 'object') {
+      if (inline && typeof marked.parseInline === 'function') {
+        container.innerHTML = marked.parseInline(source);
+      } else if (typeof marked.parse === 'function') {
+        container.innerHTML = marked.parse(source);
+      } else {
+        container.textContent = source;
+      }
+    } else {
+      container.textContent = source;
     }
-    return [];
+    return container.innerHTML !== '' || container.textContent !== '';
   }
 
   function parseProjects(data) {
@@ -89,15 +106,6 @@
     });
   }
 
-  function createParagraphs(paragraphs, container) {
-    paragraphs.forEach(text => {
-      if (!text) return;
-      const p = document.createElement('p');
-      p.textContent = text;
-      container.appendChild(p);
-    });
-  }
-
   function createFigure(src, alt) {
     const figure = document.createElement('figure');
     figure.className = 'block block--image';
@@ -111,10 +119,18 @@
   }
 
   function createCaption(text) {
-    if (!text) return null;
+    const source = normalizeMarkdown(text).trim();
+    if (!source) return null;
     const p = document.createElement('p');
     p.className = 'block-caption';
-    p.textContent = text;
+    const marked = window.marked;
+    if (marked?.parseInline) {
+      p.innerHTML = marked.parseInline(source);
+    } else if (marked?.parse) {
+      p.innerHTML = marked.parse(source);
+    } else {
+      p.textContent = source;
+    }
     return p;
   }
 
@@ -130,12 +146,20 @@
     blocks.forEach(block => {
       if (!block || typeof block !== 'object') return;
       const type = (block.type || '').toLowerCase();
-      const paragraphs = splitParagraphs(block.body || block.text || block.copy);
+      const textValue =
+        block.body ??
+        block.text ??
+        block.copy ??
+        block.description ??
+        block.value ??
+        block.content ??
+        '';
+      const hasText = normalizeMarkdown(textValue).trim().length > 0;
       const imageSrc = block.src || block.image;
       const alt = block.alt || '';
       const caption = block.caption;
 
-      if ((type === 'image' || (!paragraphs.length && imageSrc)) && imageSrc) {
+      if ((type === 'image' || (!hasText && imageSrc)) && imageSrc) {
         const figure = createFigure(imageSrc, alt);
         wrapper.appendChild(figure);
         const cap = createCaption(caption);
@@ -143,10 +167,16 @@
         return;
       }
 
-      if ((type === 'textimage' || (paragraphs.length && imageSrc)) && imageSrc) {
+      if ((type === 'textimage' || (hasText && imageSrc)) && imageSrc) {
         const combo = document.createElement('div');
         combo.className = 'block block--text-image';
-        createParagraphs(paragraphs, combo);
+        if (hasText) {
+          const textBlock = document.createElement('div');
+          textBlock.className = 'block block--text';
+          if (renderMarkdown(textBlock, textValue)) {
+            combo.appendChild(textBlock);
+          }
+        }
         const figure = createFigure(imageSrc, alt);
         combo.appendChild(figure);
         const cap = createCaption(caption);
@@ -155,11 +185,12 @@
         return;
       }
 
-      if (!paragraphs.length) return;
+      if (!hasText) return;
       const textBlock = document.createElement('div');
       textBlock.className = 'block block--text';
-      createParagraphs(paragraphs, textBlock);
-      wrapper.appendChild(textBlock);
+      if (renderMarkdown(textBlock, textValue)) {
+        wrapper.appendChild(textBlock);
+      }
     });
 
     if (!wrapper.children.length) {

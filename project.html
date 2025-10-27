@@ -12,17 +12,43 @@
       margin:0;
       font-family:"Inter","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
       line-height:1.65;
-      background:#fbfbfb;
-      color:#1c1c1c;
+      background:var(--bg);
+      color:var(--ink);
     }
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
 
     :root{
-      --wrap: min(720px, calc(100vw - 48px));
-      --muted:#707070;
-      --ink:#111;
+      --bg:#ffffff;
+      --ink:#1a1a1a;
+      --muted:#6a6a6a;
+      --panel:#111;
+      --panel-ink:#eaeaea;
+      --accent:#999;
+      --radius:12px;
+      --gap:16px;
+      --maxw:1120px;
+      --wrap:min(720px, calc(100vw - 48px));
       --border:rgba(0,0,0,.08);
+
+      --space-h2-subheader:4px;
+      --space-h2-sections:44px;
+      --space-h2-labels:8px;
+      --space-projectpreview-h2:12px;
+      --space-menu-text-divider:12px;
+      --space-menuitem-gap:28px;
+      --space-workprojects-text-img:22px;
+      --space-label-label-x:8px;
+      --pad-section-y:36px;
+      --pad-lr:16px;
+      --pad-menu-x:28px;
+      --pad-navbar-top:44px;
+      --pad-navbar-bottom:22px;
+      --radius-label:75px;
+    }
+
+    @media (min-width:768px){
+      :root{--gap:20px}
     }
 
     .skip{
@@ -70,15 +96,24 @@
     }
     .back-link:hover{color:var(--ink);}
 
+    p {
+      margin: 0;
+    }
+
+    ol, ul {
+      margin: 0;
+    }
+
     main{
       padding:24px 0 72px;
     }
     article.project{
-      width:var(--wrap);
-      margin-inline:auto;
+      width: 100%;
+      padding-left: var(--pad-lr);
+      padding-right: var(--pad-lr);
       display:flex;
       flex-direction:column;
-      gap:48px;
+      gap:var(--space-workprojects-text-img);
     }
     .project-header{
       display:flex;
@@ -104,9 +139,7 @@
     }
 
     .project-hero{
-      margin:0;
-      border-radius:20px;
-      overflow:hidden;
+      margin:0;            
       background:#f0f0f0;
     }
     .project-hero figcaption{
@@ -140,21 +173,52 @@
     .project-content{
       display:flex;
       flex-direction:column;
-      gap:40px;
+      gap:var(--space-workprojects-text-img);
     }
     .block{
       display:flex;
-      flex-direction:column;
-      gap:18px;
+      flex-direction:column;      
+    }
+    .block--text{
+      display:flex;
+      flex-direction:column;      
+      gap: 12px;
     }
     .block--text p{
       margin:0;
     }
-    .block--text p + p{margin-top:18px;}
-    .block--image{
+    .block--text h1,
+    .block--text h2,
+    .block--text h3,
+    .block--text h4{
       margin:0;
-      border-radius:20px;
-      overflow:hidden;
+      font-weight:600;
+      letter-spacing:.02em;
+    }
+    .block--text h1{font-size:1.6rem;}
+    .block--text h2{font-size:1.4rem;}
+    .block--text h3{font-size:1.2rem;}
+    .block--text h4{font-size:1rem;text-transform:uppercase;letter-spacing:.12em;}
+    .block--text pre{
+      margin:0;
+      padding:16px;
+      border-radius:16px;
+      background:#111;
+      color:#f5f5f5;
+      font-family:"JetBrains Mono","Fira Code",monospace;
+      font-size:.85rem;
+      overflow:auto;
+    }
+    .block--text :not(pre) > code{
+      display:inline-block;
+      padding:2px 6px;
+      border-radius:6px;
+      background:rgba(17,17,17,.08);
+      font-family:"JetBrains Mono","Fira Code",monospace;
+      font-size:.85rem;
+    }
+    .block--image{
+      margin:0;            
       background:#f0f0f0;
     }
     .block--image img{
@@ -170,8 +234,7 @@
     }
     .block--text-image p{
       margin:0;
-    }
-    .block--text-image p + p{margin-top:18px;}
+    }    
 
     .project-links{
       display:flex;
@@ -323,6 +386,7 @@
   </footer>
 
   <script src="./vendor/js-yaml.min.js"></script>
+  <script src="./vendor/marked.min.js"></script>
   <script src="./project-detail.js" defer></script>
 </body>
 </html>
