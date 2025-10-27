@@ -1,0 +1,258 @@
+projects:
+  - summary: Toto je branding
+    deck: Branding
+    card:
+      thumb: /images/uploads/beautiful-shot-snowy-mountain-sunset.jpg
+      alt: hora
+    title: Testovací projekt
+    tags:
+      - adasasd/asdasda/asdasda
+    content:
+      - type: textimage
+        body: Text + obrazek - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Maecenas rhoncus elit fermentum nibh tincidunt, quis placerat arcu
+          mattis. Maecenas vel auctor elit. Proin interdum feugiat rutrum. Nunc
+          at pellentesque eros, sed consequat augue. Ut bibendum scelerisque
+          ante, eget hendrerit erat semper sed. Morbi ultricies congue elit,
+          quis feugiat libero gravida in. Sed orci magna, elementum ut tellus
+          et, pellentesque aliquam sem. Donec et est dapibus, euismod orci vel,
+          vulputate sapien. Morbi sem leo, porttitor ut pharetra quis, mollis
+          varius ipsum. Class aptent taciti sociosqu ad litora torquent per
+          conubia nostra, per inceptos himenaeos. Sed a ante non sapien
+          porttitor ullamcorper. Quisque sit amet ullamcorper velit, a commodo
+          tellus.
+        src: /images/uploads/beautiful-shot-snowy-mountain-sunset.jpg
+        alt: hora - obsah 1
+        caption: Popisek 1 - Praesent vitae est sapien. Morbi gravida ac justo ac
+          ultricies. Praesent elementum sollicitudin nunc eu fermentum. Sed nec
+          ultrices justo. Curabitur condimentum nulla mi. Morbi non congue
+          neque. Sed tristique ligula id dui ultricies, nec ornare sem iaculis.
+          Etiam a varius erat. Nunc erat felis, imperdiet at est eget, blandit
+          mattis ipsum. Duis eget urna ac quam feugiat egestas. Maecenas
+          vehicula mi vel ex cursus laoreet. Pellentesque in arcu ac purus
+          venenatis porttitor. Sed congue metus quis risus scelerisque feugiat.
+      - type: textimage
+        body: Text + Obrazek 2 - Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Maecenas rhoncus elit fermentum nibh tincidunt, quis placerat
+          arcu mattis. Maecenas vel auctor elit. Proin interdum feugiat rutrum.
+          Nunc at pellentesque eros, sed consequat augue. Ut bibendum
+          scelerisque ante, eget hendrerit erat semper sed. Morbi ultricies
+          congue elit, quis feugiat libero gravida in. Sed orci magna, elementum
+          ut tellus et, pellentesque aliquam sem. Donec et est dapibus, euismod
+          orci vel, vulputate sapien. Morbi sem leo, porttitor ut pharetra quis,
+          mollis varius ipsum. Class aptent taciti sociosqu ad litora torquent
+          per conubia nostra, per inceptos himenaeos. Sed a ante non sapien
+          porttitor ullamcorper. Quisque sit amet ullamcorper velit, a commodo
+          tellus.
+        src: /images/uploads/beautiful-shot-snowy-mountain-sunset.jpg
+        alt: Hora 2
+        caption: Popisek Obsah 2 - Praesent vitae est sapien. Morbi gravida ac justo ac
+          ultricies. Praesent elementum sollicitudin nunc eu fermentum. Sed nec
+          ultrices justo. Curabitur condimentum nulla mi. Morbi non congue
+          neque. Sed tristique ligula id dui ultricies, nec ornare sem iaculis.
+          Etiam a varius erat. Nunc erat felis, imperdiet at est eget, blandit
+          mattis ipsum. Duis eget urna ac quam feugiat egestas. Maecenas
+          vehicula mi vel ex cursus laoreet. Pellentesque in arcu ac purus
+          venenatis porttitor. Sed congue metus quis risus scelerisque feugiat.
+      - type: text
+        body: "**Toto je samostny text** - Praesent vitae est sapien. Morbi gravida ac
+          justo ac ultricies. Praesent elementum sollicitudin nunc eu fermentum.
+          Sed nec ultrices justo. Curabitur condimentum nulla mi. Morbi non
+          congue neque. Sed tristique ligula id dui ultricies, nec ornare sem
+          iaculis. Etiam a varius erat. Nunc erat felis, imperdiet at est eget,
+          blandit mattis ipsum. Duis eget urna ac quam feugiat egestas. Maecenas
+          vehicula mi vel ex cursus laoreet. Pellentesque in arcu ac purus
+          venenatis porttitor. Sed congue metus quis risus scelerisque feugiat."
+      - type: text
+        body: >-
+          Toto je samostatny text + upravy textu:
+
+
+          # Nadpis 1
+
+
+          **Praesent vitae est sapien.** Morbi gravida ac justo ac ultricies. Praesent elementum sollicitudin nunc eu fermentum. Sed nec ultrices justo. Curabitur condimentum nulla mi. Morbi non congue neque. Sed tristique ligula id dui ultricies, nec ornare sem iaculis. Etiam a varius erat. Nunc erat felis, imperdiet at est eget, blandit mattis ipsum. Duis eget urna ac quam feugiat egestas. Maecenas vehicula mi vel ex cursus laoreet. Pellentesque in arcu ac purus venenatis porttitor. Sed congue metus quis risus scelerisque feugiat.
+
+
+          ```python
+
+          import pandas as pd
+
+
+          def test_f():
+            y = 1 + 2
+            x = y + 3
+          ```
+
+
+          `from a import sklearn.test code`
+
+
+          `y++`
+
+
+          ## Nadpis 2
+
+
+          ### Nadpis 3
+
+
+          #### Nadpis 4
+    links:
+      - label: 1 odkaz - Přemysls Space - jeho vesmír
+        url: https://premysls.space/
+    hero:
+      image: /images/uploads/beautiful-shot-snowy-mountain-sunset.jpg
+      alt: Hora sekce
+      caption: HERO Sekce - popisek
+    id: a1
+  - details:
+      Client: Recerve Street Food
+      Role: Art Direction & Graphic Design
+      Year: "2024"
+      Deliverables:
+        - Logo suite
+        - Vehicle wrap
+        - Menu board
+        - Merch vizuály
+    summary: Kompletní vizuální identita pro pražský street food truck.
+    deck: Branding · Logo Design · Print
+    card:
+      thumb: /images/beruna1.jpeg
+      alt: Brand aplikace na food trucku Recerve
+    title: RECERVE FOOD TRUCK
+    tags:
+      - Branding
+      - Logo Design
+      - Print
+    content:
+      - type: text
+        body: >
+          Recerve chtěli hravou identitu, která by zdůraznila kvalitu street
+          food nabídky. Navrhla jsem modulární logo inspirované ručně psanými
+          cedulemi tržnic a sadu typografických prvků, které se dají rychle
+          kombinovat.
+
+          Barevná paleta a ilustrační styl se propisují do wrapu auta, menu boardů i propagačních materiálů. Díky tomu působí značka soudržně napříč všemi kanály.
+      - type: image
+        src: /images/beruna1.jpeg
+        alt: Food truck Recerve po rebrandingu
+      - type: text
+        body: >
+          Základní vizuální jazyk staví na kombinaci výrazných bloků a ručně
+          psaných detailů. Díky jednoduché mřížce dokáže tým rychle připravovat
+          další aplikace pro sezonní menu nebo eventy.
+
+          Identita je navržena tak, aby fungovala v tiskovinách, na merchu i v digitální komunikaci.
+      - type: textimage
+        body: >
+          Limitované edice triček a tašek podporují komunitu kolem trucku.
+          Všechny materiály sdílí společnou paletu a ilustrace, takže značka
+          působí konzistentně.
+        src: /images/beruna3.jpeg
+        alt: Brand merch Recerve položený na stole
+        caption: Mix tiskovin a merchu pro první launch event.
+    links:
+      - label: View process deck
+        url: /projects/recerve-food-truck.html
+    hero:
+      image: /images/beruna1.jpeg
+      alt: Food truck Recerve oblepený novou vizuální identitou
+      caption: Wrap auta, menu boardy i merch sjednocuje modulární typografie.
+    id: recerve-food-truck
+  - details:
+      Client: City Modern Museum
+      Role: Graphic Design & Art Direction
+      Year: "2023"
+      Deliverables:
+        - Plakáty
+        - Citylight variace
+        - Digitální bannery
+    summary: Modulární plakátová kampaň pro sezónní výstavy městského muzea.
+    deck: Print · Typography
+    card:
+      thumb: /images/beruna2.jpeg
+      alt: Série plakátů pro muzeum
+    title: MUSEUM POSTER SERIES
+    tags:
+      - Print
+      - Typography
+    content:
+      - type: text
+        body: >
+          Potřebovali jsme systém, který zvládne komunikovat různé výstavy a
+          přitom zůstane rozpoznatelný. Navrhla jsem typografickou mřížku, která
+          pracuje s kontrastem serifů a moderních grotesků a dá se rychle
+          přizpůsobit.
+
+          Barevné kódování pomáhá návštěvníkům rozlišit jednotlivé linie expozic – od experimentálního designu až po historické sbírky.
+      - type: image
+        src: /images/beruna2.jpeg
+        alt: Série plakátů nainstalovaných na výstavě
+      - type: text
+        body: >
+          Layout je přenositelný na citylighty i digitální bannery. Základní
+          práce s typografií umožňuje rychlou tvorbu nových variant pro sezónní
+          témata a doprovodné eventy.
+      - type: textimage
+        body: >
+          Outdoor kampaň navazuje na plakáty a používá stejný diagonální rytmus,
+          takže návštěvník hned pozná, že jde o součást muzejní série.
+        src: /images/beruna3.jpeg
+        alt: Poster série na billboardu v exteriéru
+        caption: Outdoor kampaň v centru města.
+    links:
+      - label: Zobrazit kampaň
+        url: /projects/museum-posters.html
+    hero:
+      image: /images/beruna2.jpeg
+      alt: Plakáty muzejní série nainstalované na scéně
+      caption: Plakátová série sjednocená diagonálním rastrem.
+    id: museum-poster-series
+  - details:
+      Client: Fintech Labs
+      Role: Product Design & Prototyping
+      Year: "2024"
+      Deliverables:
+        - Design systém
+        - UX testování
+        - High-fidelity prototypy
+    summary: Redesign mobilní aplikace fintech startupu zaměřený na čitelnost a důvěru.
+    deck: UX/UI · Prototype
+    card:
+      thumb: /images/beruna3.jpeg
+      alt: Náhled mobilní aplikace
+    title: APP UI REDESIGN
+    tags:
+      - UX/UI
+      - Prototype
+    content:
+      - type: text
+        body: >
+          Revidovala jsem informační architekturu a zjednodušila klíčové
+          uživatelské cesty k rychlému přehledu financí. Vizualita staví na
+          kontrastních blocích a jasné typografii, která podporuje důvěru.
+      - type: textimage
+        body: >
+          Uživatel si hned po přihlášení všimne nejdůležitějších změn. Hlavní
+          navigace zůstává dostupná na jeden tap, takže se neztrácí kontext.
+        src: /images/beruna3.jpeg
+        alt: Dashboard mobilní aplikace po redesignu
+      - type: text
+        body: >
+          Součástí výstupu byl interaktivní prototyp, který jsme využili pro
+          uživatelské testování s pilotní skupinou klientů. Na základě jejich
+          zpětné vazby jsme upravili hierarchii i wording jednotlivých kroků.
+      - type: text
+        body: >
+          Výsledkem je modulární design systém, který může vývojový tým rychle
+          škálovat na další funkce. Komponenty jsou definované v Figma knihovně
+          a připravené pro export do kódu.
+    links:
+      - label: Dribbble shot
+        url: https://dribbble.com/shots/12345678
+    hero:
+      image: /images/beruna3.jpeg
+      alt: Mobilní aplikace po redesignu zobrazená na telefonu
+      caption: Nový dashboard s jasnou hierarchií informací.
+    id: app-ui-redesign

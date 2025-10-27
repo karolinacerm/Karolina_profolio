@@ -13,12 +13,18 @@
 
     const thumb = document.createElement('div');
     thumb.className = 'thumb';
-    if (project.thumb) {
+    const thumbSrc =
+      project.card?.thumb ||
+      project.card?.image ||
+      project.thumbnail ||
+      project.hero?.image ||
+      project.hero?.src;
+    if (thumbSrc) {
       const img = document.createElement('img');
       img.loading = 'lazy';
       img.decoding = 'async';
-      img.src = project.thumb;
-      img.alt = project.thumbAlt || '';
+      img.src = thumbSrc;
+      img.alt = project.card?.alt || project.hero?.alt || '';
       thumb.appendChild(img);
     } else {
       thumb.textContent = '4:3';
@@ -31,18 +37,28 @@
     title.className = 'title';
     title.textContent = project.title || 'Untitled';
 
+    meta.appendChild(title);
+
+    if (project.summary) {
+      const summary = document.createElement('p');
+      summary.className = 'summary';
+      summary.textContent = project.summary;
+      meta.appendChild(summary);
+    }
+
     const tags = document.createElement('div');
     tags.className = 'tags';
     tags.setAttribute('aria-label', 'Tags');
-    (project.tags || []).forEach(tag => {
+    const tagList = (project.tags || []).filter(Boolean);
+    tagList.forEach(tag => {
       const span = document.createElement('span');
       span.className = 'tag';
       span.textContent = tag;
       tags.appendChild(span);
     });
-
-    meta.appendChild(title);
-    meta.appendChild(tags);
+    if (tagList.length) {
+      meta.appendChild(tags);
+    }
     link.appendChild(thumb);
     link.appendChild(meta);
     return link;
@@ -57,31 +73,58 @@
     grid.appendChild(frag);
   }
 
+  function parseProjects(data) {
+    if (!data) return [];
+    if (Array.isArray(data?.projects)) return data.projects;
+    if (Array.isArray(data)) return data;
+    return [];
+  }
+
+  function parseData(text, fallback = '{}') {
+    const source = (text || '').trim();
+    if (!source) {
+      return JSON.parse(fallback);
+    }
+    if (window.jsyaml && typeof window.jsyaml.load === 'function') {
+      return window.jsyaml.load(source);
+    }
+    return JSON.parse(source);
+  }
+
+  async function fetchProjects(src) {
+    const res = await fetch(src, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const text = await res.text();
+    const parsed = parseData(text);
+    const projects = parseProjects(parsed);
+    if (!projects.length) {
+      throw new Error('projects data: očekávám pole projektů');
+    }
+    return projects;
+  }
+
   async function loadProjects() {
-    const src = grid.getAttribute('data-src') || './projects.json';
+    const src = grid.getAttribute('data-src') || './projects.yaml';
     const inline = document.getElementById('projects-data');
 
     try {
-      const res = await fetch(src, { cache: 'no-store' });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      if (Array.isArray(data)) {
-        renderProjects(data);
-        console.info(`Načteno ${data.length} projektů`);
-        return;
-      }
-      throw new Error('projects.json: očekávám pole objektů');
+      const projects = await fetchProjects(src);
+      renderProjects(projects);
+      console.info(`Načteno ${projects.length} projektů`);
+      return;
     } catch (err) {
-      console.warn('Fetch selhal, zkouším inline JSON:', err);
+      console.warn('Fetch selhal, zkouším inline data:', err);
       if (inline) {
         try {
-          const fallback = JSON.parse(inline.textContent || '[]');
-          if (Array.isArray(fallback)) {
-            renderProjects(fallback);
+          const text = inline.textContent || '';
+          const fallback = parseData(text, '[]');
+          const projects = parseProjects(fallback);
+          if (projects.length) {
+            renderProjects(projects);
             return;
           }
         } catch (parseErr) {
-          console.error('Inline JSON má chybný formát:', parseErr);
+          console.error('Inline data má chybný formát:', parseErr);
         }
       }
       grid.innerHTML = '<p style="color:var(--muted)">Žádné projekty se nepodařilo načíst.</p>';
