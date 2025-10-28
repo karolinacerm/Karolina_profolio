@@ -1,9 +1,9 @@
 backend:
-  name: netlify
+  name: gitbub
   repo: karolinacerm/Karolina_profolio
   branch: main  
 
-site_url: https://karolinacerm.github.io/Karolina_profolio/
+site_url: https://karolinac.design
 media_folder: images/uploads
 public_folder: /images/uploads
 
