@@ -10,15 +10,7 @@
 <body class="project-detail">
   <a href="#main" class="skip">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a href="./index.html" class="brand">
-        KAROLINA C
-        <span>DESIGN</span>
-      </a>
-      <a class="back-link" href="./index.html#work" aria-label="Back to projects">← Back to work</a>
-    </div>
-  </header>
+  <div data-include="partials/header.html"></div>
 
   <main id="main">
     <article class="project" data-project hidden>
@@ -44,28 +36,8 @@
     </section>
   </main>
 
-  <section class="contact">
-    <div class="wrap">
-      <h2>CONTACTS</h2>
-      <p>Got an idea for a collab? Hit me up!</p>
-      <div class="cta" role="list">
-        <a role="listitem" href="mailto:cermanova@icloud.com" aria-label="Email">
-          <span>EMAIL</span><span aria-hidden="true">→</span>
-        </a>
-        <a role="listitem" href="https://linkedin.com/in/karolina-cermanova/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <span>LINKEDIN</span><span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footwrap">
-      <div>KAROLINA C DESIGN</div>
-      <div>© 2025 All rights reserved</div>
-    </div>
-  </footer>
-
+  <div data-include="partials/footer.html"></div>
+  <script src="./partials.js" defer></script>
   <script src="./vendor/marked.min.js"></script>
   <script src="./project-detail.js" defer></script>
 </body>

@@ -7,45 +7,15 @@
   <meta name="description" content="Visual designer focused on graphics and UX/UI." />
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="index">
   <a href="#main" class="skip">Skip to content</a>
 
   <!-- ===== HEADER ===== -->
-  <header>
-    <div class="wrap nav" role="navigation" aria-label="Primary">
-      <div class="brand">KAROLINA C <div>DESIGN</div></div>
-
-      <nav class="navlinks" aria-label="Desktop">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      
-      <!-- Mobile nav (no JS) -->
-      <details class="navmenu" aria-label="Mobile menu">
-        <summary class="hamburger" aria-label="Open menu">
-          <span class="bars" aria-hidden="true"></span>
-          <span class="sr">Menu</span>
-        </summary>
-
-        <nav class="overlay" role="menu">
-          <button class="close" type="button" aria-label="Close menu"
-            onclick="this.closest('details').removeAttribute('open')">←</button>
-
-          <ul>
-            <li><a href="#hero" onclick="this.closest('details').removeAttribute('open')">Home</a></li>
-            <li><a href="#about" onclick="this.closest('details').removeAttribute('open')">About Me</a></li>
-            <li><a href="#work" onclick="this.closest('details').removeAttribute('open')">Work</a></li>
-            <li><a href="#contact" onclick="this.closest('details').removeAttribute('open')">Contact</a></li>
-          </ul>
-        </nav>
-      </details>
-    </div>
-  </header>
+  <div data-include="partials/header.html"></div>
 
   <main id="main">
     <!-- ===== HERO ===== -->
-    <section class="hero section" aria-label="Intro">
+    <section id="hero" class="hero section" aria-label="Intro">
       <div class="hero-inner">
         <div class="eyes" aria-hidden="true"></div>
         <div class="bottom">
@@ -92,35 +62,12 @@
           </noscript>
         </div>
       </div>
-    </section>
-
-    <!-- ===== CONTACT (dark) ===== -->
-    <section id="contact" class="contact">
-      <div class="wrap">
-        <div class="about" style="margin:0">
-          <h2>CONTACTS</h2>
-          <p>Got an idea for a collab? Hit me up!</p>
-        </div>
-
-        <div class="cta" role="list">
-          <a role="listitem" href="mailto:cermanova@icloud.com" aria-label="Email">
-            <span>EMAIL</span><span aria-hidden="true">→</span>
-          </a>
-          <a role="listitem" href="https://linkedin.com/in/karolina-cermanova/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <span>LINKEDIN</span><span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
+    </section>        
   </main>
 
   <!-- ===== FOOTER ===== -->
-  <section class="footer" id="footer">
-    <div class="footwrap">
-      <div>KAROLINA C DESIGN</div>
-      <div class="muted">© 2025 All rights reserved</div>
-    </div>
-  </section>
+  <div data-include="partials/footer.html"></div>
+  <script src="./partials.js" defer></script>
   <script src="./script.js" defer></script>
 </body>
 </html>
