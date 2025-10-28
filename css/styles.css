@@ -115,13 +115,7 @@
     }
     .brand span{
       display:block;
-    }
-    .brand span:last-child{
-      font-weight:400;
-      color:var(--muted);
-      letter-spacing:.1em;
-      font-size:.75rem;
-    }
+    }   
     .navmenu{margin-left:auto;display:flex;align-items:center;position:relative;z-index:10}
     .hamburger{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:none;border:none;padding:0;color:inherit}
     .hamburger .bars{width:22px;height:2px;background:var(--ink);box-shadow:0 6px 0 var(--ink),0 -6px 0 var(--ink);transition:box-shadow .3s ease, background .3s ease}
