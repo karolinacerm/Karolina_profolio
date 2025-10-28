@@ -13,16 +13,13 @@
 
     const thumb = document.createElement('div');
     thumb.className = 'thumb';
-    const thumbSrc =
-      project.card?.thumb ||
-      project.card?.image ||
-      project.thumbnail;
+    const thumbSrc = project.card?.thumb || project.card?.image || project.hero?.image || project.hero?.src;
     if (thumbSrc) {
       const img = document.createElement('img');
       img.loading = 'lazy';
       img.decoding = 'async';
       img.src = thumbSrc;
-      img.alt = project.card?.alt || '';
+      img.alt = project.card?.alt || project.hero?.alt || '';
       thumb.appendChild(img);
     } else {
       thumb.textContent = '4:3';
@@ -37,19 +34,24 @@
 
     meta.appendChild(title);
 
+    if (project.summary) {
+      const summary = document.createElement('p');
+      summary.className = 'summary';
+      summary.textContent = project.summary;
+      meta.appendChild(summary);
+    }
+
     const tags = document.createElement('div');
     tags.className = 'tags';
     tags.setAttribute('aria-label', 'Tags');
-    const tagList = (project.tags || []).filter(Boolean);
-    tagList.forEach(tag => {
+    (project.tags || []).forEach(tag => {
       const span = document.createElement('span');
       span.className = 'tag';
       span.textContent = tag;
       tags.appendChild(span);
     });
-    if (tagList.length) {
-      meta.appendChild(tags);
-    }
+
+    meta.appendChild(tags);
     link.appendChild(thumb);
     link.appendChild(meta);
     return link;
@@ -74,24 +76,17 @@
   async function fetchProjects(src) {
     const res = await fetch(src, { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const payload = await res.json();
-    const projects = parseProjects(payload);
+    const text = await res.text();
+    const parsed = window.jsyaml ? window.jsyaml.load(text) : JSON.parse(text);
+    const projects = parseProjects(parsed);
     if (!projects.length) {
       throw new Error('projects data: očekávám pole projektů');
     }
     return projects;
   }
 
-  function parseInlineData(text, fallback = '[]') {
-    const source = (text || '').trim();
-    if (!source) {
-      return JSON.parse(fallback);
-    }
-    return JSON.parse(source);
-  }
-
   async function loadProjects() {
-    const src = grid.getAttribute('data-src') || './projects.json';
+    const src = grid.getAttribute('data-src') || './projects.yaml';
     const inline = document.getElementById('projects-data');
 
     try {
@@ -100,11 +95,11 @@
       console.info(`Načteno ${projects.length} projektů`);
       return;
     } catch (err) {
-      console.warn('Fetch selhal, zkouším inline data:', err);
+       console.warn('Fetch selhal, zkouším inline data:', err);
       if (inline) {
         try {
           const text = inline.textContent || '';
-          const fallback = parseInlineData(text, '[]');
+          const fallback = window.jsyaml ? window.jsyaml.load(text) : JSON.parse(text || '[]');
           const projects = parseProjects(fallback);
           if (projects.length) {
             renderProjects(projects);
