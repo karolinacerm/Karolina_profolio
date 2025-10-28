@@ -1,7 +1,12 @@
     /* ===== CSS RESET (trimmed) ===== */
     *,*::before,*::after{box-sizing:border-box}
     html:focus-within{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.6}
+    body{
+      margin:0;
+      font-family:var(--font-family-base);
+      font-size:var(--type-body-size);
+      line-height:var(--type-body-line);
+    }
     img{max-width:100%;}
     a{color:inherit;text-decoration:none}
     button,input,select,textarea{font:inherit}
@@ -42,12 +47,51 @@
 
       /* Label */
       --radius-label: 75px;             /* 4.6875rem */
+
+      /* Typography — Mobile */
+      --font-family-base: "Inter","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+      --type-body-size: 1.125rem;       /* 18px */
+      --type-body-line: 1.75rem;        /* 28px */
+      --type-tags-size: 0.75rem;        /* 12px */
+      --type-tags-line: 1rem;           /* 16px */
+      --type-menu-size: 1.25rem;        /* 20px */
+      --type-menu-line: 1.625rem;       /* 26px */
+      --type-h2-size: 0.75rem;          /* 12px */
+      --type-h2-line: 1rem;             /* 16px */
+      --type-subhead-size: 0.75rem;     /* 12px */
+      --type-subhead-line: 1.125rem;    /* 18px */
+      --type-h1-size: 1.25rem;          /* 20px */
+      --type-h1-line: normal;           /* auto */
     }
     
     @media (min-width: 768px){
       :root{ --gap: 20px }
     }
+    @media (min-width: 900px){
+      :root{
+        --type-body-size: 1.375rem;     /* 22px */
+        --type-body-line: 2.125rem;     /* 34px */
+        --type-tags-size: 1rem;         /* 16px */
+        --type-tags-line: 1.375rem;     /* 22px */
+        --type-menu-size: 1.375rem;     /* 22px */
+        --type-menu-line: 1.75rem;      /* 28px */
+        --type-h2-size: 1rem;           /* 16px */
+        --type-h2-line: 1.375rem;       /* 22px */
+        --type-subhead-size: 1rem;      /* 16px */
+        --type-subhead-line: 1.5rem;    /* 24px */
+        --type-h1-size: 1.5rem;         /* 24px */
+        --type-h1-line: 1.75rem;        /* 28px */
+      }
+    }
     body{background:var(--bg);color:var(--ink)}
+    h1{
+      font-size:var(--type-h1-size);
+      line-height:var(--type-h1-line);
+    }
+    h2{
+      font-size:var(--type-h2-size);
+      line-height:var(--type-h2-line);
+    }
     .wrap{max-width:var(--maxw);margin-inline:auto; padding-bottom:0}
     .nav{padding: 24px;}
 
@@ -77,6 +121,13 @@
 
     @media (max-width: 900px){
       .navlinks{display:none}
+    }
+
+    .navlinks a,
+    .navmenu .overlay a,
+    .cta a{
+      font-size:var(--type-menu-size);
+      line-height:var(--type-menu-line);
     }
 
     /* ===== HERO ===== */
@@ -154,15 +205,26 @@ section {
     /* ===== DARK PANEL (ABOUT) ===== */
     .panel{background:var(--panel);color:var(--panel-ink)}
     .about{max-width:720px;margin-inline:auto;}
-    .about h2{margin:0 0 8px 0;font-size:1rem;letter-spacing:.05em;color:#bdbdbd}
+    .about h2{
+      margin:0 0 8px 0;
+      font-size:var(--type-subhead-size);
+      line-height:var(--type-subhead-line);
+      letter-spacing:.05em;
+      color:#bdbdbd;
+    }
     .about p{margin:0 0 12px 0}
     .about p + p{opacity:.95}
 
     .about .description{display:flex;flex-direction:column;gap:var(--space-workprojects-text-img)}
 
     /* ===== SELECTED WORK ===== */
-    .section .title {font-size:16px;letter-spacing:.06em;text-transform:uppercase;}
-    .section .section-header{display: flex; flex-direction: column;gap: var(--space-h2-subheader); padding-bottom: var(--space-h2-sections);}
+    .section .title {
+      font-size:var(--type-h2-size);
+      line-height:var(--type-h2-line);
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .section .section-header{display: flex; flex-direction: column; padding-bottom: var(--space-h2-sections);}
     .grid{
       display:grid;gap:var(--space-workprojects-text-img);
       grid-template-columns:1fr;
@@ -191,7 +253,13 @@ section {
     .meta .title{font-weight:600;margin:0;}
     .tags{display:flex;flex-wrap:wrap;gap:var(--space-label-label-x)}
     .tag{
-      font-size:.78rem;padding:4px 8px;border-radius:999px;border:1px solid #ddd;background:var(--bg);text-transform: uppercase;
+      font-size:var(--type-tags-size);
+      line-height:var(--type-tags-line);
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid #ddd;
+      background:var(--bg);
+      text-transform: uppercase;
     }
 
     /* ===== CONTACT / FOOTER ===== */
@@ -204,7 +272,7 @@ section {
     .cta a:hover{opacity:.9}
     .footer{border-top:1px solid #1e1e1e;background:#0b0b0b;color:#bdbdbd;font-size:.85rem}
     .footer .footwrap{max-width:var(--maxw);margin-inline:auto;display:flex;justify-content:space-between;align-items:center;}
-    .muted{color:#9a9a9a;text-transform: uppercase;}
+    .muted{color:#9a9a9a;text-transform: uppercase;font-size: var(--type-subhead-size);}
 
     /* ==== FULLSCREEN MOBILE MENU – ANIMACE ==== */
 
