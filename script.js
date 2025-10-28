@@ -16,15 +16,13 @@
     const thumbSrc =
       project.card?.thumb ||
       project.card?.image ||
-      project.thumbnail ||
-      project.hero?.image ||
-      project.hero?.src;
+      project.thumbnail;
     if (thumbSrc) {
       const img = document.createElement('img');
       img.loading = 'lazy';
       img.decoding = 'async';
       img.src = thumbSrc;
-      img.alt = project.card?.alt || project.hero?.alt || '';
+      img.alt = project.card?.alt || '';
       thumb.appendChild(img);
     } else {
       thumb.textContent = '4:3';
@@ -38,13 +36,6 @@
     title.textContent = project.title || 'Untitled';
 
     meta.appendChild(title);
-
-    if (project.summary) {
-      const summary = document.createElement('p');
-      summary.className = 'summary';
-      summary.textContent = project.summary;
-      meta.appendChild(summary);
-    }
 
     const tags = document.createElement('div');
     tags.className = 'tags';

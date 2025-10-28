@@ -114,22 +114,6 @@
     return figure;
   }
 
-  function createCaption(text) {
-    const source = normalizeMarkdown(text).trim();
-    if (!source) return null;
-    const p = document.createElement('p');
-    p.className = 'block-caption';
-    const marked = window.marked;
-    if (marked?.parseInline) {
-      p.innerHTML = marked.parseInline(source);
-    } else if (marked?.parse) {
-      p.innerHTML = marked.parse(source);
-    } else {
-      p.textContent = source;
-    }
-    return p;
-  }
-
   function renderContent(blocks) {
     const wrapper = getField('content');
     if (!wrapper) return;
@@ -153,13 +137,10 @@
       const hasText = normalizeMarkdown(textValue).trim().length > 0;
       const imageSrc = block.src || block.image;
       const alt = block.alt || '';
-      const caption = block.caption;
 
       if ((type === 'image' || (!hasText && imageSrc)) && imageSrc) {
         const figure = createFigure(imageSrc, alt);
         wrapper.appendChild(figure);
-        const cap = createCaption(caption);
-        if (cap) wrapper.appendChild(cap);
         return;
       }
 
@@ -175,8 +156,6 @@
         }
         const figure = createFigure(imageSrc, alt);
         combo.appendChild(figure);
-        const cap = createCaption(caption);
-        if (cap) combo.appendChild(cap);
         wrapper.appendChild(combo);
         return;
       }
@@ -238,38 +217,6 @@
         metaEl.textContent = meta;
       } else {
         metaEl.remove();
-      }
-    }
-
-    const summaryEl = getField('summary');
-    if (summaryEl) {
-      if (project.summary) {
-        summaryEl.textContent = project.summary;
-      } else {
-        summaryEl.remove();
-      }
-    }
-
-    const heroBlock = getBlock('hero');
-    if (heroBlock) {
-      const heroImage = getField('heroImage');
-      if (project.hero?.image || project.hero?.src) {
-        const src = project.hero.image || project.hero.src;
-        if (heroImage) {
-          heroImage.src = src;
-          heroImage.alt = project.hero.alt || '';
-        }
-        const caption = getField("heroCaption")//heroBlock.querySelector('[data-field="heroCaption"]');
-        if (caption) {
-          if (project.hero.caption) {
-            caption.textContent = project.hero.caption;
-          } else {
-            caption.remove();
-          }
-        }
-        heroBlock.hidden = false;
-      } else {
-        heroBlock.remove();
       }
     }
 
