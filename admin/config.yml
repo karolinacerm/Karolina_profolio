@@ -1,10 +1,7 @@
 backend:
-  name: github
+  name: netlify
   repo: karolinacerm/Karolina_profolio
-  branch: main
-  base_url: https://api.github.com
-  auth_endpoint: /callback
-
+  branch: main  
 
 site_url: https://karolinacerm.github.io/Karolina_profolio/
 media_folder: images/uploads
