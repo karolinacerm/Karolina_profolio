@@ -93,7 +93,7 @@
       font-size:var(--type-h2-size);
       line-height:var(--type-h2-line);
     }
-    .wrap{max-width:var(--maxw); padding-bottom:0}
+    .wrap{max-width:var(--maxw);margin-inline:auto;padding-bottom:0}
     .nav{padding: 24px;}
 
     /* ===== ACCESSIBILITY ===== */
@@ -122,16 +122,12 @@
       letter-spacing:.1em;
       font-size:.75rem;
     }
-    details.navmenu{margin-left:auto}
-    .hamburger{display:inline-flex;align-items:center;gap:8px;cursor:pointer}
-    .hamburger .bars{width:22px;height:2px;background:var(--ink);box-shadow:0 6px 0 var(--ink),0 -6px 0 var(--ink)}
-    details[open] .hamburger .bars{box-shadow:none}
-    .drawer{
-      border-top:1px solid #eee;margin-top:12px;padding-top:12px;display:flex;flex-direction:column;gap:10px
-    }
-    .drawer a{padding:8px 0}
+    .navmenu{margin-left:auto;display:flex;align-items:center;position:relative;z-index:10}
+    .hamburger{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:none;border:none;padding:0;color:inherit}
+    .hamburger .bars{width:22px;height:2px;background:var(--ink);box-shadow:0 6px 0 var(--ink),0 -6px 0 var(--ink);transition:box-shadow .3s ease, background .3s ease}
+    .navmenu.is-open .hamburger .bars{box-shadow:none;background:transparent}
     @media (min-width: 900px){
-      details.navmenu{display:none}
+      .navmenu{display:none}
 .navlinks{display:flex;gap:20px;}      
     }
 
@@ -293,9 +289,6 @@ section {
     /* ==== FULLSCREEN MOBILE MENU – ANIMACE ==== */
 
 /* Skryj defaultní trojúhelník u <summary> */
-.navmenu > summary::-webkit-details-marker { display:none; }
-.navmenu > summary::marker { content: ""; }
-
 /* Overlay je vždy ve stromu (kvůli animaci), ale v zavřeném stavu mimo plátno */
 .navmenu .overlay {
   position: fixed;
@@ -307,18 +300,15 @@ section {
   padding: 48px 24px;
   z-index: 100;
 
-  /* výchozí (zavřeno) */
-  opacity: 0;
   pointer-events: none;
-  transform: translateY(-100%);
-  transition: transform .35s ease, opacity .35s ease;
+  transform: translateX(100%);
+  transition: transform .6s ease;
 }
 
 /* otevřený stav – animace proběhne tam i zpět */
-.navmenu[open] .overlay {
-  opacity: 1;
+.navmenu.is-open .overlay {
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 /* tlačítko zpět (zavření) */
@@ -332,10 +322,10 @@ section {
   cursor: pointer;
   padding: 0;
   line-height: 1;
-  transform: translateX(0);
-  transition: opacity .25s ease, transform .35s ease .05s;
+  transform: translateX(24px);
+  transition: opacity .6s ease, transform .6s ease;
 }
-.navmenu[open] .close { transform: translateX(0); opacity: 1; }
+.navmenu.is-open .close { transform: translateX(0); opacity: 1; }
 .navmenu .close:hover { opacity: .8; }
 
 /* seznam položek */
@@ -349,24 +339,23 @@ section {
 /* jednotlivé položky: jemné „vyjetí“ + fade se stupňováním */
 .navmenu .overlay li {
   border-bottom: 1px solid #2a2a2a;
-  transform: translateY(10px);
-  opacity: 0;
-  transition: transform .35s ease, opacity .35s ease;
+  transform: translateX(32px);
+  transition: transform .6s ease;
+  transition-delay: var(--navmenu-item-delay, 0s);
 }
 
 /* otevřené – zpět na místo */
-.navmenu[open] .overlay li {
-  transform: translateY(0);
-  opacity: 1;
+.navmenu.is-open .overlay li {
+  transform: translateX(0);
 }
 
 /* postupné zpoždění (stagger) pro 1–6 položek, přidej/změň dle potřeby */
-.navmenu[open] .overlay li:nth-child(1) { transition-delay: .05s; }
-.navmenu[open] .overlay li:nth-child(2) { transition-delay: .10s; }
-.navmenu[open] .overlay li:nth-child(3) { transition-delay: .15s; }
-.navmenu[open] .overlay li:nth-child(4) { transition-delay: .20s; }
-.navmenu[open] .overlay li:nth-child(5) { transition-delay: .25s; }
-.navmenu[open] .overlay li:nth-child(6) { transition-delay: .30s; }
+.navmenu .overlay li:nth-child(1) { --navmenu-item-delay: .05s; }
+.navmenu .overlay li:nth-child(2) { --navmenu-item-delay: .10s; }
+.navmenu .overlay li:nth-child(3) { --navmenu-item-delay: .15s; }
+.navmenu .overlay li:nth-child(4) { --navmenu-item-delay: .20s; }
+.navmenu .overlay li:nth-child(5) { --navmenu-item-delay: .25s; }
+.navmenu .overlay li:nth-child(6) { --navmenu-item-delay: .30s; }
 
 .navmenu .overlay a {
   display: block;
@@ -379,7 +368,7 @@ section {
 .navmenu .overlay a:hover { opacity: .85; }
 
 /* Zamez scrollu podkladu při otevření menu */
-.navmenu[open] ~ * { overflow: hidden; }
+body.navmenu-open { overflow:hidden; }
 
 /* ===== PROJECT DETAIL ===== */
 .back-link{

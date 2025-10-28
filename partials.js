@@ -37,6 +37,99 @@
       if (!target) return;
       link.setAttribute('href', resolveNavHref(target));
     });
+
+    const navmenu = root.querySelector('[data-navmenu]');
+    if (navmenu) {
+      const trigger = navmenu.querySelector('.hamburger');
+      const overlay = navmenu.querySelector('.overlay');
+      const closeBtn = navmenu.querySelector('.close');
+      const closeLinks = navmenu.querySelectorAll('[data-nav-close]');
+
+      const setExpanded = value => {
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', String(value));
+          trigger.setAttribute('aria-label', value ? 'Close menu' : 'Open menu');
+        }
+      };
+
+      const finishClose = () => {
+        navmenu.classList.remove('is-closing');
+        if (overlay) overlay.setAttribute('hidden', '');
+        document.body.classList.remove('navmenu-open');
+      };
+
+      let pendingCloseHandler = null;
+
+      const closeNav = () => {
+        if (!navmenu.classList.contains('is-open') || navmenu.classList.contains('is-closing')) return;
+        navmenu.classList.add('is-closing');
+        navmenu.classList.remove('is-open');
+        setExpanded(false);
+        if (!overlay) {
+          finishClose();
+          return;
+        }
+
+        const handler = event => {
+          if (event.target !== overlay || event.propertyName !== 'transform') return;
+          overlay.removeEventListener('transitionend', handler);
+          pendingCloseHandler = null;
+          finishClose();
+        };
+        overlay.addEventListener('transitionend', handler, { once: true });
+        pendingCloseHandler = handler;
+        window.setTimeout(() => {
+          if (navmenu.classList.contains('is-closing')) {
+            overlay.removeEventListener('transitionend', handler);
+            pendingCloseHandler = null;
+            finishClose();
+          }
+        }, 700);
+      };
+
+      const openNav = () => {
+        if (navmenu.classList.contains('is-open')) return;
+        overlay?.removeAttribute('hidden');
+        requestAnimationFrame(() => {
+          if (pendingCloseHandler && overlay) {
+            overlay.removeEventListener('transitionend', pendingCloseHandler);
+            pendingCloseHandler = null;
+          }
+          navmenu.classList.remove('is-closing');
+          navmenu.classList.add('is-open');
+          document.body.classList.add('navmenu-open');
+          setExpanded(true);
+        });
+      };
+
+      trigger?.addEventListener('click', () => {
+        if (navmenu.classList.contains('is-open')) {
+          closeNav();
+        } else {
+          openNav();
+        }
+      });
+
+      closeBtn?.addEventListener('click', closeNav);
+      closeLinks.forEach(link => {
+        link.addEventListener('click', closeNav);
+      });
+
+      overlay?.addEventListener('click', event => {
+        if (event.target === overlay) {
+          closeNav();
+        }
+      });
+
+      if (!document.body.dataset.navmenuEsc) {
+        document.body.dataset.navmenuEsc = '1';
+        document.addEventListener('keydown', evt => {
+          if (evt.key === 'Escape') {
+            closeNav();
+          }
+        });
+      }
+    }
   }
 
   async function initIncludes() {

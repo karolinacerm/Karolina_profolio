@@ -11,23 +11,22 @@
       <a data-nav-target="contact" href="#contact">Contact</a>
     </nav>
     
-    <details class="navmenu" aria-label="Mobile menu">
-      <summary class="hamburger" aria-label="Open menu">
+    <div class="navmenu" data-navmenu>
+      <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
         <span class="bars" aria-hidden="true"></span>
         <span class="sr">Menu</span>
-      </summary>
+      </button>
 
-      <nav class="overlay" role="menu">
-        <button class="close" type="button" aria-label="Close menu"
-          onclick="this.closest('details').removeAttribute('open')">←</button>
+      <nav class="overlay" id="mobile-menu" role="menu" hidden>
+        <button class="close" type="button" aria-label="Close menu">←</button>
 
         <ul>
-          <li><a data-nav-target="hero" href="#hero" onclick="this.closest('details').removeAttribute('open')">Home</a></li>
-          <li><a data-nav-target="about" href="#about" onclick="this.closest('details').removeAttribute('open')">About Me</a></li>
-          <li><a data-nav-target="work" href="#work" onclick="this.closest('details').removeAttribute('open')">Work</a></li>
-          <li><a data-nav-target="contact" href="#contact" onclick="this.closest('details').removeAttribute('open')">Contact</a></li>
+          <li><a data-nav-target="hero" data-nav-close href="#hero">Home</a></li>
+          <li><a data-nav-target="about" data-nav-close href="#about">About Me</a></li>
+          <li><a data-nav-target="work" data-nav-close href="#work">Work</a></li>
+          <li><a data-nav-target="contact" data-nav-close href="#contact">Contact</a></li>
         </ul>
       </nav>
-    </details>    
+    </div>        
   </div>
 </header>
