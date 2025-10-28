@@ -107,18 +107,24 @@
     main{
       padding:24px 0 72px;
     }
-    article.project{
-      width: 100%;
+
+    article.project {
       padding-left: var(--pad-lr);
       padding-right: var(--pad-lr);
+      display:flex;
+      flex-direction:column;
+      gap: var(--space-h2-sections);
+    }
+    
+    article .project-wrapper{
+      width: 100%;            
       display:flex;
       flex-direction:column;
       gap:var(--space-workprojects-text-img);
     }
     .project-header{
       display:flex;
-      flex-direction:column;
-      gap:16px;
+      flex-direction:column;      
     }
     .project-meta{
       margin:0;
@@ -127,9 +133,9 @@
       font-size:.7rem;
       color:var(--muted);
     }
-    .project-header h1{
+    .project-header h2{
       margin:0;
-      font-size:2rem;
+      font-size:16px;
       letter-spacing:.03em;
     }
     .project-details{
@@ -317,20 +323,21 @@
   </header>
 
   <main id="main">
-    <article class="project" data-project hidden>
+    <article class="project" data-project hidden>      
       <header class="project-header">
-        <p class="project-meta" data-field="meta"></p>
-        <h1 data-field="title">Project</h1>
+        <h2 data-field="title">Project</h2>
+        <p class="project-meta" data-field="meta"></p>        
       </header>
+      <div class="project-wrapper">
+        <dl class="project-details" data-field="details"></dl>
 
-      <dl class="project-details" data-field="details"></dl>
+        <section class="project-content" data-field="content"></section>
 
-      <section class="project-content" data-field="content"></section>
-
-      <section class="project-links" data-block="links" hidden>
-        <h2>Related</h2>
-        <div class="project-links-list" data-field="links"></div>
-      </section>
+        <section class="project-links" data-block="links" hidden>
+          <h2>Related</h2>
+          <div class="project-links-list" data-field="links"></div>
+        </section>
+      </div>
     </article>
 
     <section class="empty-state" data-empty-state hidden>

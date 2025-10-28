@@ -161,7 +161,7 @@ section {
     .about .description{display:flex;flex-direction:column;gap:var(--space-workprojects-text-img)}
 
     /* ===== SELECTED WORK ===== */
-    .section .title {font-size:1rem;color:var(--muted);letter-spacing:.06em}
+    .section .title {font-size:16px;letter-spacing:.06em;text-transform:uppercase;}
     .section .section-header{display: flex; flex-direction: column;gap: var(--space-h2-subheader); padding-bottom: var(--space-h2-sections);}
     .grid{
       display:grid;gap:var(--space-workprojects-text-img);
@@ -188,10 +188,10 @@ section {
     }
     .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
     .meta{display:flex;flex-direction:column;gap:.5rem;}
-    .meta .title{font-weight:700;margin:0;}
+    .meta .title{font-weight:600;margin:0;}
     .tags{display:flex;flex-wrap:wrap;gap:var(--space-label-label-x)}
     .tag{
-      font-size:.78rem;padding:4px 8px;border-radius:999px;border:1px solid #ddd;background:#fafafa
+      font-size:.78rem;padding:4px 8px;border-radius:999px;border:1px solid #ddd;background:var(--bg);text-transform: uppercase;
     }
 
     /* ===== CONTACT / FOOTER ===== */
@@ -204,7 +204,7 @@ section {
     .cta a:hover{opacity:.9}
     .footer{border-top:1px solid #1e1e1e;background:#0b0b0b;color:#bdbdbd;font-size:.85rem}
     .footer .footwrap{max-width:var(--maxw);margin-inline:auto;display:flex;justify-content:space-between;align-items:center;}
-    .muted{color:#9a9a9a}
+    .muted{color:#9a9a9a;text-transform: uppercase;}
 
     /* ==== FULLSCREEN MOBILE MENU – ANIMACE ==== */
 

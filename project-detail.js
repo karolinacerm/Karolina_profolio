@@ -212,7 +212,8 @@
 
     const metaEl = getField('meta');
     if (metaEl) {
-      const meta = project.deck || (Array.isArray(project.tags) ? project.tags.join(' / ') : '');
+      const tagList = Array.isArray(project.tags) ? project.tags.filter(Boolean) : [];
+      const meta = tagList.length ? `/ ${tagList.join(', ')}` : '';
       if (meta) {
         metaEl.textContent = meta;
       } else {

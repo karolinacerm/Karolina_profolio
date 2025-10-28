@@ -1,16 +1,22 @@
 {
   "projects": [
     {
-      "deck": "Branding",
       "card": {
         "thumb": "/images/uploads/beautiful-shot-snowy-mountain-sunset.jpg",
         "alt": "hora"
       },
       "title": "Testovací projekt",
       "tags": [
-        "adasasd/asdasda/asdasda"
+        "projekt",
+        "branding",
+        "design",
+        "web"
       ],
       "content": [
+         {
+          "type": "text",
+          "body": "**Toto je samostny text** - Praesent vitae est sapien. Morbi gravida ac justo ac ultricies. Praesent elementum sollicitudin nunc eu fermentum. Sed nec ultrices justo. Curabitur condimentum nulla mi. Morbi non congue neque. Sed tristique ligula id dui ultricies, nec ornare sem iaculis. Etiam a varius erat. Nunc erat felis, imperdiet at est eget, blandit mattis ipsum. Duis eget urna ac quam feugiat egestas. Maecenas vehicula mi vel ex cursus laoreet. Pellentesque in arcu ac purus venenatis porttitor. Sed congue metus quis risus scelerisque feugiat."
+        },
         {
           "type": "image",
           "src": "/images/uploads/beautiful-shot-snowy-mountain-sunset.jpg",
@@ -19,7 +25,7 @@
         {
           "type": "textimage",
           "body": "Text + obrazek - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus elit fermentum nibh tincidunt, quis placerat arcu mattis. Maecenas vel auctor elit. Proin interdum feugiat rutrum. Nunc at pellentesque eros, sed consequat augue. Ut bibendum scelerisque ante, eget hendrerit erat semper sed. Morbi ultricies congue elit, quis feugiat libero gravida in. Sed orci magna, elementum ut tellus et, pellentesque aliquam sem. Donec et est dapibus, euismod orci vel, vulputate sapien. Morbi sem leo, porttitor ut pharetra quis, mollis varius ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed a ante non sapien porttitor ullamcorper. Quisque sit amet ullamcorper velit, a commodo tellus.",
-          "src": "/images/uploads/beautiful-shot-snowy-mountain-sunset.jpg",
+          "src": "/images/uploads/img_0541.jpeg",
           "alt": "hora - obsah 1"
         },
         {
@@ -27,19 +33,7 @@
           "body": "***Text + Obrazek 2*** - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus elit fermentum nibh tincidunt, quis placerat arcu mattis. Maecenas vel auctor elit. Proin interdum feugiat rutrum. Nunc at pellentesque eros, sed consequat augue. Ut bibendum scelerisque ante, eget hendrerit erat semper sed. Morbi ultricies congue elit, quis feugiat libero gravida in. Sed orci magna, elementum ut tellus et, pellentesque aliquam sem. Donec et est dapibus, euismod orci vel, vulputate sapien. Morbi sem leo, porttitor ut pharetra quis, mollis varius ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed a ante non sapien porttitor ullamcorper. Quisque sit amet ullamcorper velit, a commodo tellus.\n\n**Obrazej**\n\nadasd\n\n1. asdasd\n2. asdsad",
           "src": "/images/uploads/beautiful-shot-snowy-mountain-sunset.jpg",
           "alt": "Hora 2"
-        },
-        {
-          "type": "text",
-          "body": "**Toto je samostny text** - Praesent vitae est sapien. Morbi gravida ac justo ac ultricies. Praesent elementum sollicitudin nunc eu fermentum. Sed nec ultrices justo. Curabitur condimentum nulla mi. Morbi non congue neque. Sed tristique ligula id dui ultricies, nec ornare sem iaculis. Etiam a varius erat. Nunc erat felis, imperdiet at est eget, blandit mattis ipsum. Duis eget urna ac quam feugiat egestas. Maecenas vehicula mi vel ex cursus laoreet. Pellentesque in arcu ac purus venenatis porttitor. Sed congue metus quis risus scelerisque feugiat."
-        },
-        {
-          "type": "text",
-          "body": "Toto je samostatny text + upravy textu:\n\n# Nadpis 1\n\n\n\n**Praesent vitae est sapien.** Morbi gravida ac justo ac ultricies. Praesent elementum sollicitudin nunc eu fermentum. Sed nec ultrices justo. Curabitur condimentum nulla mi. Morbi non congue neque. Sed tristique ligula id dui ultricies, nec ornare sem iaculis. Etiam a varius erat. Nunc erat felis, imperdiet at est eget, blandit mattis ipsum. Duis eget urna ac quam feugiat egestas. Maecenas vehicula mi vel ex cursus laoreet. Pellentesque in arcu ac purus venenatis porttitor. Sed congue metus quis risus scelerisque feugiat.\n\n```python\nimport pandas as pd\n\ndef test_f():\n  y = 1 + 2\n  x = y + 3\n```\n\n`from a import sklearn.test code`\n\n`y++`\n\n## Nadpis 2\n\n### Nadpis 3\n\n#### Nadpis 4"
-        },
-        {
-          "type": "text",
-          "body": "# B﻿eruna\n\na﻿sdasdasdmalsůk daslkdn laknsd"
-        }
+        }        
       ],
       "links": [
         {
