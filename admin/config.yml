@@ -1,5 +1,5 @@
 backend:
-  name: gitbub
+  name: github
   repo: karolinacerm/Karolina_profolio
   branch: main  
 
