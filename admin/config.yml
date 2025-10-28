@@ -2,6 +2,9 @@ backend:
   name: github
   repo: karolinacerm/Karolina_profolio
   branch: main
+  base_url: https://api.github.com
+  auth_endpoint: /callback
+
 
 site_url: https://karolinacerm.github.io/Karolina_profolio/
 media_folder: images/uploads
