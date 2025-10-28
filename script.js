@@ -80,31 +80,27 @@
     return [];
   }
 
-  function parseData(text, fallback = '{}') {
-    const source = (text || '').trim();
-    if (!source) {
-      return JSON.parse(fallback);
-    }
-    if (window.jsyaml && typeof window.jsyaml.load === 'function') {
-      return window.jsyaml.load(source);
-    }
-    return JSON.parse(source);
-  }
-
   async function fetchProjects(src) {
     const res = await fetch(src, { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const text = await res.text();
-    const parsed = parseData(text);
-    const projects = parseProjects(parsed);
+    const payload = await res.json();
+    const projects = parseProjects(payload);
     if (!projects.length) {
       throw new Error('projects data: očekávám pole projektů');
     }
     return projects;
   }
 
+  function parseInlineData(text, fallback = '[]') {
+    const source = (text || '').trim();
+    if (!source) {
+      return JSON.parse(fallback);
+    }
+    return JSON.parse(source);
+  }
+
   async function loadProjects() {
-    const src = grid.getAttribute('data-src') || './projects.yaml';
+    const src = grid.getAttribute('data-src') || './projects.json';
     const inline = document.getElementById('projects-data');
 
     try {
@@ -117,7 +113,7 @@
       if (inline) {
         try {
           const text = inline.textContent || '';
-          const fallback = parseData(text, '[]');
+          const fallback = parseInlineData(text, '[]');
           const projects = parseProjects(fallback);
           if (projects.length) {
             renderProjects(projects);

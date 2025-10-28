@@ -54,13 +54,10 @@
     return [];
   }
 
-  function parseData(text, fallback = '{}') {
+  function parseInlineData(text, fallback = '[]') {
     const source = (text || '').trim();
     if (!source) {
       return JSON.parse(fallback);
-    }
-    if (window.jsyaml && typeof window.jsyaml.load === 'function') {
-      return window.jsyaml.load(source);
     }
     return JSON.parse(source);
   }
@@ -68,9 +65,8 @@
   async function fetchProjects(src) {
     const res = await fetch(src, { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const text = await res.text();
-    const parsed = parseData(text);
-    const projects = parseProjects(parsed);
+    const payload = await res.json();
+    const projects = parseProjects(payload);
     if (!projects.length) {
       throw new Error('Projects data is empty');
     }
@@ -291,7 +287,7 @@
       return;
     }
 
-    const src = './projects.yaml';
+    const src = './projects.json';
     const inline = document.getElementById('projects-data');
 
     try {
@@ -303,7 +299,7 @@
       if (inline) {
         try {
           const text = inline.textContent || '';
-          const fallback = parseData(text, '[]');
+          const fallback = parseInlineData(text, '[]');
           const projects = parseProjects(fallback);
           const project = projects.find(item => item.id === projectId);
           renderProject(project || null);
