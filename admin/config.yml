@@ -3,94 +3,90 @@ backend:
   repo: karolinacerm/Karolina_profolio
   branch: main
 
-local_backend: true
-
 site_url: https://karolinacerm.github.io/Karolina_profolio/
 media_folder: images/uploads
 public_folder: /images/uploads
 
 collections:
-  - name: content
-    label: Obsah
+  - name: "projects"
+    label: "Projekty"
     editor:
       preview: false
     files:
-      - name: projects
-        label: Projekty
-        file: projects.yaml
-        format: yaml
+      - file: "projects.yaml"
+        label: "Seznam projektů"
+        name: "projects_data"
         fields:
-          - label: Projekty
-            name: projects
-            widget: list
-            add_to_top: true
-            collapsed: true
-            summary: "{{title}}"
+          - label: "Projekty"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}}"
             fields:
-              - { label: ID, name: id, widget: string, hint: "Použij pro URL parametry (např. recerve-food-truck)." }
-              - { label: Titulek, name: title, widget: string }
-              - { label: Meta řádek, name: deck, widget: string, required: false, hint: "Krátká linka nad titulkem (např. Branding · Print)." }
-              - { label: Souhrn, name: summary, widget: text, hint: "Perex – zobrazí se v kartě i nahoře na detailu." }
-              - { label: Tagy, name: tags, widget: list, required: false, hint: "Volitelné štítky pro kartu a metadata." }
-              - label: Náhled karty
-                name: card
-                widget: object
+              - { label: "Titulek", name: "title", widget: "string" }
+              - { label: "ID", name: "id", widget: "string", hint: "Pro URL parametry (např. recerve-food-truck)." }
+              - { label: "Meta řádek", name: "deck", widget: "string", required: false }
+              - { label: "Souhrn", name: "summary", widget: "text" }
+              - { label: "Tagy", name: "tags", widget: "list", required: false }
+              - label: "Náhled karty"
+                name: "card"
+                widget: "object"
                 collapsed: false
                 fields:
-                  - { label: Obrázek, name: thumb, widget: image, hint: "Zobrazí se v gridu projektů." }
-                  - { label: Alt text, name: alt, widget: string, required: false }
-              - label: Hero sekce
-                name: hero
-                widget: object
+                  - { label: "Obrázek", name: "thumb", widget: "image", hint: "Zobrazí se v gridu projektů." }
+                  - { label: "Alt text", name: "alt", widget: "string", required: false }
+              - label: "Hero sekce"
+                name: "hero"
+                widget: "object"
                 collapsed: true
                 fields:
-                  - { label: Obrázek, name: image, widget: image, required: false }
-                  - { label: Alt text, name: alt, widget: string, required: false }
-                  - { label: Popisek, name: caption, widget: string, required: false }
-              - label: Projekt v číslech
-                name: details
-                widget: object
+                  - { label: "Obrázek", name: "image", widget: "image", required: false }
+                  - { label: "Alt text", name: "alt", widget: "string", required: false }
+                  - { label: "Popisek", name: "caption", widget: "string", required: false }
+              - label: "Projekt v číslech"
+                name: "details"
+                widget: "object"
                 collapsed: true
                 fields:
-                  - { label: Klient, name: Client, widget: string, required: false }
-                  - { label: Role, name: Role, widget: string, required: false }
-                  - { label: Rok, name: Year, widget: string, required: false }
-                  - { label: Výstupy, name: Deliverables, widget: list, required: false, hint: "Odděl jednotlivé výstupy." }
-              - label: Obsah stránky
-                name: content
-                widget: list
+                  - { label: "Klient", name: "Client", widget: "string", required: false }
+                  - { label: "Role", name: "Role", widget: "string", required: false }
+                  - { label: "Rok", name: "Year", widget: "string", required: false }
+                  - { label: "Výstupy", name: "Deliverables", widget: "list", required: false }
+              - label: "Obsah stránky"
+                name: "content"
+                widget: "list"
                 collapsed: false
-                summary: "{{type}} blok"
+                summary: "{{fields.type}} blok"
                 hint: "Skládej textové a obrazové bloky v pořadí, v jakém se mají zobrazit."
                 types:
-                  - label: Text
-                    name: text
-                    widget: object
-                    summary: "Text"
+                  - label: "Text"
+                    name: "text"
+                    widget: "object"
                     fields:
-                      - { label: Text, name: body, widget: markdown, hint: "Odděl odstavce prázdným řádkem." }
-                  - label: Obrázek
-                    name: image
-                    widget: object
-                    summary: "Obrázek"
+                      - { label: "Typ bloku", name: "type", widget: "hidden", default: "text" }
+                      - { label: "Text", name: "body", widget: "markdown", hint: "Odděl odstavce prázdným řádkem." }
+                  - label: "Obrázek"
+                    name: "image"
+                    widget: "object"
                     fields:
-                      - { label: Obrázek, name: src, widget: image }
-                      - { label: Alt text, name: alt, widget: string, required: false }
-                      - { label: Popisek, name: caption, widget: string, required: false }
-                  - label: Text + obrázek
-                    name: textimage
-                    widget: object
-                    summary: "Text + obrázek"
+                      - { label: "Typ bloku", name: "type", widget: "hidden", default: "image" }
+                      - { label: "Obrázek", name: "src", widget: "image" }
+                      - { label: "Alt text", name: "alt", widget: "string", required: false }
+                      - { label: "Popisek", name: "caption", widget: "string", required: false }
+                  - label: "Text + obrázek"
+                    name: "textimage"
+                    widget: "object"
                     fields:
-                      - { label: Text, name: body, widget: markdown, hint: "Odděl odstavce prázdným řádkem." }
-                      - { label: Obrázek, name: src, widget: image }
-                      - { label: Alt text, name: alt, widget: string, required: false }
-                      - { label: Popisek, name: caption, widget: string, required: false }
-              - label: Externí odkazy
-                name: links
-                widget: list
+                      - { label: "Typ bloku", name: "type", widget: "hidden", default: "textimage" }
+                      - { label: "Text", name: "body", widget: "markdown" }
+                      - { label: "Obrázek", name: "src", widget: "image" }
+                      - { label: "Alt text", name: "alt", widget: "string", required: false }
+                      - { label: "Popisek", name: "caption", widget: "string", required: false }
+              - label: "Externí odkazy"
+                name: "links"
+                widget: "list"
                 required: false
-                summary: "{{label}}"
+                summary: "{{fields.label}}"
                 fields:
-                  - { label: Popisek, name: label, widget: string }
-                  - { label: URL, name: url, widget: string }
+                  - { label: "Popisek", name: "label", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+              - { label: "Obsah (volitelně)", name: "body", widget: "markdown", required: false }
