@@ -1,4 +1,6 @@
-    /* ===== CSS RESET (trimmed) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ===== CSS RESET (trimmed) ===== */
     *,*::before,*::after{box-sizing:border-box}
     html:focus-within{scroll-behavior:smooth}
     body{
@@ -12,14 +14,15 @@
     button,input,select,textarea{font:inherit}
 
 
-* { margin: 0; }
+* { margin: 0; font-family: "Montserrat";}
 
     /* ===== THEME ===== */
     :root {
       --bg: #ffffff;
       --ink: #1a1a1a;
       --muted: #6a6a6a;
-      --panel: #111;         /* dark panels (about/footer) */
+      --black: #191817;
+      --panel: #191817;         /* dark panels (about/footer) */
       --panel-ink: #eaeaea;  /* text on dark panels */
       --accent: #999;
       --gap: 16px;
@@ -49,8 +52,7 @@
       /* Label */
       --radius-label: 75px;             /* 4.6875rem */
 
-      /* Typography — Mobile */
-      --font-family-base: "Inter","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+      /* Typography — Mobile */      
       --type-body-size: 1.125rem;       /* 18px */
       --type-body-line: 1.75rem;        /* 28px */
       --type-tags-size: 0.75rem;        /* 12px */
@@ -210,13 +212,11 @@ section {
 
     /* ===== DARK PANEL (ABOUT) ===== */
     .panel{background:var(--panel);color:var(--panel-ink)}
-    .about{max-width:720px;margin-inline:auto;}
-    .about h2{
-      margin:0 0 8px 0;
+    .about{max-width:720px;display: flex;flex-direction: column;gap: var(--space-h2-sections);}
+    .about h2{      
       font-size:var(--type-subhead-size);
       line-height:var(--type-subhead-line);
-      letter-spacing:.05em;
-      color:#bdbdbd;
+      letter-spacing:.05em;      
     }
     .about p{margin:0 0 12px 0}
     .about p + p{opacity:.95}
@@ -273,12 +273,27 @@ section {
     .contact .wrap{display: flex;flex-direction: column;gap:var(--space-h2-sections)}
     .cta{display:flex;flex-direction:column;gap: var(--space-menuitem-gap);}
     .cta a{
-      border-top:1px solid #3a3a3a;padding:14px 0;display:flex;justify-content:space-between;align-items:center
+      border-top:1px solid #3a3a3a;padding:14px 0;display:flex;justify-content:flex-start;align-items:center;gap: 12px;
     }
     .cta a:hover{opacity:.9}
-    .footer{border-top:1px solid #1e1e1e;background:#0b0b0b;color:#bdbdbd;font-size:.85rem}
+    .footer{border-top:1px solid #1e1e1e;background:var(--panel);color:#bdbdbd;font-size:.85rem}
     .footer .footwrap{max-width:var(--maxw);margin-inline:auto;display:flex;justify-content:space-between;align-items:center;}
-    .muted{color:#9a9a9a;text-transform: uppercase;font-size: var(--type-subhead-size);}
+
+    .contacts-description {
+      display: flex;
+      flex-direction: column;      
+    }
+    .contacts-description .description {
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: var(--type-subhead-size);
+      margin: 0;
+
+      display: flex;
+      flex-direction: column;
+      line-height: var(--type-subhead-line);
+    }
+    .muted{color:var(--muted);text-transform: uppercase;font-size: var(--type-subhead-size);}
 
     /* ==== FULLSCREEN MOBILE MENU – ANIMACE ==== */
 
