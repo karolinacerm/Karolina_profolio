@@ -120,7 +120,7 @@
     }   
     .navmenu{margin-left:auto;display:flex;align-items:center;position:relative;z-index:10}
     .hamburger{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:none;border:none;padding:0;color:inherit}
-    .hamburger .bars{width:22px;height:2px;background:var(--ink);box-shadow:0 6px 0 var(--ink),0 -6px 0 var(--ink);transition:box-shadow .3s ease, background .3s ease}
+    .hamburger .bars{width:22px;height:2px;background:var(--ink);box-shadow:0 8px 0 var(--ink),0 -8px 0 var(--ink);transition:box-shadow .3s ease, background .3s ease}
     .navmenu.is-open .hamburger .bars{box-shadow:none;background:transparent}
     @media (min-width: 900px){
       .navmenu{display:none}
@@ -173,7 +173,7 @@
   justify-content: center; /* oči doprostřed */
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: relative;
 }
 
@@ -245,14 +245,28 @@ section {
         gap: var(--space-projectpreview-h2);         
     }
     .thumb{
-      aspect-ratio:4/3;background:#111;color:#e5e5e5;display:grid;place-items:center;
-      font-weight:600;letter-spacing:.08em; object-fit: cover; object-position: center; /* 🔹 zarovná na střed */    
+      /* ensure the tile itself always stays 4:3 and doesn't grow with the image */
+      position:relative;
+      aspect-ratio: 4/3;
+      width:100%;
+      overflow:hidden;
+      background:#111;
+      color:#e5e5e5;
+      display:grid;
+      place-items:center;
+      font-weight:600;
+      letter-spacing:.08em;
     }
+
+    /* absolutely position the image so it fills the 4:3 box without affecting its size */
     .thumb img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;    /* 🔹 obrázek vyplní, ale zachová poměr */
-        object-position: center; /* 🔹 zarovná na střed */        
+        object-fit: cover;    /* obrázek vyplní, ale zachová poměr */
+        object-position: center; /* zarovná na střed */
+        display:block;
     }
     .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
     .meta{display:flex;flex-direction:column;gap:.5rem;}
@@ -497,10 +511,19 @@ body.navmenu-open { overflow:hidden; }
 .project-detail .block--image{
   margin:0;
   background:#f0f0f0;
+  position: relative; /* make container a positioned box for absolute img */
+  aspect-ratio: 4/3;   /* enforce 4:3 ratio */
+  width: 100%;
+  overflow: hidden;
 }
 .project-detail .block--image img{
-  width:100%;
-  display:block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fill the 4:3 box without stretching */
+  object-position: center;
+  display: block;
 }
 .project-detail .block--text-image{
   display:flex;

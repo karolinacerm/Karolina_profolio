@@ -42,6 +42,36 @@
         }
       ],
       "id": "a1"
+    },
+    {
+      "card": {
+        "thumb": "/images/uploads/img_0541.jpeg",
+        "alt": "náhled projektu"
+      },
+      "title": "Název projektu",
+      "tags": [
+        "projekt",
+        "design",
+        "web"
+      ],
+      "content": [
+        {
+          "type": "text",
+          "body": "**Krátký popis projektu** – stručné představení obsahu, účelu nebo kontextu projektu."
+        },
+        {
+          "type": "image",
+          "src": "/images/uploads/img_0541.jpeg",
+          "alt": "Popisek obrázku"
+        },
+        {
+          "type": "textimage",
+          "body": "Delší text, který doplňuje obrázek. Může obsahovat **formátování**, seznamy, nebo odkazy.\n\n1. První bod\n2. Druhý bod\n\n[Odkaz na něco zajímavého](https://example.com)",
+          "src": "/images/uploads/img_0541.jpeg",
+          "alt": "Popisek obrázku sekce"
+        }
+      ],       
+      "id": "unikatni-id"
     }
   ]
 }
