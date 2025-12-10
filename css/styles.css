@@ -287,7 +287,34 @@ section {
     .contact .wrap{display: flex;flex-direction: column;gap:var(--space-h2-sections)}
     .cta{display:flex;flex-direction:column;gap: var(--space-menuitem-gap);}
     .cta a{
-      border-top:1px solid #3a3a3a;padding:14px 0;display:flex;justify-content:flex-start;align-items:center;gap: 12px;
+      /* long divider under the label: use a pseudo-element that spans the link */
+      position: relative;
+      border-top: none;
+      padding:14px 0 18px; /* top padding + extra bottom space for the rule */
+      display:flex;
+      justify-content:flex-start;
+      align-items:center;
+      gap: 12px;
+    }
+
+    .cta a p{ margin: 0; }
+    .cta a p:first-child{
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      /* keep label spacing visually similar */
+      padding-bottom: 4px;
+    }
+
+    /* full-width thin divider under each link */
+    .cta a::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #3a3a3a;
+      bottom: 6px; /* positions the rule slightly below the label */
+      pointer-events: none;
     }
     .cta a:hover{opacity:.9}
     .footer{border-top:1px solid #1e1e1e;background:var(--panel);color:#bdbdbd;font-size:.85rem}
