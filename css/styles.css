@@ -171,6 +171,37 @@
   position: relative;
 }
 
+/* Responsive container for embedded SVG animation */
+.hero-anim {
+  display: block;           /* ensures object/img behaves like a block-level element */
+  width: min(100%, 1000px); /* default: up to 1000px but never exceed viewport */
+  max-width: 100%;
+  height: auto;            /* preserve aspect ratio */
+  margin-inline: auto;     /* center horizontally */
+}
+
+/* make the inner svg/image fill the container */
+.hero-anim, .hero-anim img, .hero-anim svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile: slightly inset from edges and a bit smaller */
+@media (max-width: 599px) {
+  .hero-anim {
+    width: calc(100vw - 32px); /* 16px inset on both sides */
+    margin-inline: 16px;
+  }
+}
+
+/* Desktop: larger, centered and limited by viewport */
+@media (min-width: 900px) {
+  .hero-anim {
+    width: min(70vw, 1200px);
+  }
+}
+
 .hero .eyes {
   /* pro střed sekce */
   position: absolute;
