@@ -109,8 +109,8 @@
     header{position:sticky;top:0;background:var(--bg);z-index:9;}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding: var(--pad-navbar-top) var(--pad-lr) var(--pad-navbar-bottom);}
     .brand{
-      font-weight:700;
-      letter-spacing:.02em;
+      font-weight:600;
+      letter-spacing:.04em;
       display:flex;
       flex-direction:column;
       text-decoration:none;
