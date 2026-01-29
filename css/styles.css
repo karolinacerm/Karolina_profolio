@@ -359,8 +359,7 @@ section {
       border-top: none;
       padding:14px 0 18px; /* top padding + extra bottom space for the rule */
       display:flex;
-      justify-content:flex-start;
-      align-items:center;
+      justify-content:flex-start;      
       gap: 12px;
     }
 
