@@ -177,12 +177,12 @@
 
 .hero-inner {
   display: flex;
-  flex-direction: column;
-  justify-content: center; /* oči doprostřed */
+  flex-direction: column;  
   align-items: center;
   width: 100%;
   height: 80%;
   position: relative;
+  margin-bottom: 10vh;
 }
 
 /* Responsive container for embedded SVG animation */
