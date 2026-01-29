@@ -135,7 +135,7 @@
     
     .hamburger:hover{background:rgba(0,0,0,0.03)}
     .hamburger:focus-visible{outline:2px solid rgba(0,0,0,0.12);outline-offset:2px}
-    .hamburger .bars{width:22px;height:2px;background:var(--ink);box-shadow:0 8px 0 var(--ink),0 -8px 0 var(--ink);transition:box-shadow .3s ease, background .3s ease}
+    .hamburger .bars{width:25px;height:1px;background:var(--ink);box-shadow:0 8px 0 var(--ink),0 -8px 0 var(--ink);transition:box-shadow .3s ease, background .3s ease}
     .navmenu.is-open .hamburger .bars{box-shadow:none;background:transparent}
     @media (min-width: 900px){
       .navmenu{display:none}
