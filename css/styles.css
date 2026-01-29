@@ -154,27 +154,25 @@
     }
 
     /* ===== HERO ===== */
-    .hero{min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center}
-    .eyes{
+.hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh; /* nebo libovolná výška */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.eyes{
       width:122px;height:48px;margin-inline:auto;margin-bottom:18px;
       background: radial-gradient(closest-side,#000 60%,transparent 61%) 25% 50%/18px 18px no-repeat,
                   radial-gradient(closest-side,#000 60%,transparent 61%) 75% 50%/18px 18px no-repeat,
                   linear-gradient(#000,#000) 0 100%/100% 2px no-repeat;
       filter:contrast(120%);
-    }     
-    
-
-    .hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* nebo libovolná výška */
-}
-
-.hero {
-    
-}
+    }
 
 .hero-inner {
   display: flex;
@@ -251,7 +249,10 @@
     }
 
 section {
-    padding: var(--pad-section-y) var(--pad-lr);    
+    padding: var(--pad-section-y) var(--pad-lr);
+    background: var(--bg);
+    position: relative;
+    z-index: 2;
 }
 
     /* ===== DARK PANEL (ABOUT) ===== */
