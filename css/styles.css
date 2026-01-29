@@ -18,7 +18,8 @@
 
     /* ===== THEME ===== */
     :root {
-      --bg: #ffffff;
+      --bg: #F8F8F8;
+      --secondary-bg: #fff;
       --ink: #1a1a1a;
       --muted: #6a6a6a;
       --black: #191817;
@@ -250,7 +251,7 @@
     }
 
 section {
-    padding: var(--pad-section-y) var(--pad-lr);
+    padding: var(--pad-section-y) var(--pad-lr);    
 }
 
     /* ===== DARK PANEL (ABOUT) ===== */
@@ -305,7 +306,7 @@ section {
     .card{
         display: flex;
         flex-direction: column;
-        overflow:hidden;background:#fff;
+        overflow:hidden;background:var(--bg);
         transition:transform .2s ease, box-shadow .2s ease;
         gap: var(--space-projectpreview-h2);         
     }
@@ -342,8 +343,8 @@ section {
       line-height:var(--type-tags-line);
       padding:4px 8px;
       border-radius:999px;
-      border:1px solid #ddd;
-      background:var(--bg);
+      border:1px solid #19181760;      
+      background:var(--secondary-bg);
       text-transform: uppercase;
     }
 
