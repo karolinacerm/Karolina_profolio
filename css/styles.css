@@ -119,7 +119,21 @@
       display:block;
     }   
     .navmenu{margin-left:auto;display:flex;align-items:center;position:relative;z-index:10}
-    .hamburger{display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:none;border:none;padding:0;color:inherit}
+    .hamburger{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;      
+      cursor:pointer;
+      background:none;
+      border:none;
+      min-width:44px;
+      min-height:44px;
+      border-radius:8px;
+      color:inherit;
+    }
+    
+    .hamburger:hover{background:rgba(0,0,0,0.03)}
+    .hamburger:focus-visible{outline:2px solid rgba(0,0,0,0.12);outline-offset:2px}
     .hamburger .bars{width:22px;height:2px;background:var(--ink);box-shadow:0 8px 0 var(--ink),0 -8px 0 var(--ink);transition:box-shadow .3s ease, background .3s ease}
     .navmenu.is-open .hamburger .bars{box-shadow:none;background:transparent}
     @media (min-width: 900px){
@@ -241,7 +255,11 @@ section {
 
     /* ===== DARK PANEL (ABOUT) ===== */
     .panel{background:var(--panel);color:var(--panel-ink)}
-    .about{max-width:720px;display: flex;flex-direction: column;gap: var(--space-h2-sections);}
+    .about{
+      display: flex;
+      gap: var(--space-h2-sections);
+      justify-content: space-between;
+    }
     .about h2{      
       font-size:var(--type-subhead-size);
       line-height:var(--type-subhead-line);
@@ -250,7 +268,25 @@ section {
     .about p{margin:0 0 12px 0}
     .about p + p{opacity:.95}
 
-    .about .description{display:flex;flex-direction:column;gap:var(--space-workprojects-text-img)}
+    .about .description{
+      display: flex;
+      flex-direction: column;
+      gap:var(--space-workprojects-text-img);
+      width: 50%;
+    }
+
+    @media (max-width: 900px) {
+       .about{
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-h2-sections);
+      justify-content: space-between;
+    }
+      .about .description{
+        width: auto;
+      }                
+      
+    }
 
     /* ===== SELECTED WORK ===== */
     .section .title {
