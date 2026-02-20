@@ -85,6 +85,7 @@
         --type-subhead-line: 1.5rem;    /* 24px */
         --type-h1-size: 1.5rem;         /* 24px */
         --type-h1-line: 1.75rem;        /* 28px */
+        --pad-lr: 48px;                 /* větší horizontální padding na desktopu */
       }
     }
     body{background:var(--bg);color:var(--ink)}
@@ -96,7 +97,7 @@
       font-size:var(--type-h2-size);
       line-height:var(--type-h2-line);
     }
-    .wrap{max-width:var(--maxw);margin-inline:auto;padding-bottom:0}
+    .wrap{margin-inline:auto;padding-bottom:0}
     .nav{padding: 24px;}
 
     /* ===== ACCESSIBILITY ===== */
@@ -107,17 +108,28 @@
 
     /* ===== HEADER / NAV ===== */
     header{position:sticky;top:0;background:var(--bg);z-index:9;}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding: var(--pad-navbar-top) var(--pad-lr) var(--pad-navbar-bottom);}
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: var(--pad-navbar-top) 48px var(--pad-navbar-bottom);
+    }
     .brand{
-      font-weight:600;
-      letter-spacing:.04em;
+      font-weight:700;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
       display:flex;
       flex-direction:column;
       text-decoration:none;
       color:inherit;
+      line-height:1.1;
     }
     .brand span{
       display:block;
+    }
+    .brand span + span{
+      margin-top:2px;
     }   
     .navmenu{margin-left:auto;display:flex;align-items:center;position:relative;z-index:10}
     .hamburger{
@@ -137,11 +149,19 @@
     .hamburger:focus-visible{outline:2px solid rgba(0,0,0,0.12);outline-offset:2px}
     .hamburger .bars{width:25px;height:1px;background:var(--ink);box-shadow:0 8px 0 var(--ink),0 -8px 0 var(--ink);transition:box-shadow .3s ease, background .3s ease}
     .navmenu.is-open .hamburger .bars{box-shadow:none;background:transparent}
-    @media (min-width: 900px){
+    @media (min-width: 900px){       
+      .nav{
+        align-items:flex-start;
+        justify-content:space-between;
+        gap:clamp(24px,6vw,120px);
+      }
       .navmenu{display:none}
-.navlinks{display:flex;gap:20px;}      
-    }
-
+.navlinks{display:flex;
+          flex:1;
+          justify-content:space-around;
+          margin-left:0;
+        }                      
+}      
     @media (max-width: 900px){
       .navlinks{display:none}
     }
@@ -151,6 +171,9 @@
     .cta a{
       font-size:var(--type-menu-size);
       line-height:var(--type-menu-line);
+    }
+    .navlinks a{
+      text-transform:uppercase;                 
     }
 
     /* ===== HERO ===== */
@@ -184,35 +207,22 @@
   margin-bottom: 10vh;
 }
 
-/* Responsive container for embedded SVG animation */
+/* Responsive container pro hero animaci – respektuje padding sekce, ať to drží grid */
 .hero-anim {
-  display: block;           /* ensures object/img behaves like a block-level element */
-  width: min(100%, 1000px); /* default: up to 1000px but never exceed viewport */
+  display: block;
+  width: 100%;
   max-width: 100%;
-  height: auto;            /* preserve aspect ratio */
-  margin-inline: auto;     /* center horizontally */
+  height: auto;
+  margin-inline: auto;
 }
 
-/* make the inner svg/image fill the container */
-.hero-anim, .hero-anim img, .hero-anim svg {
+/* vnitřní svg/img vždy vyplní kontejner */
+.hero-anim,
+.hero-anim img,
+.hero-anim svg {
   width: 100%;
   height: auto;
   display: block;
-}
-
-/* Mobile: slightly inset from edges and a bit smaller */
-@media (max-width: 599px) {
-  .hero-anim {
-    width: calc(100vw - 32px); /* 16px inset on both sides */
-    margin-inline: 16px;
-  }
-}
-
-/* Desktop: larger, centered and limited by viewport */
-@media (min-width: 900px) {
-  .hero-anim {
-    width: min(70vw, 1200px);
-  }
 }
 
 .hero .eyes {
@@ -256,55 +266,79 @@ section {
 }
 
     /* ===== DARK PANEL (ABOUT) ===== */
-    .panel{background:var(--panel);color:var(--panel-ink)}
-    .about{
-      display: flex;
-      gap: var(--space-h2-sections);
-      justify-content: space-between;
+    .panel{
+      background:var(--panel);
+      color:var(--panel-ink);
+      padding-block: clamp(40px, 10vh, 80px);
     }
-    .about h2{      
+
+    .about_wrapper{
+      max-width: 100%;
+      margin-inline:0;         /* žádný margin na wrapperu */
+      display:flex;
+      flex-direction:column;
+      gap:clamp(40px, 8vh, 72px);
+    }
+
+    .about{
+      width:100%;
+      margin-inline:0;      /* zarovnání obsahu na stejné kraje jako obrázek */
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:clamp(32px, 8vw, 120px);
+    }
+
+    .about h2{
       font-size:var(--type-subhead-size);
       line-height:var(--type-subhead-line);
-      letter-spacing:.05em;      
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:500;
+      white-space:nowrap;
     }
-    .about p{margin:0 0 12px 0}
-    .about p + p{opacity:.95}
+
+    .about p{
+      margin:0 0 12px 0;
+      max-width:36rem;
+    }
+
+    .about p + p{
+      opacity:.95;
+    }
 
     .about .description{
-      display: flex;
-      flex-direction: column;
-      gap:var(--space-workprojects-text-img);
-      width: 50%;
-    }
-    
-    @media (min-width: 900px) {
-      .about_wrapper {
-      display: flex;
-      gap: 80px;
-      flex-direction: column;    
-      padding-left: var(--pad-lr);
-      padding-right: var(--pad-lr);
-    }
-    .about_wrapper img {
-      width: stretch;
+      display:flex;
+      flex-direction:column;
+      gap:var(--space-workprojects-text-img);      
+      margin-left:auto;
+      text-align:left;
     }
 
-    .about .description{      
-      width: 50%;
-      align-self: flex-end;
+    .about_wrapper img{
+      display:block;
+      width:100%;
+      max-width:100%;
+      height:auto;
+      margin-inline:0;
     }
-    }
-    @media (max-width: 900px) {
-       .about{
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-h2-sections);
-      justify-content: space-between;
-    }
+
+    @media (max-width: 900px){
+      .about_wrapper{
+        padding-inline: var(--pad-lr); /* stejné odsazení jako ostatní sekce na mobilu */
+      }
+
+      .about{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:var(--space-h2-sections);
+      }
+
       .about .description{
-        width: auto;
-      }                
-      
+        max-width:none;
+        width:100%;
+        margin-left:0;
+      }
     }
 
     /* ===== SELECTED WORK ===== */
