@@ -406,6 +406,11 @@ section {
     }
     .muted{color:var(--muted);text-transform: uppercase;font-size: var(--type-subhead-size);}
 
+    /* Decorative footer visual (responsive full-width image) */
+    .footer-visual{width:100%;overflow:hidden;background:#111}
+    .footer-visual img{display:block;width:100%;height:auto;object-fit:cover;max-height:360px}
+    .footer-visual img[alt=""]{filter:brightness(.9)}
+
     /* ==== FULLSCREEN MOBILE MENU – ANIMACE ==== */
 
 /* Skryj defaultní trojúhelník u <summary> */
