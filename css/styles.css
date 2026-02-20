@@ -276,7 +276,24 @@ section {
       gap:var(--space-workprojects-text-img);
       width: 50%;
     }
+    
+    @media (min-width: 900px) {
+      .about_wrapper {
+      display: flex;
+      gap: 80px;
+      flex-direction: column;    
+      padding-left: var(--pad-lr);
+      padding-right: var(--pad-lr);
+    }
+    .about_wrapper img {
+      width: stretch;
+    }
 
+    .about .description{      
+      width: 50%;
+      align-self: flex-end;
+    }
+    }
     @media (max-width: 900px) {
        .about{
       display: flex;
@@ -412,9 +429,6 @@ section {
     .footer-visual img[alt=""]{filter:brightness(.9)}
 
     /* ==== FULLSCREEN MOBILE MENU – ANIMACE ==== */
-
-/* Skryj defaultní trojúhelník u <summary> */
-/* Overlay je vždy ve stromu (kvůli animaci), ale v zavřeném stavu mimo plátno */
 .navmenu .overlay {
   position: fixed;
   inset: 0;
