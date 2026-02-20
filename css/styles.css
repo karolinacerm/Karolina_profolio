@@ -417,25 +417,12 @@ section {
     .contact .wrap{
       display: flex;
       flex-direction: column;
-      gap:var(--space-h2-sections);
-      max-width:var(--maxw);
-      margin-inline:auto;
+      gap:var(--space-h2-sections);            
     }
     @media (min-width: 900px){
-      .contact .wrap{
-        flex-direction:row;
-        justify-content:space-between;
-        align-items:flex-start;
-        gap:clamp(32px,8vw,120px);
-      }
-      .contacts-description{
-        flex:1;
-        max-width:420px;
-      }
-      .cta{
-        flex:1;
-        max-width:420px;
-      }
+      .contact .wrap{ 
+        align-items:flex-start;        
+      }      
     }
     .cta{display:flex;flex-direction:column;gap: var(--space-menuitem-gap);}
     .cta a{
@@ -543,10 +530,7 @@ section {
     }
     
     .footer-copyright{
-      display:none;
-      border-top:1px solid #3a3a3a;
-      padding-top:var(--space-h2-sections);
-      padding-inline: var(--pad-lr);
+      border-top:1px solid #3a3a3a;        
       max-width:var(--maxw);
       margin-inline:auto;
     }
