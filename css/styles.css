@@ -248,6 +248,31 @@
   padding-inline: var(--pad-lr);
 }
 
+.hero .bottom_desktop {
+  display: none;
+  position: absolute;
+  bottom: clamp(2rem, 5vh, 4rem);    
+  text-align: center;  
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-h2-subheader);
+  width: 100%;    
+}
+
+.hero .bottom_desktop .kicker {
+  font-size: var(--type-h2-size);
+  letter-spacing: 0.08em;  
+  max-lines: 1;
+}
+
+.hero .line {
+  width: 80%;
+  height: 1px;
+  background: var(--ink);
+  margin-top: var(--space-h2-subheader);
+}
+
 .hero .kicker {
   font-size: var(--type-h2-size);
   letter-spacing: 0.08em;  
@@ -271,6 +296,19 @@ section {
     background: var(--bg);
     position: relative;
     z-index: 2;
+}
+
+@media (min-width: 900px){
+    .hero .bottom {
+      display: none;
+    }
+
+    .hero .bottom_desktop {
+      display: flex;
+    }
+    .hero-inner {
+      margin-bottom: 0;
+    }
 }
 
     /* ===== DARK PANEL (ABOUT) ===== */
