@@ -27,8 +27,7 @@
       --panel-ink: #eaeaea;  /* text on dark panels */
       --accent: #999;
       --gap: 16px;
-      --radius: 12px;
-      --maxw: 1120px;
+      --radius: 12px;      
       --wrap: min(720px, calc(100vw - 2 * var(--pad-lr)));
 
       /* Spacing — Vertical */
@@ -44,8 +43,8 @@
       --space-label-label-x: 8px;       /* 0.50rem */
 
       /* Padding */
-      --pad-section-y: 40px;            /* 2.5rem – podle Figmy vertikální rytmus */
-      --pad-lr: 20px;                   /* 1.25rem – mobilní gutter blíž Figmě */
+      --pad-section-y: 40px;            /* 2.5rem */
+      --pad-lr: 20px;                   /* 1.25rem */
       --pad-menu-x: 28px;               /* 1.75rem */
       --pad-navbar-top: 44px;           /* 2.75rem */
       --pad-navbar-bottom: 22px;        /* 1.375rem */
@@ -85,7 +84,7 @@
         --type-subhead-line: 1.5rem;    /* 24px */
         --type-h1-size: 1.5rem;         /* 24px */
         --type-h1-line: 1.75rem;        /* 28px */
-        --pad-lr: 64px;                 /* větší horizontální padding na desktopu – podle desktop gridu ve Figmě */
+        --pad-lr: 64px;                 /* desktop gutter */ 
       }
     }
     body{background:var(--bg);color:var(--ink)}
@@ -227,8 +226,7 @@
   display: block;
 }
 
-.hero .eyes {
-  /* pro střed sekce */
+.hero .eyes {  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -371,7 +369,7 @@ section {
 
     @media (max-width: 900px){
       .about_wrapper{
-        padding-inline: var(--pad-lr); /* stejné odsazení jako ostatní sekce na mobilu */
+        padding-inline: var(--pad-lr);
       }
 
       .about{
@@ -409,7 +407,6 @@ section {
         gap: var(--space-projectpreview-h2);         
     }
     .thumb{
-      /* ensure the tile itself always stays 4:3 and doesn't grow with the image */
       position:relative;
       aspect-ratio: 4/3;
       width:100%;
@@ -422,14 +419,13 @@ section {
       letter-spacing:.08em;
     }
 
-    /* absolutely position the image so it fills the 4:3 box without affecting its size */
     .thumb img {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;    /* obrázek vyplní, ale zachová poměr */
-        object-position: center; /* zarovná na střed */
+        object-fit: cover;    
+        object-position: center; 
         display:block;
     }
     .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
@@ -464,10 +460,9 @@ section {
     }
     .cta{display:flex;flex-direction:column;gap: var(--space-menuitem-gap); min-width: stretch;}
     .cta a{
-      /* long divider under the label: use a pseudo-element that spans the link */
       position: relative;
       border-top: none;
-      padding:14px 0 18px; /* top padding + extra bottom space for the rule */
+      padding:14px 0 18px; 
       display:flex;
       justify-content:flex-start;      
       gap: 12px;
@@ -477,11 +472,9 @@ section {
     .cta a p:first-child{
       text-transform: uppercase;
       letter-spacing: .06em;
-      /* keep label spacing visually similar */
       padding-bottom: 4px;
     }
 
-    /* full-width thin divider under each link */
     .cta a::after{
       content: "";
       position: absolute;
@@ -489,7 +482,7 @@ section {
       right: 0;
       height: 1px;
       background: #3a3a3a;
-      bottom: 6px; /* positions the rule slightly below the label */
+      bottom: 6px; 
       pointer-events: none;
     }
     .cta a:hover{opacity:.9}
@@ -595,7 +588,6 @@ section {
     }
     .muted{color:var(--muted);text-transform: uppercase;font-size: var(--type-subhead-size);}
 
-    /* Decorative footer visual (responsive full-width image) */
     .footer-visual{width:100%;overflow:hidden;background:#111}
     .footer-visual img{display:block;width:100%;height:auto;object-fit:cover;max-height:360px}
     .footer-visual img[alt=""]{filter:brightness(.9)}
@@ -686,7 +678,7 @@ section {
   transform: translateX(0);
 }
 
-/* postupné zpoždění (stagger) pro 1–6 položek, přidej/změň dle potřeby */
+/* postupné zpoždění (stagger) pro 1–6 položek */
 .navmenu .overlay li:nth-child(1) { --navmenu-item-delay: .05s; }
 .navmenu .overlay li:nth-child(2) { --navmenu-item-delay: .10s; }
 .navmenu .overlay li:nth-child(3) { --navmenu-item-delay: .15s; }
@@ -704,7 +696,7 @@ section {
 }
 .navmenu .overlay a:hover { opacity: .85; }
 
-/* Zamez scrollu podkladu při otevření menu */
+/* Zamezení scrollu podkladu při otevření menu */
 body.navmenu-open { overflow:hidden; }
 
 /* ===== PROJECT DETAIL ===== */
@@ -730,8 +722,7 @@ body.navmenu-open { overflow:hidden; }
   padding-right:var(--pad-lr);
   display:flex;
   flex-direction:column;
-  gap:var(--space-h2-sections);
-  max-width:var(--maxw);
+  gap:var(--space-h2-sections);  
   margin-inline:auto;
 }
 .project-detail .project-wrapper{
@@ -827,8 +818,8 @@ body.navmenu-open { overflow:hidden; }
 .project-detail .block--image{
   margin:0;
   background:#f0f0f0;
-  position: relative; /* make container a positioned box for absolute img */
-  aspect-ratio: 4/3;   /* enforce 4:3 ratio */
+  position: relative;
+  aspect-ratio: 4/3;
   width: 100%;
   overflow: hidden;
 }
@@ -837,7 +828,7 @@ body.navmenu-open { overflow:hidden; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill the 4:3 box without stretching */
+  object-fit: cover;
   object-position: center;
   display: block;
 }
@@ -882,6 +873,7 @@ body.navmenu-open { overflow:hidden; }
 }
 
 /* ===== PROJECT DETAIL – DESKTOP ENHANCEMENTS ===== */
+/*
 @media (min-width: 900px){
   .project-detail article.project{
     padding-left:var(--pad-lr);
@@ -898,10 +890,9 @@ body.navmenu-open { overflow:hidden; }
     font-size:var(--type-h1-size);
     line-height:var(--type-h1-line);
   }
-  .project-detail .block--text-image{
-    flex-direction:row;
-    align-items:flex-start;
+  .project-detail .block--text-image{    
     gap:clamp(32px,6vw,80px);
+    align-items: center;
   }
   .project-detail .block--text-image .block--text{
     flex:1;
@@ -911,6 +902,8 @@ body.navmenu-open { overflow:hidden; }
     max-width:50%;
   }
 }
+*/
+
 
 /* ===== UTIL ===== */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
