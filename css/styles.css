@@ -467,10 +467,8 @@ section {
     @media (min-width: 1100px){ .grid{ grid-template-columns:repeat(3,1fr) } }
     .card{
         display: flex;
-        flex-direction: column;
-        overflow:hidden;background:var(--bg);
-        transition:transform .2s ease, box-shadow .2s ease;
-        gap: var(--space-projectpreview-h2);         
+        flex-direction: column;                
+        gap: var(--space-projectpreview-h2);             
     }
     .thumb{
       position:relative;

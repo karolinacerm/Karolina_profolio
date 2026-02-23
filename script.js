@@ -9,8 +9,13 @@
     const link = document.createElement('a');
     link.className = 'card';
     link.href = project.href || (project.id ? `./project.html?id=${project.id}` : '#');
-    link.setAttribute('aria-label', project.ariaLabel || project.title || 'Project');
-
+    link.setAttribute('aria-label', project.ariaLabel || project.title || 'Project'); 
+  
+    // ← přidej AOS atributy ↓
+    link.setAttribute('data-aos', 'fade-up');              // typ animace
+    link.setAttribute('data-aos-duration', '800');         // délka v ms
+    link.setAttribute('data-aos-offset', '150');         // offset scrollu
+  
     const thumb = document.createElement('div');
     thumb.className = 'thumb';
     const thumbSrc = project.card?.thumb || project.card?.image || project.hero?.image || project.hero?.src;
@@ -24,23 +29,23 @@
     } else {
       thumb.textContent = '4:3';
     }
-
+  
     const meta = document.createElement('div');
     meta.className = 'meta';
-
+  
     const title = document.createElement('p');
     title.className = 'title';
     title.textContent = project.title || 'Untitled';
-
+  
     meta.appendChild(title);
-
+  
     if (project.summary) {
       const summary = document.createElement('p');
       summary.className = 'summary';
       summary.textContent = project.summary;
       meta.appendChild(summary);
     }
-
+  
     const tags = document.createElement('div');
     tags.className = 'tags';
     tags.setAttribute('aria-label', 'Tags');
@@ -50,7 +55,7 @@
       span.textContent = tag;
       tags.appendChild(span);
     });
-
+  
     meta.appendChild(tags);
     link.appendChild(thumb);
     link.appendChild(meta);
@@ -118,4 +123,11 @@
   } else {
     loadProjects();
   }
+
+  // — až TEĎ inicializuj AOS —
+  AOS.init({
+    duration: 800,
+    once: false
+  });
 })();
+
