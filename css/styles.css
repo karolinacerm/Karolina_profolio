@@ -86,6 +86,10 @@
         --type-h1-size: 1.5rem;         /* 24px */
         --type-h1-line: 1.75rem;        /* 28px */
         --pad-lr: 64px;                 /* desktop gutter */ 
+
+        --brand-menu-size: 1.5rem;         /* 24px */
+        --brand-menu-line: 1.75rem;        /* 28px */
+        --brand-menu-spacing: 4%;
       }
     }
     body{background:var(--bg);color:var(--ink)}
@@ -116,8 +120,10 @@
       padding: var(--pad-navbar-top) var(--pad-lr) var(--pad-navbar-bottom);
     }
     .brand{
-      font-weight:700;
-      letter-spacing:0.18em;
+      font-weight:bold;
+      letter-spacing:var(--brand-menu-spacing);
+      font-size:var(--brand-menu-size);
+      line-height:var(--brand-menu-line);
       text-transform:uppercase;
       display:flex;
       flex-direction:column;
