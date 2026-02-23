@@ -72,6 +72,35 @@
         }
       ],       
       "id": "unikatni-id"
+    },
+    {
+      "id": "web-pro-skolu",
+      "title": "Web pro Školku",
+      "card": {
+        "thumb": "/images/uploads/img_0857.jpeg",
+        "alt": "WE pro kolu"
+      },
+      "tags": [
+        "design",
+        "project",
+        "UI",
+        "UX"
+      ],
+      "content": [
+        {
+          "type": "text",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan neque quis dui auctor, in ultrices mi elementum. Curabitur ut felis dui. Quisque sed magna neque. Nam eget tortor ex. Pellentesque posuere ex purus. Cras quis urna dictum, scelerisque urna quis, semper magna. Duis non neque et massa consequat semper. Suspendisse libero lacus, vehicula eu metus sit amet, suscipit sollicitudin ante. Sed scelerisque turpis dignissim hendrerit faucibus."
+        },
+        {
+          "type": "image",
+          "src": "/images/uploads/img_2688-1.png",
+          "alt": "alt"
+        },
+        {
+          "type": "text",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan neque quis dui auctor, in ultrices mi elementum. Curabitur ut felis dui. Quisque sed magna neque. Nam eget tortor ex. Pellentesque posuere ex purus. Cras quis urna dictum, scelerisque urna quis, semper magna. Duis non neque et massa consequat semper. Suspendisse libero lacus, vehicula eu metus sit amet, suscipit sollicitudin ante. Sed scelerisque turpis dignissim hendrerit faucibus."
+        }
+      ]
     }
   ]
 }
