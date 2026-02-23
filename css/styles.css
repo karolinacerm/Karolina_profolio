@@ -157,8 +157,9 @@
       .navmenu{display:none}
 .navlinks{display:flex;
           flex:1;
-          justify-content:space-around;
+          justify-content:space-between;
           margin-left:0;
+          padding-left: var(--pad-lr);          
         }                      
 }      
     @media (max-width: 900px){
