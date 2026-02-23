@@ -90,6 +90,11 @@
         --brand-menu-size: 1.5rem;         /* 24px */
         --brand-menu-line: 1.75rem;        /* 28px */
         --brand-menu-spacing: 4%;
+
+        --underline-brand-hero-size: 1rem;
+        --underline-brand-hero-weight: 600;
+        --underline-brand-hero-spacing: 1%;
+        --underline-brand-hero-border-color: #19181740
       }
     }
     body{background:var(--bg);color:var(--ink)}
@@ -268,15 +273,16 @@
 }
 
 .hero .bottom_desktop .kicker {
-  font-size: var(--type-h2-size);
-  letter-spacing: 0.08em;  
+  font-size: var(--underline-brand-hero-size);
+  font-weight: var(--underline-brand-hero-weight);
+  letter-spacing: var(--underline-brand-hero-spacing);  
   max-lines: 1;
 }
 
 .hero .line {
   width: 80%;
   height: 1px;
-  background: var(--ink);
+  background: var(--underline-brand-hero-border-color);
   margin-top: var(--space-h2-subheader);
 }
 
