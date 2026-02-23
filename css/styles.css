@@ -33,8 +33,8 @@
       /* Spacing — Vertical */
       --space-h2-subheader: 4px;        /* 0.25rem */
       --space-h2-sections: 44px;        /* 2.75rem */
-      --space-h2-labels: 8px;           /* 0.50rem */
-      --space-projectpreview-h2: 12px;  /* 0.75rem */
+      --space-h2-labels: 6px;           /* 0.50rem */
+      --space-projectpreview-h2: 18px;  /* 0.75rem */
       --space-menu-text-divider: 12px;  /* 0.75rem */
       --space-menuitem-gap: 28px;       /* 1.75rem */
       --space-workprojects-text-img: 22px; /* 1.375rem */
@@ -43,7 +43,7 @@
       --space-label-label-x: 8px;       /* 0.50rem */
 
       /* Padding */
-      --pad-section-y: 40px;            /* 2.5rem */
+      --pad-section-y: 108px;            /* 2.5rem */
       --pad-lr: 20px;                   /* 1.25rem */
       --pad-menu-x: 28px;               /* 1.75rem */
       --pad-navbar-top: 44px;           /* 2.75rem */
@@ -55,21 +55,26 @@
       /* Typography — Mobile */      
       --type-body-size: 1.125rem;       /* 18px */
       --type-body-line: 1.75rem;        /* 28px */
-      --type-tags-size: 0.75rem;        /* 12px */
-      --type-tags-line: 1rem;           /* 16px */
+      --type-tags-size: 0.875rem;        /* 12px */
+      --type-tags-line: 1.375rem;           /* 16px */
+      --type-tags-weight: 400;
+      --type-tags-spacing: 1.67%;
+      --type-tags-border-color: #19181740;
       --type-menu-size: 1.25rem;        /* 20px */
       --type-menu-line: 1.625rem;       /* 26px */
       --type-h2-size: 0.75rem;          /* 12px */
       --type-h2-line: 1rem;       
       --type-h2-spacing: 1%;
-      --type-h2-weight: 600;      /* 16px */
+      --type-h2-weight: 500;      /* 16px */
       --type-subhead-size: 0.75rem;     /* 12px */
       --type-subhead-line: 1.125rem; 
-      --type-subhead-weight: 400;   /* 18px */
+      --type-subhead-weight: 300;   /* 18px */
       --type-subhead-spacing: 2%;
       --type-subhead-height: 1.5rem;
       --type-h1-size: 1.25rem;          /* 20px */
       --type-h1-line: normal;           /* auto */
+
+      --project-meta-text-gap: 12px
     }
     
     @media (min-width: 768px){
@@ -77,6 +82,8 @@
     }
     @media (min-width: 900px){
       :root{
+        --space-h2-sections: 66px;
+
         --type-body-size: 1.375rem;     /* 22px */
         --type-body-line: 2.125rem;     /* 34px */
         --type-tags-size: 1rem;         /* 16px */
@@ -84,6 +91,7 @@
         --type-menu-size: 1.25rem;     /* 22px */
         --type-menu-line: 1.75rem;      /* 28px */
         --type-menu-spacing: 4%;
+        --type-menu-weight: 400;
         --type-h2-size: 1rem;           /* 16px */
         --type-h2-line: 1.375rem;       /* 22px */
         --type-subhead-size: 1rem;      /* 16px */
@@ -94,20 +102,21 @@
 
         --brand-menu-size: 1.5rem;         /* 24px */
         --brand-menu-line: 1.75rem;        /* 28px */
-        --brand-menu-spacing: 4%;
+        --brand-menu-spacing: 4%;   
+        --brand-menu-weight: 600;
 
         --underline-brand-hero-size: 1rem;
-        --underline-brand-hero-weight: 600;
+        --underline-brand-hero-weight: 500;
         --underline-brand-hero-spacing: 1%;
         --underline-brand-hero-border-color: #19181740;
 
         --about-brand-size: 1rem;
-        --about-brand-weight: 600;
+        --about-brand-weight: 500;
         --about-brand-spacing: 1%;        
 
         --about-description-size: 1.375rem;
         --about-description-spacing: 1%;
-        --about-description-weight: 400;
+        --about-description-weight: 300;
         --about-description-height: 2.125rem;        
       }
     }
@@ -119,6 +128,7 @@
     h2{
       font-size:var(--type-h2-size);
       line-height:var(--type-h2-line);
+      font-weight: var(--type-h2-weight);      
     }
     .wrap{margin-inline:auto;padding-bottom:0}
     .nav{padding: 24px;}
@@ -139,7 +149,7 @@
       padding: var(--pad-navbar-top) var(--pad-lr) var(--pad-navbar-bottom);
     }
     .brand{
-      font-weight:bold;
+      font-weight:var(--brand-menu-weight);
       letter-spacing:var(--brand-menu-spacing);
       font-size:var(--brand-menu-size);
       line-height:var(--brand-menu-line);
@@ -198,6 +208,7 @@
       font-size:var(--type-menu-size);
       line-height:var(--type-menu-line);
       letter-spacing:var(--type-menu-spacing);
+      font-weight: var(--type-menu-weight);
     }
     .navlinks a{
       text-transform:uppercase;                 
@@ -462,16 +473,17 @@ section {
         display:block;
     }
     .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
-    .meta{display:flex;flex-direction:column;gap:.5rem;}
+    .meta{display:flex;flex-direction:column;gap:var(--project-meta-text-gap)}
     .meta .title{margin:0;}
     .tags{display:flex;flex-wrap:wrap;gap:var(--space-label-label-x)}
     .tag{
       font-size:var(--type-tags-size);
       line-height:var(--type-tags-line);
+      letter-spacing: var(--type-tags-spacing);
+      font-weight: var(--type-tags-weight);
       padding:4px 8px;
       border-radius:999px;
-      border:1px solid #19181760;      
-      background:var(--secondary-bg);
+      border:1px solid var(--type-tags-border-color);            
       text-transform: uppercase;
     }
 
@@ -504,7 +516,10 @@ section {
     .cta a p{ margin: 0; }
     .cta a p:first-child{
       text-transform: uppercase;
-      letter-spacing: .06em;
+      letter-spacing: var(--type-menu-spacing);
+      font-size: var(--type-menu-size);
+      font-weight: var(--type-menu-weight);
+      line-height: var(--type-menu-line);
       padding-bottom: 4px;
     }
 
@@ -514,7 +529,7 @@ section {
       left: 0;
       right: 0;
       height: 1px;
-      background: #3a3a3a;
+      background: #F8F8F840;
       bottom: 6px; 
       pointer-events: none;
     }
@@ -607,7 +622,8 @@ section {
 
     .contacts-description {
       display: flex;
-      flex-direction: column;      
+      flex-direction: column;
+      gap: var(--space-h2-labels)
     }
     .contacts-description .description {
       text-transform: uppercase;
