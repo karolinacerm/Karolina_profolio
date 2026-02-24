@@ -308,7 +308,7 @@
 .hero .bottom_desktop {
   display: none;
   position: absolute;
-  bottom: clamp(-2rem, -30vh, -30rem);
+  bottom: clamp(-24px, -30vh, -30rem);
   text-align: center;  
   flex-direction: row;
   justify-content: space-between;
