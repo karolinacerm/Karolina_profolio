@@ -30,6 +30,12 @@
       --radius: 12px;      
       --wrap: min(720px, calc(100vw - 2 * var(--pad-lr)));
 
+      /* OFFCIAL COLORS*/
+      --brand-white: #f8f8f8;
+      --brand-black: #191817;
+      --dividers-color: #F8F8F840;
+      --label-border-color: #19181740;
+
       /* Spacing — Vertical */
       --space-h2-subheader: 4px;        /* 0.25rem */
       --space-h2-sections: 44px;        /* 2.75rem */
@@ -37,14 +43,14 @@
       --space-projectpreview-h2: 18px;  /* 0.75rem */
       --space-menu-text-divider: 12px;  /* 0.75rem */
       --space-menuitem-gap: 28px;       /* 1.75rem */
-      --space-workprojects-text-img: 45px; /* 1.375rem */
+      --space-workprojects-text-img: 22px; /* 1.375rem */
 
       /* Spacing — Horizontal */
       --space-label-label-x: 8px;       /* 0.50rem */
 
       /* Padding */
-      --pad-section-y: 108px;            /* 2.5rem */
-      --pad-lr: 20px;                   /* 1.25rem */
+      --pad-section-y: 36px;                  /* 2.5rem */
+      --pad-lr: 16px;                   /* 1.25rem */
       --pad-menu-x: 28px;               /* 1.75rem */
       --pad-navbar-top: 44px;           /* 2.75rem */
       --pad-navbar-bottom: 22px;        /* 1.375rem */
@@ -54,18 +60,25 @@
 
       /* Typography — Mobile */      
       --type-body-size: 1.125rem;       /* 18px */
-      --type-body-line: 1.75rem;        /* 28px */
-      --type-tags-size: 0.875rem;        /* 12px */
-      --type-tags-line: 1.375rem;           /* 16px */
-      --type-tags-weight: 400;
+      --type-body-line: 1.75rem;   
+           /* 28px */
+      --type-tags-size: 10px;
+      --type-tags-line: 16px;           /* 16px */
+      --type-tags-weight: 500;
       --type-tags-spacing: 1.67%;
+
       --type-tags-border-color: #19181740;
-      --type-menu-size: 1.25rem;        /* 20px */
-      --type-menu-line: 1.625rem;       /* 26px */
+
+      --type-menu-size: 20px;        /* 20px */
+      --type-menu-line: 26px;  
+      --type-menu-spacing: 4%;
+      --type-menu-weight: 500; 
+          
       --type-h2-size: 0.75rem;          /* 12px */
       --type-h2-line: 1rem;       
       --type-h2-spacing: 1%;
-      --type-h2-weight: 600;      /* 16px */
+      --type-h2-weight: 600; 
+           
       --type-subhead-size: 0.75rem;     /* 12px */
       --type-subhead-line: 1.125rem; 
       --type-subhead-weight: 300;   /* 18px */
@@ -74,9 +87,18 @@
       --type-h1-size: 1.25rem;          /* 20px */
       --type-h1-line: normal;           /* auto */
 
-      --project-meta-text-gap: 12px;
+      --project-meta-text-gap: 8px;
 
       --about-description-gap: 22px;
+
+      --brand-menu-size: 1.25rem;         /* 24px */      
+      --brand-menu-spacing: 4%;   
+      --brand-menu-weight: 600;      
+
+      --about-description-size: 1.375rem;
+      --about-description-spacing: 1%;
+      --about-description-weight: 300;
+      --about-description-height: 2.125rem;    
     }
     
     @media (min-width: 768px){
@@ -89,18 +111,23 @@
         --type-body-size: 1.375rem;     /* 22px */
         --type-body-line: 2.125rem;     /* 34px */
         --type-tags-size: 1rem;         /* 16px */
-        --type-tags-line: 1.375rem;     /* 22px */
+        --type-tags-line: 1.375rem; 
+            /* 22px */
         --type-menu-size: 1.25rem;     /* 22px */
         --type-menu-line: 1.75rem;      /* 28px */
         --type-menu-spacing: 4%;
         --type-menu-weight: 400;
+
         --type-h2-size: 1rem;           /* 16px */
-        --type-h2-line: 1.375rem;       /* 22px */
+        --type-h2-line: 1.375rem;  
+             /* 22px */
         --type-subhead-size: 1rem;      /* 16px */
         --type-subhead-line: 1.5rem;    /* 24px */
         --type-h1-size: 1.5rem;         /* 24px */
-        --type-h1-line: 1.75rem;        /* 28px */
-        --pad-lr: 64px;                 /* desktop gutter */ 
+        --type-h1-line: 1.75rem;
+                /* 28px */
+        --pad-lr: 64px;  
+        --pad-section-y: 108px;               /* desktop gutter */ 
 
         --brand-menu-size: 1.5rem;         /* 24px */
         --brand-menu-line: 1.75rem;        /* 28px */
@@ -110,16 +137,16 @@
         --underline-brand-hero-size: 1rem;
         --underline-brand-hero-weight: 500;
         --underline-brand-hero-spacing: 1%;
-        --underline-brand-hero-border-color: #19181740;
-
-        --about-brand-size: 1rem;
-        --about-brand-weight: 500;
-        --about-brand-spacing: 1%;        
+        --underline-brand-hero-border-color: #19181740;            
 
         --about-description-size: 1.375rem;
         --about-description-spacing: 1%;
         --about-description-weight: 300;
-        --about-description-height: 2.125rem;                
+        --about-description-height: 2.125rem;     
+        
+        --space-workprojects-text-img: 45px; /* 1.375rem */
+
+        --project-meta-text-gap: 12px;
       }
     }
     body{background:var(--bg);color:var(--ink)}
@@ -296,7 +323,7 @@
 
 .hero .bottom {
   position: absolute;
-  bottom: clamp(2rem, 5vh, 4rem);
+  bottom: clamp(-2rem, -10vh, 15rem);
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -375,8 +402,7 @@ section {
     /* ===== DARK PANEL (ABOUT) ===== */
     .panel{
       background:var(--panel);
-      color:var(--panel-ink);
-      padding-block: clamp(40px, 10vh, 80px);
+      color:var(--panel-ink);      
     }
 
     .about_wrapper{
@@ -384,7 +410,7 @@ section {
       margin-inline:0;         /* žádný margin na wrapperu */
       display:flex;
       flex-direction:column;
-      gap:clamp(40px, 8vh, 72px);
+      gap: var(--space-h2-sections);
     }
 
     .about{
@@ -434,11 +460,7 @@ section {
       margin-inline:0;
     }
 
-    @media (max-width: 900px){
-      .about_wrapper{
-        padding-inline: var(--pad-lr);
-      }
-
+    @media (max-width: 900px){          
       .about{
         flex-direction:column;
         align-items:flex-start;
@@ -462,11 +484,17 @@ section {
     }
     .section .section-header{display: flex; flex-direction: column; padding-bottom: var(--space-h2-sections);}
     .grid{
-      display:grid;gap: 66px var(--space-workprojects-text-img);
+      display:grid;gap: var(--space-workprojects-text-img);
       grid-template-columns:1fr;
     }
     @media (min-width: 700px){ .grid{ grid-template-columns:repeat(2,1fr) } }
     @media (min-width: 1100px){ .grid{ grid-template-columns:repeat(3,1fr) } }
+
+    @media (min-width: 900px) {
+      .grid {
+        gap: 66px var(--space-workprojects-text-img);
+      }
+    }
     .card{
         display: flex;
         flex-direction: column;                
@@ -511,8 +539,7 @@ section {
     /* ===== CONTACT / FOOTER ===== */
     .contact{
       background:var(--panel);
-      color:var(--panel-ink);
-      padding-block: clamp(40px, 10vh, 80px);
+      color:var(--panel-ink);      
     }
     .contact .wrap{
       display: flex;
@@ -640,10 +667,9 @@ section {
       color: white;
     }
     
-    .footer-copyright{
-      border-top:1px solid #F8F8F840;      
+    .footer-copyright{            
       margin-inline:auto;
-    }
+    }    
     
     .footer-copyright .muted{
       color:#cccccc;
@@ -652,8 +678,7 @@ section {
       font-weight: var(--type-subhead-weight);
       letter-spacing: var(--type-subhead-spacing);
       line-height: var(--type-subhead-height);
-      margin:0;
-      padding-top: 18px;
+      margin:0;      
     }
 
     .contacts-description {
@@ -697,9 +722,16 @@ section {
       }
       .footer-copyright{
         display:block;
+        border-top:1px solid #F8F8F840;      
       }
       .footer-brand .footer-name{                
-      }      
+      }            
+    }
+
+    @media (max-width: 900px){
+      .footer {
+        padding-bottom: 88px;
+      }
     }
 
     /* ==== FULLSCREEN MOBILE MENU – ANIMACE ==== */
@@ -799,7 +831,7 @@ body.navmenu-open { overflow:hidden; }
 }
 .project-detail .back-link:hover{color:var(--ink);}
 .project-detail main{
-  padding:var(--pad-section-y) 0 calc(var(--pad-section-y) * 2);
+  padding:var(--pad-section-y) 0;
 }
 .project-detail article.project{
   padding-left:var(--pad-lr);
