@@ -485,6 +485,7 @@ section {
     .grid{
       display:grid;gap: var(--space-workprojects-text-img);
       grid-template-columns:1fr;
+      overflow: visible;
     }
     @media (min-width: 700px){ .grid{ grid-template-columns:repeat(2,1fr) } }
     @media (min-width: 1100px){ .grid{ grid-template-columns:repeat(3,1fr) } }
@@ -494,11 +495,31 @@ section {
         gap: 66px var(--space-workprojects-text-img);
       }
     }
-    .card{
-        display: flex;
-        flex-direction: column;                
-        gap: var(--space-projectpreview-h2);             
-    }
+
+/* AOS element */
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* hover element */
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-projectpreview-h2);
+
+  transform: translateY(0);
+  transition: transform 160ms ease-out, box-shadow 160ms ease-out;  
+
+  will-change: transform;
+}
+
+.card:hover .card-inner {
+  transform: translateY(-6px);  
+}
+
+
     .thumb{
       position:relative;
       aspect-ratio: 4/3;

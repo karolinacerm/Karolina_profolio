@@ -57,8 +57,13 @@
     });
   
     meta.appendChild(tags);
-    link.appendChild(thumb);
-    link.appendChild(meta);
+    const inner = document.createElement('div');
+    inner.className = 'card-inner';
+
+    inner.appendChild(thumb);
+    inner.appendChild(meta);
+
+link.appendChild(inner);
     return link;
   }
 
