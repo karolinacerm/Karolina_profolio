@@ -831,6 +831,7 @@ body.navmenu-open { overflow:hidden; }
 }
 .project-detail .back-link:hover{color:var(--ink);}
 .project-detail main{
+  background: var(--brand-white);
   padding:var(--pad-section-y) 0;
 }
 .project-detail article.project{
