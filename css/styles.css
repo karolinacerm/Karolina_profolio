@@ -591,16 +591,38 @@ section {
       padding-bottom: 4px;
     }
 
-    .cta a::after{
+    .cta a::before {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
+      bottom: 6px;
+    
       height: 1px;
-      background: var(--dividers-color);
-      bottom: 6px; 
+      background: currentColor;
+    
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 500ms ease-out;
+    
       pointer-events: none;
     }
+
+    .cta a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 6px;
+      height: 1px;
+      background: var(--dividers-color);
+      pointer-events: none;
+    }
+
+    .cta a:hover::before {
+      transform: scaleX(1);
+    }
+
     .cta a:hover{opacity:.9}
     .footer{
       border-top:1px solid #1e1e1e;
@@ -699,7 +721,7 @@ section {
       letter-spacing: var(--type-subhead-spacing);
       line-height: var(--type-subhead-height);
       margin:0;      
-      padding-top: var(--space-h2-labels);
+      padding-top: var(--space-menu-text-divider);
     }
 
     .contacts-description {
