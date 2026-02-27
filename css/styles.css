@@ -1047,38 +1047,16 @@ body.navmenu-open { overflow:hidden; }
   color:var(--muted);
 }
 
-/* ===== PROJECT DETAIL – DESKTOP ENHANCEMENTS ===== */
-/*
-@media (min-width: 900px){
-  .project-detail article.project{
-    padding-left:var(--pad-lr);
-    padding-right:var(--pad-lr);
-  }
-  .project-detail .project-header{
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:baseline;
-    gap:var(--space-workprojects-text-img);
-  }
-  .project-detail .project-header h2{
-    font-size:var(--type-h1-size);
-    line-height:var(--type-h1-line);
-  }
-  .project-detail .block--text-image{    
-    gap:clamp(32px,6vw,80px);
-    align-items: center;
-  }
-  .project-detail .block--text-image .block--text{
-    flex:1;
-  }
-  .project-detail .block--text-image .block--image{
-    flex:1;
-    max-width:50%;
-  }
-}
-*/
-
-
 /* ===== UTIL ===== */
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* AOS HW acceleration */
+[data-aos] {
+  pointer-events: none; /* Zabrání zbytečným eventům během animace */
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}

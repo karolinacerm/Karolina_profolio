@@ -105,6 +105,10 @@
   function createFigure(src, alt) {
     const figure = document.createElement('figure');
     figure.className = 'block block--image';
+    
+    // Přidání animace
+    figure.setAttribute('data-aos', 'fade-up');
+    
     const img = document.createElement('img');
     img.loading = 'lazy';
     img.decoding = 'async';
@@ -163,6 +167,10 @@
       if (!hasText) return;
       const textBlock = document.createElement('div');
       textBlock.className = 'block block--text';
+
+      // Přidání animace pro text
+      textBlock.setAttribute('data-aos', 'fade-up');
+
       if (renderMarkdown(textBlock, textValue)) {
         wrapper.appendChild(textBlock);
       }
@@ -227,6 +235,17 @@
 
     article.hidden = false;
     emptyState.hidden = true;
+
+    // INICIALIZACE / REFRESH AOS    
+    requestAnimationFrame(() => {
+      if (window.AOS) {
+        window.AOS.init({
+          duration: 400,
+          easing: 'ease-out-quad',
+          disableMutationObserver: false
+        });
+      }
+    });
   }
 
   async function init() {
