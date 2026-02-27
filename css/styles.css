@@ -53,7 +53,9 @@
       --pad-lr: 16px;                   /* 1.25rem */
       --pad-menu-x: 28px;               /* 1.75rem */
       --pad-navbar-top: 44px;           /* 2.75rem */
-      --pad-navbar-bottom: 22px;        /* 1.375rem */
+      --pad-navbar-bottom: 22px;        /* 1.375rem */      
+
+      --pad-article: var(--pad-lr);
 
       /* Label */
       --radius-label: 75px;             /* 4.6875rem */
@@ -146,6 +148,8 @@
         --space-workprojects-text-img: 45px; /* 1.375rem */
 
         --project-meta-text-gap: 12px;
+
+        --pad-article: 170px
       }
     }
     body{background:var(--brand-black);color:var(--brand-black)}
@@ -158,6 +162,11 @@
       line-height:var(--type-h2-line);
       font-weight: var(--type-h2-weight);      
     }
+
+    strong {
+      font-weight: 500;
+    }
+
     .wrap{margin-inline:auto;padding-bottom:0}
     .nav{padding: 24px;}
 
@@ -878,8 +887,8 @@ body.navmenu-open { overflow:hidden; }
   padding:var(--pad-section-y) 0;
 }
 .project-detail article.project{
-  padding-left:var(--pad-lr);
-  padding-right:var(--pad-lr);
+  padding-left:var(--pad-article);
+  padding-right:var(--pad-article);
   display:flex;
   flex-direction:column;
   gap:var(--space-h2-sections);  
@@ -936,8 +945,7 @@ body.navmenu-open { overflow:hidden; }
 }
 .project-detail .project-content{
   display:flex;
-  flex-direction:column;
-  gap:var(--space-workprojects-text-img);
+  flex-direction:column;  
 }
 .project-detail .block{
   display:flex;
@@ -946,7 +954,7 @@ body.navmenu-open { overflow:hidden; }
 .project-detail .block--text{
   display:flex;
   flex-direction:column;
-  gap:var(--space-workprojects-text-img);
+  padding: var(--space-workprojects-text-img) 0;
 }
 .project-detail .block--text p{
   font-size: var(--about-description-size);
@@ -985,20 +993,19 @@ body.navmenu-open { overflow:hidden; }
   font-family:"JetBrains Mono","Fira Code",monospace;
   font-size:.85rem;
 }
-.project-detail .block--image{
-  margin:0;
-  background:var(--brand-white);
+.project-detail .block--image {
+  margin: 0;
+  background: var(--brand-white);
   position: relative;
-  aspect-ratio: 4/3;
   width: 100%;
-  overflow: hidden;
+  /* Odstraňte aspect-ratio a overflow, pokud není potřeba ořez */
 }
-.project-detail .block--image img{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  object-position: center;
+
+.project-detail .block--image img {
   display: block;
+  width: 100%;      /* Obrázek vyplní šířku kontejneru */
+  height: auto;    /* Výška se dopočítá podle originálního poměru stran */
+  /* Odstraňte position: absolute a inset: 0 */
 }
 .project-detail .block--text-image{
   display:flex;
