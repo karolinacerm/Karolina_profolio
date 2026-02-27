@@ -1,135 +1,56 @@
 {
   "projects": [
-    {
-      "card": {
-        "thumb": "/images/uploads/beautiful-shot-snowy-mountain-sunset.jpg",
-        "alt": "hora"
+      {
+        "id": "1",
+        "title": "Digital & Print Identity for a Czech Cyclist",
+        "card": {
+        "thumb": "images/uploads/cyclist-identity/antonie_mockup_magazine1.png",
+        "alt": "Popis náhledu projektu"
       },
-      "title": "Testovací projekt",
       "tags": [
-        "projekt",
-        "branding",
-        "design",
-        "web"
+        "web design",
+        "visual identity",
+        "print"
       ],
       "content": [
         {
-          "type": "text",
-          "body": "**Toto je samostny text** - Praesent vitae est sapien. Morbi gravida ac justo ac ultricies. Praesent elementum sollicitudin nunc eu fermentum. Sed nec ultrices justo. Curabitur condimentum nulla mi. Morbi non congue neque. Sed tristique ligula id dui ultricies, nec ornare sem iaculis. Etiam a varius erat. Nunc erat felis, imperdiet at est eget, blandit mattis ipsum. Duis eget urna ac quam feugiat egestas. Maecenas vehicula mi vel ex cursus laoreet. Pellentesque in arcu ac purus venenatis porttitor. Sed congue metus quis risus scelerisque feugiat."
+        "type": "text",
+        "body": "**Antonie is a young and talented cyclist from the Czech Republic, and this project was created to elevate her digital and personal brand.** It includes both a modern website and a printed portfolio brochure that together highlight her story, achievements, and personality."
         },
         {
-          "type": "image",
-          "src": "/images/uploads/beautiful-shot-snowy-mountain-sunset.jpg",
-          "alt": "Hora sekce"
+        "type": "image",
+        "src": "images/uploads/cyclist-identity/antonie_mockup_desktop.png",
+        "alt": "desktop mockup"
         },
         {
-          "type": "textimage",
-          "body": "Text + obrazek - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus elit fermentum nibh tincidunt, quis placerat arcu mattis. Maecenas vel auctor elit. Proin interdum feugiat rutrum. Nunc at pellentesque eros, sed consequat augue. Ut bibendum scelerisque ante, eget hendrerit erat semper sed. Morbi ultricies congue elit, quis feugiat libero gravida in. Sed orci magna, elementum ut tellus et, pellentesque aliquam sem. Donec et est dapibus, euismod orci vel, vulputate sapien. Morbi sem leo, porttitor ut pharetra quis, mollis varius ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed a ante non sapien porttitor ullamcorper. Quisque sit amet ullamcorper velit, a commodo tellus.",
-          "src": "/images/uploads/img_0541.jpeg",
-          "alt": "hora - obsah 1"
+        "type": "text",
+        "body": "The website focuses on key performance statistics, titles, and a dynamic blog section for recent updates, while the printed portfolio offers a more personal look — featuring biometric data, career milestones, and design elements inspired by the Czech tricolor."
         },
         {
-          "type": "textimage",
-          "body": "***Text + Obrazek 2*** - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus elit fermentum nibh tincidunt, quis placerat arcu mattis. Maecenas vel auctor elit. Proin interdum feugiat rutrum. Nunc at pellentesque eros, sed consequat augue. Ut bibendum scelerisque ante, eget hendrerit erat semper sed. Morbi ultricies congue elit, quis feugiat libero gravida in. Sed orci magna, elementum ut tellus et, pellentesque aliquam sem. Donec et est dapibus, euismod orci vel, vulputate sapien. Morbi sem leo, porttitor ut pharetra quis, mollis varius ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed a ante non sapien porttitor ullamcorper. Quisque sit amet ullamcorper velit, a commodo tellus.\n\n**Obrazej**\n\nadasd\n\n1. asdasd\n2. asdsad",
-          "src": "/images/uploads/beautiful-shot-snowy-mountain-sunset.jpg",
-          "alt": "Hora 2"
-        }
-      ],
-      "links": [
-        {
-          "label": "1 odkaz - Přemysls Space - jeho vesmír",
-          "url": "https://premysls.space/"
-        }
-      ],
-      "id": "a1"
-    },
-    {
-      "card": {
-        "thumb": "/images/uploads/img_0541.jpeg",
-        "alt": "náhled projektu"
-      },
-      "title": "Název projektu",
-      "tags": [
-        "projekt",
-        "design",
-        "web"
-      ],
-      "content": [
-        {
-          "type": "text",
-          "body": "**Krátký popis projektu** – stručné představení obsahu, účelu nebo kontextu projektu."
+        "type": "image",
+        "src": "images/uploads/cyclist-identity/Antonie_homescreen_mockup.png",
+        "alt": "lannding page key features"
         },
         {
-          "type": "image",
-          "src": "/images/uploads/img_0541.jpeg",
-          "alt": "Popisek obrázku"
+        "type": "image",
+        "src": "images/uploads/cyclist-identity/Mobile_Antonie_mock2.png",
+        "alt": "landing page mobile"
         },
         {
-          "type": "textimage",
-          "body": "Delší text, který doplňuje obrázek. Může obsahovat **formátování**, seznamy, nebo odkazy.\n\n1. První bod\n2. Druhý bod\n\n[Odkaz na něco zajímavého](https://example.com)",
-          "src": "/images/uploads/img_0541.jpeg",
-          "alt": "Popisek obrázku sekce"
-        }
-      ],
-      "id": "unikatni-id"
-    },
-    {
-      "id": "web-pro-skolu",
-      "title": "Web pro Školku",
-      "card": {
-        "thumb": "/images/uploads/img_0857.jpeg",
-        "alt": "WE pro kolu"
-      },
-      "tags": [
-        "design",
-        "project",
-        "UI",
-        "UX"
-      ],
-      "content": [
-        {
-          "type": "text",
-          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan neque quis dui auctor, in ultrices mi elementum. Curabitur ut felis dui. Quisque sed magna neque. Nam eget tortor ex. Pellentesque posuere ex purus. Cras quis urna dictum, scelerisque urna quis, semper magna. Duis non neque et massa consequat semper. Suspendisse libero lacus, vehicula eu metus sit amet, suscipit sollicitudin ante. Sed scelerisque turpis dignissim hendrerit faucibus."
+        "type": "text",
+        "body": "The unified visual identity ensures consistency across digital and print, strengthening her professional presentation to teams, sponsors, and fans."
         },
         {
-          "type": "image",
-          "src": "/images/uploads/img_2688-1.png",
-          "alt": "alt"
+        "type": "image",
+        "src": "images/uploads/cyclist-identity/antonie_mockup_magazine1.png",
+        "alt": "landing page mobile"
         },
         {
-          "type": "text",
-          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan neque quis dui auctor, in ultrices mi elementum. Curabitur ut felis dui. Quisque sed magna neque. Nam eget tortor ex. Pellentesque posuere ex purus. Cras quis urna dictum, scelerisque urna quis, semper magna. Duis non neque et massa consequat semper. Suspendisse libero lacus, vehicula eu metus sit amet, suscipit sollicitudin ante. Sed scelerisque turpis dignissim hendrerit faucibus."
+        "type": "image",
+        "src": "images/uploads/cyclist-identity/Antonie_typography.png",
+        "alt": "landing page mobile"
         }
       ]
-    },
-    {
-    "id": "web-pro-skoluASDA",
-    "title": "Web pro Školku",
-    "card": {
-      "thumb": "/images/uploads/img_0857.jpeg",
-      "alt": "WE pro kolu"
-    },
-    "tags": [
-      "design",
-      "project",
-      "UI",
-      "UX"
-    ],
-    "content": [
-      {
-        "type": "text",
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan neque quis dui auctor, in ultrices mi elementum. Curabitur ut felis dui. Quisque sed magna neque. Nam eget tortor ex. Pellentesque posuere ex purus. Cras quis urna dictum, scelerisque urna quis, semper magna. Duis non neque et massa consequat semper. Suspendisse libero lacus, vehicula eu metus sit amet, suscipit sollicitudin ante. Sed scelerisque turpis dignissim hendrerit faucibus."
-      },
-      {
-        "type": "image",
-        "src": "/images/uploads/img_2688-1.png",
-        "alt": "alt"
-      },
-      {
-        "type": "text",
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan neque quis dui auctor, in ultrices mi elementum. Curabitur ut felis dui. Quisque sed magna neque. Nam eget tortor ex. Pellentesque posuere ex purus. Cras quis urna dictum, scelerisque urna quis, semper magna. Duis non neque et massa consequat semper. Suspendisse libero lacus, vehicula eu metus sit amet, suscipit sollicitudin ante. Sed scelerisque turpis dignissim hendrerit faucibus."
-      }
-    ]
-  }
+    }
   ]
 }
