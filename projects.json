@@ -1,7 +1,80 @@
 {
   "projects": [
       {
-        "id": "1",
+        "id": "3",
+        "title": "Branding for a street food restaurant",
+        "card": {
+        "thumb": "images/uploads/street-food-restaurant/pecdrive_menu_mockup 1.png",
+        "alt": "image"
+      },
+      "tags": [
+        "brand identity",
+        "logo",
+        "print",
+        "socials"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": "**PecDrive is a street food restaurant with a built-in stone pizza oven right inside the truck — one of the things that makes it truly unique.** <br>The goal of this project was to create a **visual identity** that reflects the hipster-like energy with which PecDrive crafts and serves its menu. **The logo** was meant to capture the main attributes of this street food concept **— the car, the pizza, and the oven.**"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/pecdrive_billboard_mock1 1.png",
+        "alt": "image"
+        },
+        {
+        "type": "text",
+        "body": "At first, combining **these elements** into a cohesive logo was quite a challenge. But after **experimenting with different concepts** and a few rounds of brainstorming, this idea came to life — complemented by **playful illustrations** and **a bold, funky typeface** that resonates with the spirited character of PecDrive<br>The whole identity is tied together with **a contrasting color palette** led by vibrant orange, symbolizing energy and appetite, inviting customers to enjoy those tasteful bites that PecDrive delivers from its truck."
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/Frame 234.png",
+        "alt": "image"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/pecdrive_menu_mockup 1.png",
+        "alt": "image"
+        },
+        {
+        "type": "text",
+        "body": "After finalizing the brand identity, I designed **several print materials** including **menus, billboards, and digital assets for social media presentation.**<br>It was a real **pleasure** and **a valuable experience** to explore design within the gastronomic field — and I’m really happy with the results that came out of it. **Check out some insights into this project below!**"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/FOOD_WRAPPER 1.png",
+        "alt": "image"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/pecdrive_menu_mockup_2 1.png",
+        "alt": "image"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/STICKER_LOGO 1.png",
+        "alt": "image"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/pecdrive_illustrations_showcase 1.png",
+        "alt": "image"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/2-Pizza Box 1.png",
+        "alt": "image"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/Frame 235.png",
+        "alt": "image"
+        }
+      ]
+    },
+      {
+        "id": "2",
         "title": "Digital & Print Identity for a Czech Cyclist",
         "card": {
         "thumb": "images/uploads/cyclist-identity/antonie_mockup_magazine1.png",
@@ -15,7 +88,7 @@
       "content": [
         {
         "type": "text",
-        "body": "**Antonie is a young and talented cyclist from the Czech Republic, and this project was created to elevate her digital and personal brand.** It includes both a modern website and a printed portfolio brochure that together highlight her story, achievements, and personality."
+        "body": "**Antonie is a young and talented cyclist from the Czech Republic, and this project was created to elevate her digital and personal brand.**<br>It includes both a modern **website** and a **printed portfolio** brochure that together highlight her story, achievements, and personality."
         },
         {
         "type": "image",
@@ -24,7 +97,7 @@
         },
         {
         "type": "text",
-        "body": "The website focuses on key performance statistics, titles, and a dynamic blog section for recent updates, while the printed portfolio offers a more personal look — featuring biometric data, career milestones, and design elements inspired by the Czech tricolor."
+        "body": "The website focuses on key **performance statistics, titles,** and a **dynamic blog section** for recent updates, while the **printed portfolio offers a more personal look** — featuring **biometric data, career milestones,** and **design elements inspired by the Czech tricolor.**"
         },
         {
         "type": "image",
@@ -38,7 +111,7 @@
         },
         {
         "type": "text",
-        "body": "The unified visual identity ensures consistency across digital and print, strengthening her professional presentation to teams, sponsors, and fans."
+        "body": "The unified visual identity **ensures consistency** across digital and print, **strengthening her professional presentation** to teams, sponsors, and fans."
         },
         {
         "type": "image",
@@ -49,6 +122,50 @@
         "type": "image",
         "src": "images/uploads/cyclist-identity/Antonie_typography.png",
         "alt": "landing page mobile"
+        }
+      ]
+    },
+    {
+        "id": "1",
+        "title": "Film Festival Motion Teaser",
+        "card": {
+        "thumbVideo": "images/uploads/film-festival-animation/filmfestival-animation.MP4",
+        "alt": "Film festival animation preview"
+      },
+      "tags": [
+        "animation"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": " **2D promotional animation created for a film festival.** <br>Inspired by the festival’s visual identity, the animation translates static design elements into motion — resulting in a short digital teaser concluding with the event date."
+        },
+        { "type": "video", "src": "videos/festival-full.mp4", "alt": "Film festival animation preview", "controls": true },
+        {
+        "type": "text",
+        "body": "*Note: This is an independent (unofficial) concept project created independently as a personal initiative.*"
+        }
+      ]
+    },
+    {
+        "id": "0",
+        "title": "Posters Collection",
+        "card": {
+        "thumb": "images/uploads/posters-collection/portfolio_posters_preview.jpg",
+        "alt": "Poster Design"
+      },
+      "tags": [
+        "graphic design"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": "Take a browse through my curated collection of experimental posters exploring typography, composition, and visual rhythm.<br>An ongoing playground for ideas, intuition, and graphic experimentation."
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/posters-collection/corverde_poster.jpg",
+        "alt": "desktop mockup"
         }
       ]
     }
