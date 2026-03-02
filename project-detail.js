@@ -118,6 +118,41 @@
     return figure;
   }
 
+  function createVideo(src, alt, poster) {
+    const figure = document.createElement('figure');
+    figure.className = 'block block--image';
+    figure.setAttribute('data-aos', 'fade-up');
+
+    const video = document.createElement('video');
+    video.src = src;
+    
+    video.controls = false;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    
+    video.setAttribute('disablePictureInPicture', '');
+    video.setAttribute('disableremoteplayback', '');
+
+    if (poster) {
+      video.poster = poster;
+    }
+    if (alt) {
+      video.setAttribute('aria-label', alt);
+      video.title = alt;
+    }
+    
+    video.style.pointerEvents = 'none';
+
+    figure.appendChild(video);
+    return figure;
+  }
+
+  function isVideoSource(src) {
+    return /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(src || '');
+  }
+
   function renderContent(blocks) {
     const wrapper = getField('content');
     if (!wrapper) return;
@@ -140,15 +175,39 @@
         '';
       const hasText = normalizeMarkdown(textValue).trim().length > 0;
       const imageSrc = block.src || block.image;
+      const videoSrc = block.video || (isVideoSource(imageSrc) ? imageSrc : '');
       const alt = block.alt || '';
+      const poster = block.videoImage || block.poster || '';
 
-      if ((type === 'image' || (!hasText && imageSrc)) && imageSrc) {
+      if ((type === 'video' || (!hasText && videoSrc)) && videoSrc) {
+        const video = createVideo(videoSrc, alt, poster);
+        wrapper.appendChild(video);
+        return;
+      }
+
+      if ((type === 'image' || (!hasText && imageSrc && !isVideoSource(imageSrc))) && imageSrc && !isVideoSource(imageSrc)) {
         const figure = createFigure(imageSrc, alt);
         wrapper.appendChild(figure);
         return;
       }
 
-      if ((type === 'textimage' || (hasText && imageSrc)) && imageSrc) {
+      if ((type === 'videoimage') && videoSrc) {
+        const combo = document.createElement('div');
+        combo.className = 'block block--text-image';
+        if (hasText) {
+          const textBlock = document.createElement('div');
+          textBlock.className = 'block block--text';
+          if (renderMarkdown(textBlock, textValue)) {
+            combo.appendChild(textBlock);
+          }
+        }
+        const video = createVideo(videoSrc, alt, poster);
+        combo.appendChild(video);
+        wrapper.appendChild(combo);
+        return;
+      }
+
+      if ((type === 'textimage' || type === 'textimgae' || (hasText && imageSrc && !isVideoSource(imageSrc))) && imageSrc && !isVideoSource(imageSrc)) {
         const combo = document.createElement('div');
         combo.className = 'block block--text-image';
         if (hasText) {

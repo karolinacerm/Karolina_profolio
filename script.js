@@ -10,8 +10,7 @@
     link.className = 'card';
     link.href = project.href || (project.id ? `./project.html?id=${project.id}` : '#');
     link.setAttribute('aria-label', project.ariaLabel || project.title || 'Project'); 
-  
-    // ← přidej AOS atributy ↓
+    
     link.setAttribute('data-aos', 'fade-up');              // typ animace
     link.setAttribute('data-aos-duration', '800');         // délka v ms
     link.setAttribute('data-aos-offset', '150');         // offset scrollu
@@ -20,12 +19,24 @@
     thumb.className = 'thumb';
     const thumbSrc = project.card?.thumb || project.card?.image || project.hero?.image || project.hero?.src;
     if (thumbSrc) {
-      const img = document.createElement('img');
-      img.loading = 'lazy';
-      img.decoding = 'async';
-      img.src = thumbSrc;
-      img.alt = project.card?.alt || project.hero?.alt || '';
-      thumb.appendChild(img);
+      const isVideoThumb = /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(thumbSrc);
+      if (isVideoThumb) {
+        const video = document.createElement('video');
+        video.src = thumbSrc;
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.playsInline = true;
+        video.setAttribute('aria-label', project.card?.alt || project.hero?.alt || '');
+        thumb.appendChild(video);
+      } else {
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.src = thumbSrc;
+        img.alt = project.card?.alt || project.hero?.alt || '';
+        thumb.appendChild(img);
+      }
     } else {
       thumb.textContent = '4:3';
     }
@@ -135,4 +146,3 @@ link.appendChild(inner);
     once: false
   });
 })();
-
