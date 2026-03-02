@@ -18,9 +18,14 @@
         "type": "text",
         "body": "**PecDrive is a street food restaurant with a built-in stone pizza oven right inside the truck — one of the things that makes it truly unique.** <br>The goal of this project was to create a **visual identity** that reflects the hipster-like energy with which PecDrive crafts and serves its menu. **The logo** was meant to capture the main attributes of this street food concept **— the car, the pizza, and the oven.**"
         },
+         {
+        "type": "image",
+        "src": "images/uploads/street-food-restaurant/Frame 234.png",
+        "alt": "image"
+        },
         {
         "type": "image",
-        "src": "images/uploads/street-food-restaurant/pecdrive_billboard_mock1 1.png",
+        "src": "images/uploads/street-food-restaurant/pecdrive_menu_mockup 1.png",
         "alt": "image"
         },
         {
@@ -29,12 +34,7 @@
         },
         {
         "type": "image",
-        "src": "images/uploads/street-food-restaurant/Frame 234.png",
-        "alt": "image"
-        },
-        {
-        "type": "image",
-        "src": "images/uploads/street-food-restaurant/pecdrive_menu_mockup 1.png",
+        "src": "images/uploads/street-food-restaurant/pecdrive_billboard_mock1 1.png",
         "alt": "image"
         },
         {
@@ -143,7 +143,7 @@
         { "type": "video", "src": "images/uploads/film-festival-animation/filmfestival-animation.mp4", "alt": "Film festival animation preview", "controls": true },
         {
         "type": "text",
-        "body": "*Note: This is an independent (unofficial) concept project created independently as a personal initiative.*"
+        "body": "*Note: This is an unofficial concept project created as a personal initiative.*"
         }
       ]
     },
@@ -164,7 +164,22 @@
         },
         {
         "type": "image",
+        "src": "images/uploads/posters-collection/laoliva_poster_mock.jpg",
+        "alt": "desktop mockup"
+        },
+        {
+        "type": "image",
         "src": "images/uploads/posters-collection/corverde_poster.jpg",
+        "alt": "desktop mockup"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/posters-collection/mtfuji_poster_mockup.jpg",
+        "alt": "desktop mockup"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/posters-collection/vh_poster_mock.jpg",
         "alt": "desktop mockup"
         }
       ]
