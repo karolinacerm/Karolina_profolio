@@ -542,7 +542,8 @@ section {
       letter-spacing:.08em;
     }
 
-    .thumb img {
+    .thumb img,
+    .thumb video {
         position: absolute;
         inset: 0;
         width: 100%;
@@ -1001,7 +1002,8 @@ body.navmenu-open { overflow:hidden; }
   /* Odstraňte aspect-ratio a overflow, pokud není potřeba ořez */
 }
 
-.project-detail .block--image img {
+.project-detail .block--image img,
+.project-detail .block--image video {
   display: block;
   width: 100%;      /* Obrázek vyplní šířku kontejneru */
   height: auto;    /* Výška se dopočítá podle originálního poměru stran */
