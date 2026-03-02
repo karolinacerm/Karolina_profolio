@@ -331,7 +331,7 @@
 
 .hero .bottom {
   position: absolute;
-  bottom: clamp(-2rem, -10vh, 15rem);
+  bottom: clamp(3rem, -10vh, 15rem);
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
