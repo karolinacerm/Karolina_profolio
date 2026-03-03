@@ -5,6 +5,44 @@
     return;
   }
 
+  function initAOS() {
+    if (!window.AOS) return;
+    window.AOS.init({
+      duration: 800,
+      once: true
+    });
+  }
+
+  function setupDeferredVideo(video) {
+    video.preload = 'none';
+    video.autoplay = false;
+
+    const startVideo = () => {
+      if (video.dataset.started === 'true') return;
+      video.dataset.started = 'true';
+      video.preload = 'metadata';
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      startVideo();
+      return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        startVideo();
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '200px 0px' });
+
+    observer.observe(video);
+  }
+
   function createCard(project) {
     const link = document.createElement('a');
     link.className = 'card';
@@ -23,16 +61,18 @@
       if (isVideoThumb) {
         const video = document.createElement('video');
         video.src = thumbSrc;
-        video.autoplay = true;
         video.loop = true;
         video.muted = true;
         video.playsInline = true;
+        video.setAttribute('preload', 'none');
         video.setAttribute('aria-label', project.card?.alt || project.hero?.alt || '');
+        setupDeferredVideo(video);
         thumb.appendChild(video);
       } else {
         const img = document.createElement('img');
         img.loading = 'lazy';
         img.decoding = 'async';
+        img.fetchPriority = 'low';
         img.src = thumbSrc;
         img.alt = project.card?.alt || project.hero?.alt || '';
         thumb.appendChild(img);
@@ -95,7 +135,7 @@ link.appendChild(inner);
   }
 
   async function fetchProjects(src) {
-    const res = await fetch(src, { cache: 'no-store' });
+    const res = await fetch(src, { cache: 'default' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = await res.text();
     const parsed = window.jsyaml ? window.jsyaml.load(text) : JSON.parse(text);
@@ -140,9 +180,5 @@ link.appendChild(inner);
     loadProjects();
   }
 
-  // — až TEĎ inicializuj AOS —
-  AOS.init({
-    duration: 800,
-    once: false
-  });
+  initAOS();
 })();
