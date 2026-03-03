@@ -140,7 +140,7 @@
         "type": "text",
         "body": " **2D promotional animation created for a film festival.** <br>Inspired by the festival’s visual identity, the animation translates static design elements into motion — resulting in a short digital teaser concluding with the event date."
         },
-        { "type": "video", "src": "images/uploads/film-festival-animation/filmfestival-animation.mp4", "alt": "Film festival animation preview", "controls": true },
+        { "type": "video", "src": "images/uploads/film-festival-animation/filmfestival-animation.MP4", "alt": "Film festival animation preview", "controls": true },
         {
         "type": "text",
         "body": "*Note: This is an unofficial concept project created as a personal initiative.*"
