@@ -1,10 +1,90 @@
 {
   "projects": [
       {
+        "id": "4",
+        "title": "DataBox System Redesign",
+        "card": {
+        "thumb": "images/uploads/DataBoxSystem/DBox_Thumbnail.png",
+        "alt": "image"
+      },
+      "tags": [
+        "UX / UI",
+        "product design",
+        "app redesign"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": "Datovká schránka is a **government messaging system** used for **sending official documents in file format** (no plain text messages). The goal of this redesign was to **improve clarity, usability, and information hierarchy** — while keeping the legal nature of the system intact."
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/DBox_Thumbnail.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "text",
+        "body": "**The current Data Box system suffers from several usability issues:**<br>overwhelming information density, poor visual hierarchy, a non-intuitive message composition flow, and attachments that are often difficult to access.<br><br>**The redesign therefore focuses on:**<br>- Making the interface feel familiar (email-like mental model)<br>- Reducing visual noise and unnecessary UI elements<br>- Making attachments immediately accessible"
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/databox_mockup.jpg", 
+        "alt": "image" 
+        },
+        {
+        "type": "text",
+        "body": "# **Key UX Improvements**"
+        },
+        {
+        "type": "text",
+        "body": "**Familiar Mental Model (Email Inspiration)**<br>Since Datovka functions similarly to email (inbox, sent messages, attachments), the redesign builds on this familiar pattern.<br>**- Clear Inbox / Sent toggle<br>- Pull-to-refresh instead of a sync button<br>- Floating action button for composing messages<br>- Structured message list similar to mail apps<br><br>This significantly reduces the learning curve for users.**"
+        },
+        {
+        "type": "text",
+        "body": "**Another focus area was the message composition and detail flow.**<br>Because Datovka only allows file-based messages, users either upload an attachment or generate one from text. The redesign therefore prioritizes clear attachment handling and a simplified composition flow.<br><br>**Key improvements include:**<br>- Easy attachment upload<br>- Clear “Write Message” option that automatically generates a PDF<br>- Secondary settings structured logically instead of stacked in a long scroll<br><br>**When opening a message, the most important elements are:**<br>- Subject<br>- Sender<br>- Message content (attachment)<br><br>**All other information is secondary metadata.**<br><br>**The redesign therefore emphasizes:**<br>- Subject, sender, and addressee<br>- Attachment visible immediately (no forced download)<br>- Metadata collapsed but accessible"
+        },
+        {
+        "type": "text",
+        "body": "Inspired by **familiar messaging** patterns and supported by **a simple design system,** the interface clearly **separates app UI elements from official system data through typography and color.**<br>The result is **a cleaner structure** and **more intuitive experience.** Check out the app showcase with additional notes about the improvements below!"
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/DBox_Dashboard.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/DBox_send_message.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/DBox_Attachments.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/DBox_flyer.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/Dbox_UIStyles.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/DBox_branding.png", 
+        "alt": "image" 
+        }
+        
+      ]
+    },
+      {
         "id": "3",
         "title": "Branding for a street food restaurant",
         "card": {
-        "thumb": "images/uploads/street-food-restaurant/pecdrive_menu_mockup 1.png",
+        "thumb": "images/uploads/street-food-restaurant/brand_guide.png",
         "alt": "image"
       },
       "tags": [
@@ -20,7 +100,7 @@
         },
          {
         "type": "image",
-        "src": "images/uploads/street-food-restaurant/Frame 234.png",
+        "src": "images/uploads/street-food-restaurant/brand_guide.png",
         "alt": "image"
         },
         {
@@ -68,7 +148,7 @@
         },
         {
         "type": "image",
-        "src": "images/uploads/street-food-restaurant/Frame 235.png",
+        "src": "images/uploads/street-food-restaurant/socials_showcase.png",
         "alt": "image"
         }
       ]
