@@ -322,6 +322,17 @@
   display: block;
 }
 
+#about,
+#work,
+#contact,
+.footer,
+.footer-visual,
+.project-detail .project-content,
+.project-detail .project-links {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
 .hero .eyes {  
   position: absolute;
   top: 50%;
@@ -552,6 +563,11 @@ section {
         object-position: center; 
         display:block;
     }    
+
+    .card{
+      content-visibility:auto;
+      contain-intrinsic-size: 320px 420px;
+    }
     .meta{display:flex;flex-direction:column;gap:var(--project-meta-text-gap)}
     .meta .title{margin:0;}
     .tags{display:flex;flex-wrap:wrap;gap:var(--space-label-label-x)}

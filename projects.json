@@ -263,6 +263,65 @@
         "alt": "landing page mobile"
         }
       ]
+    },
+    {
+        "id": "1",
+        "title": "Film Festival Motion Teaser",
+        "card": {
+        "thumb": "images/uploads/film-festival-animation/filmfestival-animation.MP4",
+        "alt": "Film festival animation preview"
+      },
+      "tags": [
+        "animation"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": " **2D promotional animation created for a film festival.** <br>Inspired by the festival’s visual identity, the animation translates static design elements into motion — resulting in a short digital teaser concluding with the event date."
+        },
+        { "type": "video", "src": "images/uploads/film-festival-animation/filmfestival-animation.MP4", "alt": "Film festival animation preview", "controls": true },
+        {
+        "type": "text",
+        "body": "*Note: This is an unofficial concept project created as a personal initiative.*"
+        }
+      ]
+    },
+    {
+        "id": "0",
+        "title": "Posters Collection",
+        "card": {
+        "thumb": "images/uploads/posters-collection/portfolio_posters_preview.jpg",
+        "alt": "Poster Design"
+      },
+      "tags": [
+        "graphic design"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": "Take a browse through my curated collection of experimental posters exploring typography, composition, and visual rhythm.<br>An ongoing playground for ideas, intuition, and graphic experimentation."
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/posters-collection/laoliva_poster_mock.jpg",
+        "alt": "desktop mockup"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/posters-collection/corverde_poster.jpg",
+        "alt": "desktop mockup"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/posters-collection/mtfuji_poster_mockup.jpg",
+        "alt": "desktop mockup"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/posters-collection/vh_poster_mock.jpg",
+        "alt": "desktop mockup"
+        }
+      ]
     }
   ]
 }

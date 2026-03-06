@@ -10,6 +10,51 @@
     return;
   }
 
+  function refreshAOS() {
+    if (!window.AOS) return;
+    if (!window.__aosReady) {
+      window.AOS.init({
+        duration: 400,
+        easing: 'ease-out-quad',
+        once: true,
+        disableMutationObserver: true
+      });
+      window.__aosReady = true;
+      return;
+    }
+    window.AOS.refreshHard();
+  }
+
+  function setupDeferredVideo(video) {
+    video.preload = 'none';
+    video.autoplay = false;
+
+    const startVideo = () => {
+      if (video.dataset.started === 'true') return;
+      video.dataset.started = 'true';
+      video.preload = 'metadata';
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {});
+      }
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      startVideo();
+      return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        startVideo();
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '200px 0px' });
+
+    observer.observe(video);
+  }
+
   const getField = name => article.querySelector(`[data-field="${name}"]`);
   const getBlock = name => article.querySelector(`[data-block="${name}"]`);
 
@@ -63,7 +108,7 @@
   }
 
   async function fetchProjects(src) {
-    const res = await fetch(src, { cache: 'no-store' });
+    const res = await fetch(src, { cache: 'default' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     const projects = parseProjects(payload);
@@ -112,6 +157,7 @@
     const img = document.createElement('img');
     img.loading = 'lazy';
     img.decoding = 'async';
+    img.fetchPriority = 'low';
     img.src = src;
     img.alt = alt || '';
     figure.appendChild(img);
@@ -125,12 +171,12 @@
 
     const video = document.createElement('video');
     video.src = src;
-    
+
     video.controls = false;
-    video.autoplay = true;
     video.loop = true;
     video.muted = true;
     video.playsInline = true;
+    video.setAttribute('preload', 'none');
     
     video.setAttribute('disablePictureInPicture', '');
     video.setAttribute('disableremoteplayback', '');
@@ -144,6 +190,7 @@
     }
     
     video.style.pointerEvents = 'none';
+    setupDeferredVideo(video);
 
     figure.appendChild(video);
     return figure;
@@ -297,13 +344,7 @@
 
     // INICIALIZACE / REFRESH AOS    
     requestAnimationFrame(() => {
-      if (window.AOS) {
-        window.AOS.init({
-          duration: 400,
-          easing: 'ease-out-quad',
-          disableMutationObserver: false
-        });
-      }
+      refreshAOS();
     });
   }
 
