@@ -160,36 +160,36 @@ function createFigure(src, alt) {
 }
 
   function createVideo(src, alt, poster) {
-    const figure = document.createElement('figure');
-    figure.className = 'block block--image';
-    figure.setAttribute('data-aos', 'fade-up');
+  const figure = document.createElement('figure');
+  figure.className = 'block block--image';
+  figure.setAttribute('data-aos', 'fade-up');
 
-    const video = document.createElement('video');
-    video.src = src;
+  const video = document.createElement('video');
+  video.src = src;
 
-    video.controls = false;
-    video.loop = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.setAttribute('preload', 'none');
-    
-    video.setAttribute('disablePictureInPicture', '');
-    video.setAttribute('disableremoteplayback', '');
+  video.controls = false;
+  video.loop = true;
+  video.muted = true;
+  video.playsInline = true;
+  video.autoplay = true;
+  video.preload = 'metadata';
 
-    if (poster) {
-      video.poster = poster;
-    }
-    if (alt) {
-      video.setAttribute('aria-label', alt);
-      video.title = alt;
-    }
-    
-    video.style.pointerEvents = 'none';
-    setupDeferredVideo(video);
+  video.setAttribute('disablePictureInPicture', '');
+  video.setAttribute('disableremoteplayback', '');
 
-    figure.appendChild(video);
-    return figure;
+  if (poster) {
+    video.poster = poster;
   }
+  if (alt) {
+    video.setAttribute('aria-label', alt);
+    video.title = alt;
+  }
+
+  video.style.pointerEvents = 'none';
+
+  figure.appendChild(video);
+  return figure;
+}
 
   function isVideoSource(src) {
     return /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(src || '');
