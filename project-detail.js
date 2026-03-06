@@ -147,22 +147,17 @@
     });
   }
 
-  function createFigure(src, alt) {
-    const figure = document.createElement('figure');
-    figure.className = 'block block--image';
-    
-    // Přidání animace
-    figure.setAttribute('data-aos', 'fade-up');
-    
-    const img = document.createElement('img');
-    img.loading = 'lazy';
-    img.decoding = 'async';
-    img.fetchPriority = 'low';
-    img.src = src;
-    img.alt = alt || '';
-    figure.appendChild(img);
-    return figure;
-  }
+function createFigure(src, alt) {
+  const figure = document.createElement('figure');
+  figure.className = 'block block--image';
+  figure.setAttribute('data-aos', 'fade-up');
+
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = alt || '';
+  figure.appendChild(img);
+  return figure;
+}
 
   function createVideo(src, alt, poster) {
     const figure = document.createElement('figure');

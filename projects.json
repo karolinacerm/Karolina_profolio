@@ -15,7 +15,7 @@
       "content": [
         {
         "type": "text",
-        "body": "Datovká schránka is a **government messaging system** used for **sending official documents in file format** (no plain text messages). The goal of this redesign was to **improve clarity, usability, and information hierarchy** — while keeping the legal nature of the system intact."
+        "body": "*Datova schranka* is a **government messaging system** used for **sending official documents in file format** (no plain text messages). The goal of this redesign was to **improve clarity, usability, and information hierarchy** — while keeping the legal nature of the system intact."
         },
         {
         "type": "image", 
@@ -77,7 +77,6 @@
         "src": "images/uploads/DataBoxSystem/DBox_branding.png", 
         "alt": "image" 
         }
-        
       ]
     },
       {
