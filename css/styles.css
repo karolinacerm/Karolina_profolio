@@ -100,7 +100,7 @@
       --about-description-size: 1.125rem;
       --about-description-spacing: 1%;
       --about-description-weight: 300;
-      --about-description-height: 2.125rem;    
+      --about-description-height: 1.75rem;
     }
     
     @media (min-width: 768px){
