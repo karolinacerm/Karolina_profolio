@@ -1,6 +1,116 @@
 {
   "projects": [
       {
+        "id": "6",
+        "title": "Collected",
+        "card": {
+        "thumb": "images/uploads/collected/collected_thumbnail.png",
+        "alt": "image"
+      },
+      "tags": [
+        "product design",
+        "UX / UI"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": "**Collected** brings calm to chaotic discoveries. Your favorite books, products, places, and experiences – once scattered across notes and apps – now live in one intuitive binder."
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/collected/collected_thumbnail.png", 
+        "alt": "image" 
+        },
+         {
+        "type": "text",
+        "body": "Collect privately, tag with mood and context, share what inspires. No image overload, no dopamine-chasing metrics. Just meaningful curation and genuine recommendations."
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/collected/collected_cards.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "text",
+        "body": "To evoke collecting’s truest symbol, Collected uses binder visual – the analog album that holds life’s treasures. Nostalgic page swipes deliver timeless tactile calm. Color-coded cards provide at-a-glance categorization."
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/collected/collected_binder.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "text",
+        "body": "**Context tags** add emotional depth – mood, discovery story, intention – turning finds into personal memories. "
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/collected/context_tags.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "text",
+        "body": "**Community space** allows you to share your best finds as well as get inpired by other’s favorites."
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/collected/collected_community.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/collected/collected_mocks.png", 
+        "alt": "image" 
+        }
+      ]
+    },
+      {
+        "id": "5",
+        "title": "Afterglow Espresso Bar",
+        "card": {
+        "thumb": "images/uploads/afterglow/afterglow_graphics.png",
+        "alt": "image"
+      },
+      "tags": [
+        "branding",
+        "typography"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": "**Font becomes a muse.**<br>This quick type exploration, formed into an espresso bar brand is built on an exceptional open source font Frames Part One."
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/afterglow/afterglow_graphics.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/afterglow/afterglow_storefront_sign_mock.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/afterglow/afterglow_menus.png", 
+        "alt": "image" 
+        },
+         {
+        "type": "text",
+        "body": "**Afterglow** is not a high-performance brand. It’s a low-lit espresso bar with dimmed lights, always offering refuge to every lost soul and wandering weirdo stumbling down the street.<br><br> **The logo** came to life by pairing Frames Part One with some funky hand-drawn illustrations, turning it into a customized symbol of wabi-sabi definition.<br><br>**High-contrast, exotic colors** tied the whole vision together – almost like the bar was assembled from old cargo crates straight off a harbor dock!<br><br>With **an identity** applied onto some brand mock-ups, this is the result of having a romantic dinner with Frames Part One, with some funky grooves playing in the background."
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/afterglow/afterglow_mock.jpg", 
+        "alt": "image" 
+        },
+        {
+        "type": "image", 
+        "src": "images/uploads/afterglow/storefront_logo.jpg", 
+        "alt": "image" 
+        }
+      ]
+    },{
         "id": "4",
         "title": "DataBox System Redesign",
         "card": {
@@ -8,14 +118,14 @@
         "alt": "image"
       },
       "tags": [
-        "UX / UI",
         "product design",
+        "UX / UI",
         "app redesign"
       ],
       "content": [
         {
         "type": "text",
-        "body": "*Datova schranka* is a **government messaging system** used for **sending official documents in file format** (no plain text messages). The goal of this redesign was to **improve clarity, usability, and information hierarchy** — while keeping the legal nature of the system intact."
+        "body": "**Datova schranka** is a government messaging system used for sending official documents in file format** (no plain text messages).<br> The goal of this redesign was to improve clarity, usability, and information hierarchy – while keeping the legal nature of the system intact."
         },
         {
         "type": "image", 
@@ -24,7 +134,7 @@
         },
         {
         "type": "text",
-        "body": "**The current Data Box system suffers from several usability issues:**<br>overwhelming information density, poor visual hierarchy, a non-intuitive message composition flow, and attachments that are often difficult to access.<br><br>**The redesign therefore focuses on:**<br>- Making the interface feel familiar (email-like mental model)<br>- Reducing visual noise and unnecessary UI elements<br>- Making attachments immediately accessible"
+        "body": "The current Data Box system suffers from several usability issues:<br>overwhelming information density, poor visual hierarchy, a non-intuitive message composition flow, and attachments that are often difficult to access.<br><br>**The redesign therefore focuses on:**<br> making the interface feel familiar (email-like mental model); reducing visual noise and unnecessary UI elements; making attachments immediately accessible"
         },
         {
         "type": "image", 
@@ -33,19 +143,7 @@
         },
         {
         "type": "text",
-        "body": "# **Key UX Improvements**"
-        },
-        {
-        "type": "text",
-        "body": "**Familiar Mental Model (Email Inspiration)**<br>Since Datovka functions similarly to email (inbox, sent messages, attachments), the redesign builds on this familiar pattern.<br>**- Clear Inbox / Sent toggle<br>- Pull-to-refresh instead of a sync button<br>- Floating action button for composing messages<br>- Structured message list similar to mail apps<br><br>This significantly reduces the learning curve for users.**"
-        },
-        {
-        "type": "text",
-        "body": "**Another focus area was the message composition and detail flow.**<br>Because Datovka only allows file-based messages, users either upload an attachment or generate one from text. The redesign therefore prioritizes clear attachment handling and a simplified composition flow.<br><br>**Key improvements include:**<br>- Easy attachment upload<br>- Clear “Write Message” option that automatically generates a PDF<br>- Secondary settings structured logically instead of stacked in a long scroll<br><br>**When opening a message, the most important elements are:**<br>- Subject<br>- Sender<br>- Message content (attachment)<br><br>**All other information is secondary metadata.**<br><br>**The redesign therefore emphasizes:**<br>- Subject, sender, and addressee<br>- Attachment visible immediately (no forced download)<br>- Metadata collapsed but accessible"
-        },
-        {
-        "type": "text",
-        "body": "Inspired by **familiar messaging** patterns and supported by **a simple design system,** the interface clearly **separates app UI elements from official system data through typography and color.**<br>The result is **a cleaner structure** and **more intuitive experience.** Check out the app showcase with additional notes about the improvements below!"
+        "body": "**Familiar Mental Model (Email Inspiration)**<br>Since Datovka functions similarly to email (inbox, sent messages, attachments), the redesign builds on this familiar pattern.<br><br>**- Clear Inbox / Sent toggle<br>- Pull-to-refresh instead of a sync button<br>- Floating action button for composing messages<br>- Structured message list similar to mail apps<br><br>This significantly reduces the learning curve for users.**"
         },
         {
         "type": "image", 
@@ -53,9 +151,8 @@
         "alt": "image" 
         },
         {
-        "type": "image", 
-        "src": "images/uploads/DataBoxSystem/DBox_send_message.png", 
-        "alt": "image" 
+        "type": "text",
+        "body": "**Another focus area was the message composition and detail flow.**<br>Since Datovka only allows file-based messages, users either upload an attachment or generate one from text. The redesign therefore prioritizes clear attachment handling and a simplified composition flow."
         },
         {
         "type": "image", 
@@ -64,12 +161,21 @@
         },
         {
         "type": "image", 
-        "src": "images/uploads/DataBoxSystem/DBox_flyer.png", 
+        "src": "images/uploads/DataBoxSystem/DBox_send_message.png", 
+        "alt": "image" 
+        },
+        {
+        "type": "text",
+        "body": "Inspired by familiar messaging patterns and supported by a simple design system, **the interface clearly separates app UI elements from official system data through typography and color.**<br>The result is a cleaner structure and more intuitive experience.<br>**Check out the app showcase with additional notes below!**"
+        },
+          {
+        "type": "image", 
+        "src": "images/uploads/DataBoxSystem/Dbox_UIStyles.png", 
         "alt": "image" 
         },
         {
         "type": "image", 
-        "src": "images/uploads/DataBoxSystem/Dbox_UIStyles.png", 
+        "src": "images/uploads/DataBoxSystem/DBox_flyer.png", 
         "alt": "image" 
         },
         {
@@ -81,13 +187,13 @@
     },
       {
         "id": "3",
-        "title": "Branding for a street food restaurant",
+        "title": "Pecdrive food truck",
         "card": {
         "thumb": "images/uploads/street-food-restaurant/brand_guide.png",
         "alt": "image"
       },
       "tags": [
-        "brand identity",
+        "branding",
         "logo",
         "print",
         "socials"
@@ -95,7 +201,7 @@
       "content": [
         {
         "type": "text",
-        "body": "**PecDrive is a street food restaurant with a built-in stone pizza oven right inside the truck — one of the things that makes it truly unique.** <br>The goal of this project was to create a **visual identity** that reflects the hipster-like energy with which PecDrive crafts and serves its menu. **The logo** was meant to capture the main attributes of this street food concept **— the car, the pizza, and the oven.**"
+        "body": "**PecDrive** is a street food restaurant with a built-in stone pizza oven right inside the truck — one of the things that makes it truly unique."
         },
          {
         "type": "image",
@@ -109,16 +215,16 @@
         },
         {
         "type": "text",
-        "body": "At first, combining **these elements** into a cohesive logo was quite a challenge. But after **experimenting with different concepts** and a few rounds of brainstorming, this idea came to life — complemented by **playful illustrations** and **a bold, funky typeface** that resonates with the spirited character of PecDrive<br>The whole identity is tied together with **a contrasting color palette** led by vibrant orange, symbolizing energy and appetite, inviting customers to enjoy those tasteful bites that PecDrive delivers from its truck."
+        "body": "The goal of this project was to create **a visual identity** that reflects the hipster-like energy with which PecDrive crafts and serves its menu. **The logo** was meant to capture the main attributes of this street food concept — the car, the pizza, and the oven.<br><br>At first, combining these elements into a cohesive symbol was quite a challenge. But after experimenting with different concepts and a few rounds of brainstorming, this idea came to life — complemented by **playful illustrations** and **a bold, funky typeface** that resonates with the spirited character of PecDrive."
         },
         {
         "type": "image",
-        "src": "images/uploads/street-food-restaurant/pecdrive_billboard_mock1 1.png",
+        "src": "images/uploads/street-food-restaurant/2-Pizza Box 1.png",
         "alt": "image"
         },
         {
         "type": "text",
-        "body": "After finalizing the brand identity, I designed **several print materials** including **menus, billboards, and digital assets for social media presentation.**<br>It was a real **pleasure** and **a valuable experience** to explore design within the gastronomic field — and I’m really happy with the results that came out of it. **Check out some insights into this project below!**"
+        "body": "The whole identity is tied together with **a contrasting color palette** led by vibrant orange, symbolizing energy and appetite, inviting customers to enjoy those tasteful bites that PecDrive delivers from its truck.<br><br>After finalizing the brand identity, I designed **several print materials** including menus, billboards, and digital assets for social media presentation.<br><br>It was a real pleasure and a valuable experience to explore design within the gastronomic field — and I’m really happy with the results that came out of it. **Check out some insights into this project below!**"
         },
         {
         "type": "image",
@@ -142,7 +248,7 @@
         },
         {
         "type": "image",
-        "src": "images/uploads/street-food-restaurant/2-Pizza Box 1.png",
+        "src": "images/uploads/street-food-restaurant/pecdrive_billboard_mock1 1.png",
         "alt": "image"
         },
         {
@@ -166,6 +272,11 @@
         {
         "type": "text",
         "body": "Take a browse through my curated collection of experimental posters exploring typography, composition, and visual rhythm.<br>An ongoing playground for ideas, intuition, and graphic experimentation."
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/posters-collection/portfolio_posters_preview.jpg",
+        "alt": "desktop mockup"
         },
         {
         "type": "image",
@@ -219,27 +330,27 @@
         "alt": "Popis náhledu projektu"
       },
       "tags": [
-        "web design",
         "visual identity",
+        "web design",
         "print"
       ],
       "content": [
         {
         "type": "text",
-        "body": "**Antonie is a young and talented cyclist from the Czech Republic, and this project was created to elevate her digital and personal brand.**<br>It includes both a modern **website** and a **printed portfolio** brochure that together highlight her story, achievements, and personality."
+        "body": "**Antonie** is a young and talented cyclist from the Czech Republic, and this project was created to elevate her digital and personal brand.<br>It includes both a modern **website** and a **printed portfolio brochure** that together highlight her story, achievements, and personality."
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/cyclist-identity/antonie_mockup_magazine1.png",
+        "alt": "image"
+        },
+        {
+        "type": "text",
+        "body": "**The website** focuses on key performance statistics, titles, and a dynamic blog section for recent updates, while the **printed portfolio** offers a more personal look — featuring **biometric data, career milestones, and design elements inspired by the Czech tricolor."
         },
         {
         "type": "image",
         "src": "images/uploads/cyclist-identity/antonie_mockup_desktop.png",
-        "alt": "desktop mockup"
-        },
-        {
-        "type": "text",
-        "body": "The website focuses on key **performance statistics, titles,** and a **dynamic blog section** for recent updates, while the **printed portfolio offers a more personal look** — featuring **biometric data, career milestones,** and **design elements inspired by the Czech tricolor.**"
-        },
-        {
-        "type": "image",
-        "src": "images/uploads/cyclist-identity/Antonie_homescreen_mockup.png",
         "alt": "image"
         },
         {
@@ -248,13 +359,13 @@
         "alt": "image"
         },
         {
-        "type": "text",
-        "body": "The unified visual identity **ensures consistency** across digital and print, **strengthening her professional presentation** to teams, sponsors, and fans."
+        "type": "image",
+        "src": "images/uploads/cyclist-identity/Antonie_homescreen_mockup.png",
+        "alt": "image"
         },
         {
-        "type": "image",
-        "src": "images/uploads/cyclist-identity/antonie_mockup_magazine1.png",
-        "alt": "image"
+        "type": "text",
+        "body": "**The unified visual identity** ensures consistency across digital and print, strengthening her professional presentation to teams, sponsors, and fans."
         },
         {
         "type": "image",
