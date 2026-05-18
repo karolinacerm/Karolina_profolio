@@ -150,6 +150,7 @@
         --project-meta-text-gap: 12px;
 
         --pad-article: 170px
+        
       }
     }
     body{background:var(--brand-black);color:var(--brand-black)}
@@ -971,7 +972,7 @@ body.navmenu-open { overflow:hidden; }
 .project-detail .block--text{
   display:flex;
   flex-direction:column;
-  padding: var(--space-workprojects-text-img) 0;
+  padding: var(--space-workprojects-text-img) 0;  
 }
 .project-detail .block--text p{
   font-size: var(--about-description-size);
@@ -1077,4 +1078,10 @@ body.navmenu-open { overflow:hidden; }
 
 [data-aos].aos-animate {
   pointer-events: auto;
+}
+
+@media (min-width: 1400px) {
+  .project-detail .block--text {
+    margin: 0 256px;
+  }
 }
