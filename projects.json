@@ -64,6 +64,35 @@
         }
       ]
     },
+    {
+        "id": "7",
+        "title": "San Francisco Cocktail",
+        "card": {
+        "thumb": "images/uploads/tee-design/front_1.png",
+        "alt": "tee design"
+      },
+      "tags": [
+        "tee design",
+        "illustration"
+      ],
+      "content": [
+        {
+        "type": "image",
+        "src": "images/uploads/tee-design/front_1.png",
+        "alt": "image"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/tee-design/fron_2.png",
+        "alt": "image"
+        },
+        {
+        "type": "image",
+        "src": "images/uploads/tee-design/back_1.png",
+        "alt": "design"
+        }
+      ]
+    },
       {
         "id": "5",
         "title": "Afterglow Espresso Bar",
