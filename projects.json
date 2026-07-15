@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-        "id": "7",
+        "id": "8",
         "title": "Brewprint // * COMING SOON *",
         "card": {
         "thumb": "images/uploads/brewprint/bp.thumbnail (1).webp",
@@ -19,7 +19,7 @@
       ]
     },
       {
-        "id": "6",
+        "id": "7",
         "title": "Collected",
         "card": {
         "thumb": "images/uploads/collected/collected_thumbnail.png",
@@ -83,7 +83,7 @@
       ]
     },
     {
-        "id": "7",
+        "id": "6",
         "title": "San Francisco Cocktail",
         "card": {
         "thumb": "images/uploads/tee-design/front_1.png",
