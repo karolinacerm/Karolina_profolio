@@ -1,5 +1,23 @@
 {
   "projects": [
+    {
+        "id": "7",
+        "title": "Brewprint // * COMING SOON *",
+        "card": {
+        "thumb": "images/uploads/brewprint/bp.thumbnail (1).webp",
+        "alt": "image"
+      },
+      "tags": [
+        "product design",
+        "UX / UI"
+      ],
+      "content": [
+        {
+        "type": "text",
+        "body": "*Coming Soon!*"
+        }
+      ]
+    },
       {
         "id": "6",
         "title": "Collected",
@@ -154,7 +172,7 @@
       "content": [
         {
         "type": "text",
-        "body": "**Datova schranka** is a government messaging system used for sending official documents in file format** (no plain text messages).<br> The goal of this redesign was to improve clarity, usability, and information hierarchy – while keeping the legal nature of the system intact."
+        "body": "**Datova schranka** is a government messaging system used for sending official documents in file format (no plain text messages).<br> The goal of this redesign was to improve clarity, usability, and information hierarchy – while keeping the legal nature of the system intact."
         },
         {
         "type": "image", 
