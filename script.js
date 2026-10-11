@@ -14,29 +14,45 @@
   }
 
   function setupDeferredVideo(video) {
-    video.preload = 'none';
+    // iOS Safari only autoplays inline video that carries real muted/playsinline
+    // attributes (setting the JS properties alone is not always enough).
+    video.muted = true;
+    video.defaultMuted = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
     video.autoplay = false;
+    video.preload = 'none';
 
-    const startVideo = () => {
-      if (video.dataset.started === 'true') return;
-      video.dataset.started = 'true';
-      video.preload = 'metadata';
+    let visible = false;
+    const play = () => {
+      video.preload = 'auto';
       const playPromise = video.play();
       if (playPromise && typeof playPromise.catch === 'function') {
         playPromise.catch(() => {});
       }
     };
 
+    // The first play() can be refused before any data has loaded; retry once it can play.
+    video.addEventListener('canplay', () => {
+      if (visible && video.paused) play();
+    });
+
     if (!('IntersectionObserver' in window)) {
-      startVideo();
+      visible = true;
+      play();
       return;
     }
 
+    // Play while on screen, pause when scrolled away (saves CPU/battery on long pages).
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        startVideo();
-        observer.unobserve(entry.target);
+        visible = entry.isIntersecting;
+        if (visible) {
+          play();
+        } else if (!video.paused) {
+          video.pause();
+        }
       });
     }, { rootMargin: '200px 0px' });
 
@@ -62,9 +78,6 @@
         const video = document.createElement('video');
         video.src = thumbSrc;
         video.loop = true;
-        video.muted = true;
-        video.playsInline = true;
-        video.setAttribute('preload', 'none');
         video.setAttribute('aria-label', project.card?.alt || project.hero?.alt || '');
         setupDeferredVideo(video);
         thumb.appendChild(video);
